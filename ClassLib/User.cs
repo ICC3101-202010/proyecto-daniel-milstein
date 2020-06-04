@@ -32,6 +32,10 @@ namespace Proyecto
             List<object> likes = new List<object>();
             Queue<Media> queue = new Queue<Media>();
             List<Playlist> playlists = new List<Playlist>();
+            List<User> followers = new List<User>();
+            List<Object> following = new List<object>();
+            Followers = followers;
+            Following = following;
             Favorites = favorites;
             Likes = likes;
             Queue = queue;
