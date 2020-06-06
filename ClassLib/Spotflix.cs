@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
+using System.Windows.Forms;
+
 
 namespace Proyecto
 {
@@ -10,20 +15,15 @@ namespace Proyecto
         private static Dictionary<string, User> UserDB;
         private static List<Media> MediaDB;
         private static List<Person> PeopleDB;
-        static List<Song> SongDB = new List<Song>();
-        static List<Video> VideoDB = new List<Video>();
 
-        //static Dictionary<string, List<Media>> mediaDB = new Dictionary<string, List<Media>>()
-        //{
-            //{"Songs", SongDB},
-            //{"Videos", VideoDB}
-        //};
+
+        
 
         static Spotflix()
         {
             
             
-            var load = MainClass.Load("Spotflix.bin");
+            var load = Load("Spotflix.bin");
 
             Dictionary<string, User> userDB = load.Item1;
             List<Media> mediaDB = load.Item2;
@@ -33,24 +33,10 @@ namespace Proyecto
             UserDB = userDB;
             MediaDB = mediaDB;
             PeopleDB = peopleDB;
-
+            
         }
 
-        public static List<Song> GetSongDB
-        {
-            get
-            {
-                return SongDB;
-            }
-        }
-
-        public static List<Video> GetVideoDB
-        {
-            get
-            {
-                return VideoDB;
-            }
-        }
+        
 
         public static List<Person> GetPeopleDB
         {
@@ -100,107 +86,41 @@ namespace Proyecto
         }
 
 
-        public static string LogIn()
+        public static string LogIn(string username, string password)
         {
 
-            string username = "";
-            string password = "";
-            string a = "";
-
-            List<string> opt = new List<string>() { "Welcome back!", "Username: ", "Password: ", "Log In ->", "Back"};
-            while (true)
+            User user = UserDB[username];
+            try
             {
-                Console.Clear();
-                RegexUtilities.LoadingScreen();
-                string selected = RegexUtilities.GetMenu(opt);
-                if (selected == "Back")
+                if (user.GetPassword() == password)
                 {
-                    Console.Clear();
+                    return username;
+                }
+                else
+                {
                     return "";
-                    
                 }
-
-                else if (selected == opt[1])
-                {
-                    Console.CursorVisible = true;
-                    Console.Clear();
-                    RegexUtilities.LoadingScreen();
-                    opt[1] = opt[1].Substring(0, 10);
-                    username = RegexUtilities.WriteData(opt[1]);
-                    opt[1] += username;
-                    Console.CursorVisible = false;
-                }
-
-                else if (selected == opt[2])
-                {
-                    Console.Clear();
-                    RegexUtilities.LoadingScreen();
-                    Console.CursorVisible = true;
-                    opt[2] = opt[2].Substring(0, 10);
-                    Console.Write(opt[2]);
-                    password = RegexUtilities.HidePassword();
-                    a = "";
-                    foreach (char item in password) { a += "•"; }
-                    opt[2] = $"Password: {a}";
-                    Console.CursorVisible = false;
-
-                }
-
-                else if (selected == "Log In ->") 
-                {
-                    try
-                    {
-                        User user = UserDB[username];
-                        if (user.GetPassword() == password)
-                        {
-                            Console.WriteLine("Login successful!");
-                            Console.WriteLine($"Welcome {username}");
-                            Thread.Sleep(1000);
-                            Console.Clear();
-                            return username;
-                        }
-                        else
-                        {
-                            Console.Clear();
-                            Console.WriteLine("Wrong password!");
-                            Thread.Sleep(1000);
-                            Console.Clear();
-
-                        }
-
-                    }
-                    catch (Exception)
-                    {
-                        Console.Clear();
-                        RegexUtilities.LoadingScreen();
-                        Console.WriteLine("Username doesn't exist!");
-                        Thread.Sleep(1000);
-                        Console.Clear();
-                        
-                    }
-                    
-
-                } 
+            }
+            catch (Exception)
+            {
+                return "";
             }
 
-
         }
-        public static string AdminLogIn()
+        public static string AdminLogIn(string username, string password)
         {
-            string username = LogIn();
-            User user = UserDB[username];
+            string admin = LogIn(username, password);
+            User user = UserDB[admin];
             if (user.GetAdmin() == true)
             {
                 return username;
             }
             else
             {
-                Console.Clear();
-                RegexUtilities.LoadingScreen();
-                Console.WriteLine("Sorry, you are not an administrator.");
-                Thread.Sleep(1000);
                 return "";
             }
+
+
         }
 
         public static void Register()
@@ -482,7 +402,27 @@ namespace Proyecto
 
 
         }
+        public static void Save(Dictionary<string, User> userDB, List<Media> mediaDB, List<Person> peopleDB, string name)
+        {
+            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+            IFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(stream, userDB);
+            formatter.Serialize(stream, mediaDB);
+            formatter.Serialize(stream, peopleDB);
+            stream.Close();
+        }
 
+        public static (Dictionary<string, User>, List<Media>, List<Person>) Load(string name)
+        {
+            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+            IFormatter formatter = new BinaryFormatter();
+            Dictionary<string, User> userDB = (Dictionary<string, User>)formatter.Deserialize(stream);
+            List<Media> mediaDB = (List<Media>)formatter.Deserialize(stream);
+            List<Person> peopleDB = (List<Person>)formatter.Deserialize(stream);
+            stream.Close();
+
+            return (userDB, mediaDB, peopleDB);
+        }
 
 
     }

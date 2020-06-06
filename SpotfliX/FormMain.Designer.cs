@@ -83,6 +83,7 @@
             this.ProfileButton.TabIndex = 9;
             this.ProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ProfileButton.UseVisualStyleBackColor = false;
+            this.ProfileButton.Click += new System.EventHandler(this.ProfileButton_Click);
             // 
             // FormMain
             // 
@@ -97,6 +98,9 @@
             this.Menu = this.mainMenu1;
             this.Name = "FormMain";
             this.Text = "SpotfliX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.VisibleChanged += new System.EventHandler(this.FormMain_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelPlayer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

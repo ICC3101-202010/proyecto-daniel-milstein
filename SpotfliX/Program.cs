@@ -20,29 +20,22 @@ namespace SpotfliX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            /* Agregar admin
+            User admin = new User("admin", "dnmilstein@miuandes.cl", "admin", true, true, true);
+            Spotflix.AddUser(admin);
+            Spotflix.Save(Spotflix.GetUserDB, Spotflix.GetMediaDB,Spotflix.GetPeopleDB, "Spotflix.bin");
+            */
+            
+            Form1 f1 = new Form1();
+            f1.Show();
+
+            Application.Run();
+
+
+
+
         }
 
-        public static void Save(Dictionary<string, User> userDB, List<Media> mediaDB, List<Person> peopleDB, string name)
-        {
-            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(stream, userDB);
-            formatter.Serialize(stream, mediaDB);
-            formatter.Serialize(stream, peopleDB);
-            stream.Close();
-        }
-
-        public static (Dictionary<string, User>, List<Media>, List<Person>) Load(string name)
-        {
-            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
-            IFormatter formatter = new BinaryFormatter();
-            Dictionary<string, User> userDB = (Dictionary<string, User>)formatter.Deserialize(stream);
-            List<Media> mediaDB = (List<Media>)formatter.Deserialize(stream);
-            List<Person> peopleDB = (List<Person>)formatter.Deserialize(stream);
-            stream.Close();
-
-            return (userDB, mediaDB, peopleDB);
-        }
+        
     }
 }

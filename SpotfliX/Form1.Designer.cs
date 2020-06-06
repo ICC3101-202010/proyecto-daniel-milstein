@@ -75,9 +75,9 @@
             this.panelInicio.Controls.Add(this.UserBox);
             this.panelInicio.Controls.Add(this.PassLabel);
             this.panelInicio.Controls.Add(this.UsernameLAbel);
-            this.panelInicio.Location = new System.Drawing.Point(12, 110);
+            this.panelInicio.Location = new System.Drawing.Point(223, 110);
             this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(306, 296);
+            this.panelInicio.Size = new System.Drawing.Size(472, 420);
             this.panelInicio.TabIndex = 0;
             // 
             // GoToRegButton
@@ -100,6 +100,7 @@
             this.SignInButton.TabIndex = 4;
             this.SignInButton.Text = "Sign In";
             this.SignInButton.UseVisualStyleBackColor = true;
+            this.SignInButton.Click += new System.EventHandler(this.SignInButton_Click);
             // 
             // PassBox
             // 
@@ -148,7 +149,7 @@
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1502, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(1002, 104);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -179,9 +180,9 @@
             this.panelRegister.Controls.Add(this.PvtRegLabel);
             this.panelRegister.Controls.Add(this.UserRegLabel);
             this.panelRegister.Controls.Add(this.label1);
-            this.panelRegister.Location = new System.Drawing.Point(324, 110);
+            this.panelRegister.Location = new System.Drawing.Point(179, 110);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(160, 86);
+            this.panelRegister.Size = new System.Drawing.Size(680, 512);
             this.panelRegister.TabIndex = 1;
             this.panelRegister.Visible = false;
             // 
@@ -306,6 +307,7 @@
             this.PassRegBox.PasswordChar = '•';
             this.PassRegBox.Size = new System.Drawing.Size(186, 22);
             this.PassRegBox.TabIndex = 12;
+            this.PassRegBox.TextChanged += new System.EventHandler(this.PassRegBox_TextChanged);
             // 
             // Pass2RegBox
             // 
@@ -423,7 +425,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1502, 977);
+            this.ClientSize = new System.Drawing.Size(1002, 712);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelInicio);
