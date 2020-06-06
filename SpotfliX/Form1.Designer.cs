@@ -30,37 +30,37 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelInicio = new System.Windows.Forms.Panel();
-            this.UsernameLAbel = new System.Windows.Forms.Label();
-            this.PassLabel = new System.Windows.Forms.Label();
-            this.UserBox = new System.Windows.Forms.TextBox();
-            this.PassBox = new System.Windows.Forms.TextBox();
-            this.SignInButton = new System.Windows.Forms.Button();
             this.GoToRegButton = new System.Windows.Forms.Button();
+            this.SignInButton = new System.Windows.Forms.Button();
+            this.PassBox = new System.Windows.Forms.TextBox();
+            this.UserBox = new System.Windows.Forms.TextBox();
+            this.PassLabel = new System.Windows.Forms.Label();
+            this.UsernameLAbel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRegister = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.UserRegLabel = new System.Windows.Forms.Label();
-            this.PvtRegLabel = new System.Windows.Forms.Label();
-            this.Email2RegLabel = new System.Windows.Forms.Label();
-            this.EmailRegLabel = new System.Windows.Forms.Label();
-            this.Password2RegLabel = new System.Windows.Forms.Label();
-            this.PasswordRegLabel = new System.Windows.Forms.Label();
-            this.UserRegBox = new System.Windows.Forms.TextBox();
-            this.EmailRegBox = new System.Windows.Forms.TextBox();
-            this.Email2RegBox = new System.Windows.Forms.TextBox();
-            this.Pass2RegBox = new System.Windows.Forms.TextBox();
-            this.PassRegBox = new System.Windows.Forms.TextBox();
-            this.PvtRegCheck = new System.Windows.Forms.CheckBox();
-            this.RegisterButton = new System.Windows.Forms.Button();
-            this.BackRegButton = new System.Windows.Forms.Button();
-            this.PremiumLabel = new System.Windows.Forms.Label();
-            this.PremiumCheck = new System.Windows.Forms.CheckBox();
-            this.UserAvailableLabel = new System.Windows.Forms.Label();
-            this.SamePassLabel = new System.Windows.Forms.Label();
-            this.SamePass2Label = new System.Windows.Forms.Label();
-            this.EmailSameLabel = new System.Windows.Forms.Label();
-            this.EmailSame2Label = new System.Windows.Forms.Label();
             this.RegErrorLabel = new System.Windows.Forms.Label();
+            this.EmailSame2Label = new System.Windows.Forms.Label();
+            this.EmailSameLabel = new System.Windows.Forms.Label();
+            this.SamePass2Label = new System.Windows.Forms.Label();
+            this.SamePassLabel = new System.Windows.Forms.Label();
+            this.UserAvailableLabel = new System.Windows.Forms.Label();
+            this.PremiumCheck = new System.Windows.Forms.CheckBox();
+            this.PremiumLabel = new System.Windows.Forms.Label();
+            this.BackRegButton = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
+            this.PvtRegCheck = new System.Windows.Forms.CheckBox();
+            this.PassRegBox = new System.Windows.Forms.TextBox();
+            this.Pass2RegBox = new System.Windows.Forms.TextBox();
+            this.Email2RegBox = new System.Windows.Forms.TextBox();
+            this.EmailRegBox = new System.Windows.Forms.TextBox();
+            this.UserRegBox = new System.Windows.Forms.TextBox();
+            this.PasswordRegLabel = new System.Windows.Forms.Label();
+            this.Password2RegLabel = new System.Windows.Forms.Label();
+            this.EmailRegLabel = new System.Windows.Forms.Label();
+            this.Email2RegLabel = new System.Windows.Forms.Label();
+            this.PvtRegLabel = new System.Windows.Forms.Label();
+            this.UserRegLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRegister.SuspendLayout();
@@ -75,22 +75,47 @@
             this.panelInicio.Controls.Add(this.UserBox);
             this.panelInicio.Controls.Add(this.PassLabel);
             this.panelInicio.Controls.Add(this.UsernameLAbel);
-            this.panelInicio.Location = new System.Drawing.Point(87, 164);
+            this.panelInicio.Location = new System.Drawing.Point(12, 110);
             this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(552, 512);
+            this.panelInicio.Size = new System.Drawing.Size(306, 296);
             this.panelInicio.TabIndex = 0;
             // 
-            // UsernameLAbel
+            // GoToRegButton
             // 
-            this.UsernameLAbel.AutoSize = true;
-            this.UsernameLAbel.BackColor = System.Drawing.Color.Transparent;
-            this.UsernameLAbel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLAbel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UsernameLAbel.Location = new System.Drawing.Point(95, 146);
-            this.UsernameLAbel.Name = "UsernameLAbel";
-            this.UsernameLAbel.Size = new System.Drawing.Size(117, 29);
-            this.UsernameLAbel.TabIndex = 0;
-            this.UsernameLAbel.Text = "Username";
+            this.GoToRegButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoToRegButton.Location = new System.Drawing.Point(100, 240);
+            this.GoToRegButton.Name = "GoToRegButton";
+            this.GoToRegButton.Size = new System.Drawing.Size(131, 50);
+            this.GoToRegButton.TabIndex = 5;
+            this.GoToRegButton.Text = "Register";
+            this.GoToRegButton.UseVisualStyleBackColor = true;
+            this.GoToRegButton.Click += new System.EventHandler(this.GoToRegButton_Click);
+            // 
+            // SignInButton
+            // 
+            this.SignInButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignInButton.Location = new System.Drawing.Point(285, 240);
+            this.SignInButton.Name = "SignInButton";
+            this.SignInButton.Size = new System.Drawing.Size(100, 50);
+            this.SignInButton.TabIndex = 4;
+            this.SignInButton.Text = "Sign In";
+            this.SignInButton.UseVisualStyleBackColor = true;
+            // 
+            // PassBox
+            // 
+            this.PassBox.Location = new System.Drawing.Point(285, 192);
+            this.PassBox.Name = "PassBox";
+            this.PassBox.PasswordChar = '•';
+            this.PassBox.Size = new System.Drawing.Size(100, 22);
+            this.PassBox.TabIndex = 3;
+            // 
+            // UserBox
+            // 
+            this.UserBox.Location = new System.Drawing.Point(285, 153);
+            this.UserBox.Multiline = true;
+            this.UserBox.Name = "UserBox";
+            this.UserBox.Size = new System.Drawing.Size(100, 22);
+            this.UserBox.TabIndex = 2;
             // 
             // PassLabel
             // 
@@ -104,42 +129,17 @@
             this.PassLabel.TabIndex = 1;
             this.PassLabel.Text = "Password";
             // 
-            // UserBox
+            // UsernameLAbel
             // 
-            this.UserBox.Location = new System.Drawing.Point(285, 153);
-            this.UserBox.Multiline = true;
-            this.UserBox.Name = "UserBox";
-            this.UserBox.Size = new System.Drawing.Size(100, 22);
-            this.UserBox.TabIndex = 2;
-            // 
-            // PassBox
-            // 
-            this.PassBox.Location = new System.Drawing.Point(285, 192);
-            this.PassBox.Name = "PassBox";
-            this.PassBox.PasswordChar = '•';
-            this.PassBox.Size = new System.Drawing.Size(100, 22);
-            this.PassBox.TabIndex = 3;
-            // 
-            // SignInButton
-            // 
-            this.SignInButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignInButton.Location = new System.Drawing.Point(285, 240);
-            this.SignInButton.Name = "SignInButton";
-            this.SignInButton.Size = new System.Drawing.Size(100, 50);
-            this.SignInButton.TabIndex = 4;
-            this.SignInButton.Text = "Sign In";
-            this.SignInButton.UseVisualStyleBackColor = true;
-            // 
-            // GoToRegButton
-            // 
-            this.GoToRegButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoToRegButton.Location = new System.Drawing.Point(100, 240);
-            this.GoToRegButton.Name = "GoToRegButton";
-            this.GoToRegButton.Size = new System.Drawing.Size(131, 50);
-            this.GoToRegButton.TabIndex = 5;
-            this.GoToRegButton.Text = "Register";
-            this.GoToRegButton.UseVisualStyleBackColor = true;
-            this.GoToRegButton.Click += new System.EventHandler(this.GoToRegButton_Click);
+            this.UsernameLAbel.AutoSize = true;
+            this.UsernameLAbel.BackColor = System.Drawing.Color.Transparent;
+            this.UsernameLAbel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLAbel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.UsernameLAbel.Location = new System.Drawing.Point(95, 146);
+            this.UsernameLAbel.Name = "UsernameLAbel";
+            this.UsernameLAbel.Size = new System.Drawing.Size(117, 29);
+            this.UsernameLAbel.TabIndex = 0;
+            this.UsernameLAbel.Text = "Username";
             // 
             // pictureBox1
             // 
@@ -179,33 +179,210 @@
             this.panelRegister.Controls.Add(this.PvtRegLabel);
             this.panelRegister.Controls.Add(this.UserRegLabel);
             this.panelRegister.Controls.Add(this.label1);
-            this.panelRegister.Location = new System.Drawing.Point(799, 164);
+            this.panelRegister.Location = new System.Drawing.Point(324, 110);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(552, 512);
+            this.panelRegister.Size = new System.Drawing.Size(160, 86);
             this.panelRegister.TabIndex = 1;
             this.panelRegister.Visible = false;
             // 
-            // label1
+            // RegErrorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Register";
+            this.RegErrorLabel.AutoSize = true;
+            this.RegErrorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.RegErrorLabel.Location = new System.Drawing.Point(172, 435);
+            this.RegErrorLabel.Name = "RegErrorLabel";
+            this.RegErrorLabel.Size = new System.Drawing.Size(0, 29);
+            this.RegErrorLabel.TabIndex = 23;
+            this.RegErrorLabel.Visible = false;
             // 
-            // UserRegLabel
+            // EmailSame2Label
             // 
-            this.UserRegLabel.AutoSize = true;
-            this.UserRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserRegLabel.ForeColor = System.Drawing.Color.White;
-            this.UserRegLabel.Location = new System.Drawing.Point(28, 80);
-            this.UserRegLabel.Name = "UserRegLabel";
-            this.UserRegLabel.Size = new System.Drawing.Size(117, 29);
-            this.UserRegLabel.TabIndex = 1;
-            this.UserRegLabel.Text = "Username";
+            this.EmailSame2Label.AutoSize = true;
+            this.EmailSame2Label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailSame2Label.ForeColor = System.Drawing.Color.White;
+            this.EmailSame2Label.Location = new System.Drawing.Point(456, 274);
+            this.EmailSame2Label.Name = "EmailSame2Label";
+            this.EmailSame2Label.Size = new System.Drawing.Size(0, 29);
+            this.EmailSame2Label.TabIndex = 22;
+            // 
+            // EmailSameLabel
+            // 
+            this.EmailSameLabel.AutoSize = true;
+            this.EmailSameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailSameLabel.ForeColor = System.Drawing.Color.White;
+            this.EmailSameLabel.Location = new System.Drawing.Point(456, 225);
+            this.EmailSameLabel.Name = "EmailSameLabel";
+            this.EmailSameLabel.Size = new System.Drawing.Size(0, 29);
+            this.EmailSameLabel.TabIndex = 21;
+            // 
+            // SamePass2Label
+            // 
+            this.SamePass2Label.AutoSize = true;
+            this.SamePass2Label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SamePass2Label.ForeColor = System.Drawing.Color.White;
+            this.SamePass2Label.Location = new System.Drawing.Point(456, 177);
+            this.SamePass2Label.Name = "SamePass2Label";
+            this.SamePass2Label.Size = new System.Drawing.Size(0, 29);
+            this.SamePass2Label.TabIndex = 20;
+            // 
+            // SamePassLabel
+            // 
+            this.SamePassLabel.AutoSize = true;
+            this.SamePassLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SamePassLabel.ForeColor = System.Drawing.Color.White;
+            this.SamePassLabel.Location = new System.Drawing.Point(456, 131);
+            this.SamePassLabel.Name = "SamePassLabel";
+            this.SamePassLabel.Size = new System.Drawing.Size(0, 29);
+            this.SamePassLabel.TabIndex = 19;
+            // 
+            // UserAvailableLabel
+            // 
+            this.UserAvailableLabel.AutoSize = true;
+            this.UserAvailableLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserAvailableLabel.ForeColor = System.Drawing.Color.White;
+            this.UserAvailableLabel.Location = new System.Drawing.Point(456, 80);
+            this.UserAvailableLabel.Name = "UserAvailableLabel";
+            this.UserAvailableLabel.Size = new System.Drawing.Size(0, 29);
+            this.UserAvailableLabel.TabIndex = 18;
+            // 
+            // PremiumCheck
+            // 
+            this.PremiumCheck.AutoSize = true;
+            this.PremiumCheck.Location = new System.Drawing.Point(254, 366);
+            this.PremiumCheck.Name = "PremiumCheck";
+            this.PremiumCheck.Size = new System.Drawing.Size(100, 21);
+            this.PremiumCheck.TabIndex = 17;
+            this.PremiumCheck.Text = "checkBox1";
+            this.PremiumCheck.UseVisualStyleBackColor = true;
+            // 
+            // PremiumLabel
+            // 
+            this.PremiumLabel.AutoSize = true;
+            this.PremiumLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PremiumLabel.ForeColor = System.Drawing.Color.White;
+            this.PremiumLabel.Location = new System.Drawing.Point(28, 366);
+            this.PremiumLabel.Name = "PremiumLabel";
+            this.PremiumLabel.Size = new System.Drawing.Size(117, 29);
+            this.PremiumLabel.TabIndex = 16;
+            this.PremiumLabel.Text = "Premium?";
+            // 
+            // BackRegButton
+            // 
+            this.BackRegButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackRegButton.Location = new System.Drawing.Point(33, 435);
+            this.BackRegButton.Name = "BackRegButton";
+            this.BackRegButton.Size = new System.Drawing.Size(131, 50);
+            this.BackRegButton.TabIndex = 15;
+            this.BackRegButton.Text = "Back";
+            this.BackRegButton.UseVisualStyleBackColor = true;
+            this.BackRegButton.Click += new System.EventHandler(this.BackRegButton_Click);
+            // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterButton.Location = new System.Drawing.Point(385, 435);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(131, 50);
+            this.RegisterButton.TabIndex = 14;
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // PvtRegCheck
+            // 
+            this.PvtRegCheck.AutoSize = true;
+            this.PvtRegCheck.Location = new System.Drawing.Point(254, 323);
+            this.PvtRegCheck.Name = "PvtRegCheck";
+            this.PvtRegCheck.Size = new System.Drawing.Size(100, 21);
+            this.PvtRegCheck.TabIndex = 13;
+            this.PvtRegCheck.Text = "checkBox1";
+            this.PvtRegCheck.UseVisualStyleBackColor = true;
+            // 
+            // PassRegBox
+            // 
+            this.PassRegBox.Location = new System.Drawing.Point(254, 131);
+            this.PassRegBox.Name = "PassRegBox";
+            this.PassRegBox.PasswordChar = '•';
+            this.PassRegBox.Size = new System.Drawing.Size(186, 22);
+            this.PassRegBox.TabIndex = 12;
+            // 
+            // Pass2RegBox
+            // 
+            this.Pass2RegBox.Location = new System.Drawing.Point(254, 177);
+            this.Pass2RegBox.Name = "Pass2RegBox";
+            this.Pass2RegBox.PasswordChar = '•';
+            this.Pass2RegBox.Size = new System.Drawing.Size(186, 22);
+            this.Pass2RegBox.TabIndex = 11;
+            this.Pass2RegBox.TextChanged += new System.EventHandler(this.Pass2RegBox_TextChanged);
+            // 
+            // Email2RegBox
+            // 
+            this.Email2RegBox.Location = new System.Drawing.Point(254, 274);
+            this.Email2RegBox.Name = "Email2RegBox";
+            this.Email2RegBox.Size = new System.Drawing.Size(186, 22);
+            this.Email2RegBox.TabIndex = 9;
+            this.Email2RegBox.TextChanged += new System.EventHandler(this.Email2RegBox_TextChanged);
+            // 
+            // EmailRegBox
+            // 
+            this.EmailRegBox.Location = new System.Drawing.Point(254, 225);
+            this.EmailRegBox.Name = "EmailRegBox";
+            this.EmailRegBox.Size = new System.Drawing.Size(186, 22);
+            this.EmailRegBox.TabIndex = 8;
+            this.EmailRegBox.TextChanged += new System.EventHandler(this.EmailRegBox_TextChanged);
+            // 
+            // UserRegBox
+            // 
+            this.UserRegBox.Location = new System.Drawing.Point(254, 80);
+            this.UserRegBox.Name = "UserRegBox";
+            this.UserRegBox.Size = new System.Drawing.Size(186, 22);
+            this.UserRegBox.TabIndex = 7;
+            this.UserRegBox.TextChanged += new System.EventHandler(this.UserRegBox_TextChanged);
+            // 
+            // PasswordRegLabel
+            // 
+            this.PasswordRegLabel.AutoSize = true;
+            this.PasswordRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordRegLabel.ForeColor = System.Drawing.Color.White;
+            this.PasswordRegLabel.Location = new System.Drawing.Point(28, 124);
+            this.PasswordRegLabel.Name = "PasswordRegLabel";
+            this.PasswordRegLabel.Size = new System.Drawing.Size(111, 29);
+            this.PasswordRegLabel.TabIndex = 6;
+            this.PasswordRegLabel.Text = "Password";
+            // 
+            // Password2RegLabel
+            // 
+            this.Password2RegLabel.AutoSize = true;
+            this.Password2RegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password2RegLabel.ForeColor = System.Drawing.Color.White;
+            this.Password2RegLabel.Location = new System.Drawing.Point(28, 170);
+            this.Password2RegLabel.Name = "Password2RegLabel";
+            this.Password2RegLabel.Size = new System.Drawing.Size(197, 29);
+            this.Password2RegLabel.TabIndex = 5;
+            this.Password2RegLabel.Text = "Confirm password";
+            // 
+            // EmailRegLabel
+            // 
+            this.EmailRegLabel.AutoSize = true;
+            this.EmailRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailRegLabel.ForeColor = System.Drawing.Color.White;
+            this.EmailRegLabel.Location = new System.Drawing.Point(28, 218);
+            this.EmailRegLabel.Name = "EmailRegLabel";
+            this.EmailRegLabel.Size = new System.Drawing.Size(69, 29);
+            this.EmailRegLabel.TabIndex = 4;
+            this.EmailRegLabel.Text = "Email";
+            // 
+            // Email2RegLabel
+            // 
+            this.Email2RegLabel.AutoSize = true;
+            this.Email2RegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email2RegLabel.ForeColor = System.Drawing.Color.White;
+            this.Email2RegLabel.Location = new System.Drawing.Point(28, 267);
+            this.Email2RegLabel.Name = "Email2RegLabel";
+            this.Email2RegLabel.Size = new System.Drawing.Size(155, 29);
+            this.Email2RegLabel.TabIndex = 3;
+            this.Email2RegLabel.Text = "Confirm email";
             // 
             // PvtRegLabel
             // 
@@ -219,204 +396,27 @@
             this.PvtRegLabel.Text = "Private account?";
             this.PvtRegLabel.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Email2RegLabel
+            // UserRegLabel
             // 
-            this.Email2RegLabel.AutoSize = true;
-            this.Email2RegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email2RegLabel.ForeColor = System.Drawing.Color.White;
-            this.Email2RegLabel.Location = new System.Drawing.Point(28, 267);
-            this.Email2RegLabel.Name = "Email2RegLabel";
-            this.Email2RegLabel.Size = new System.Drawing.Size(155, 29);
-            this.Email2RegLabel.TabIndex = 3;
-            this.Email2RegLabel.Text = "Confirm email";
+            this.UserRegLabel.AutoSize = true;
+            this.UserRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserRegLabel.ForeColor = System.Drawing.Color.White;
+            this.UserRegLabel.Location = new System.Drawing.Point(28, 80);
+            this.UserRegLabel.Name = "UserRegLabel";
+            this.UserRegLabel.Size = new System.Drawing.Size(117, 29);
+            this.UserRegLabel.TabIndex = 1;
+            this.UserRegLabel.Text = "Username";
             // 
-            // EmailRegLabel
+            // label1
             // 
-            this.EmailRegLabel.AutoSize = true;
-            this.EmailRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailRegLabel.ForeColor = System.Drawing.Color.White;
-            this.EmailRegLabel.Location = new System.Drawing.Point(28, 218);
-            this.EmailRegLabel.Name = "EmailRegLabel";
-            this.EmailRegLabel.Size = new System.Drawing.Size(69, 29);
-            this.EmailRegLabel.TabIndex = 4;
-            this.EmailRegLabel.Text = "Email";
-            // 
-            // Password2RegLabel
-            // 
-            this.Password2RegLabel.AutoSize = true;
-            this.Password2RegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password2RegLabel.ForeColor = System.Drawing.Color.White;
-            this.Password2RegLabel.Location = new System.Drawing.Point(28, 170);
-            this.Password2RegLabel.Name = "Password2RegLabel";
-            this.Password2RegLabel.Size = new System.Drawing.Size(197, 29);
-            this.Password2RegLabel.TabIndex = 5;
-            this.Password2RegLabel.Text = "Confirm password";
-            // 
-            // PasswordRegLabel
-            // 
-            this.PasswordRegLabel.AutoSize = true;
-            this.PasswordRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordRegLabel.ForeColor = System.Drawing.Color.White;
-            this.PasswordRegLabel.Location = new System.Drawing.Point(28, 124);
-            this.PasswordRegLabel.Name = "PasswordRegLabel";
-            this.PasswordRegLabel.Size = new System.Drawing.Size(111, 29);
-            this.PasswordRegLabel.TabIndex = 6;
-            this.PasswordRegLabel.Text = "Password";
-            // 
-            // UserRegBox
-            // 
-            this.UserRegBox.Location = new System.Drawing.Point(254, 80);
-            this.UserRegBox.Name = "UserRegBox";
-            this.UserRegBox.Size = new System.Drawing.Size(186, 22);
-            this.UserRegBox.TabIndex = 7;
-            this.UserRegBox.TextChanged += new System.EventHandler(this.UserRegBox_TextChanged);
-            // 
-            // EmailRegBox
-            // 
-            this.EmailRegBox.Location = new System.Drawing.Point(254, 225);
-            this.EmailRegBox.Name = "EmailRegBox";
-            this.EmailRegBox.Size = new System.Drawing.Size(186, 22);
-            this.EmailRegBox.TabIndex = 8;
-            this.EmailRegBox.TextChanged += new System.EventHandler(this.EmailRegBox_TextChanged);
-            // 
-            // Email2RegBox
-            // 
-            this.Email2RegBox.Location = new System.Drawing.Point(254, 274);
-            this.Email2RegBox.Name = "Email2RegBox";
-            this.Email2RegBox.Size = new System.Drawing.Size(186, 22);
-            this.Email2RegBox.TabIndex = 9;
-            this.Email2RegBox.TextChanged += new System.EventHandler(this.Email2RegBox_TextChanged);
-            // 
-            // Pass2RegBox
-            // 
-            this.Pass2RegBox.Location = new System.Drawing.Point(254, 177);
-            this.Pass2RegBox.Name = "Pass2RegBox";
-            this.Pass2RegBox.PasswordChar = '•';
-            this.Pass2RegBox.Size = new System.Drawing.Size(186, 22);
-            this.Pass2RegBox.TabIndex = 11;
-            this.Pass2RegBox.TextChanged += new System.EventHandler(this.Pass2RegBox_TextChanged);
-            // 
-            // PassRegBox
-            // 
-            this.PassRegBox.Location = new System.Drawing.Point(254, 131);
-            this.PassRegBox.Name = "PassRegBox";
-            this.PassRegBox.PasswordChar = '•';
-            this.PassRegBox.Size = new System.Drawing.Size(186, 22);
-            this.PassRegBox.TabIndex = 12;
-            // 
-            // PvtRegCheck
-            // 
-            this.PvtRegCheck.AutoSize = true;
-            this.PvtRegCheck.Location = new System.Drawing.Point(254, 323);
-            this.PvtRegCheck.Name = "PvtRegCheck";
-            this.PvtRegCheck.Size = new System.Drawing.Size(100, 21);
-            this.PvtRegCheck.TabIndex = 13;
-            this.PvtRegCheck.Text = "checkBox1";
-            this.PvtRegCheck.UseVisualStyleBackColor = true;
-            // 
-            // RegisterButton
-            // 
-            this.RegisterButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterButton.Location = new System.Drawing.Point(385, 435);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(131, 50);
-            this.RegisterButton.TabIndex = 14;
-            this.RegisterButton.Text = "Register";
-            this.RegisterButton.UseVisualStyleBackColor = true;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
-            // 
-            // BackRegButton
-            // 
-            this.BackRegButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackRegButton.Location = new System.Drawing.Point(33, 435);
-            this.BackRegButton.Name = "BackRegButton";
-            this.BackRegButton.Size = new System.Drawing.Size(131, 50);
-            this.BackRegButton.TabIndex = 15;
-            this.BackRegButton.Text = "Back";
-            this.BackRegButton.UseVisualStyleBackColor = true;
-            this.BackRegButton.Click += new System.EventHandler(this.BackRegButton_Click);
-            // 
-            // PremiumLabel
-            // 
-            this.PremiumLabel.AutoSize = true;
-            this.PremiumLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PremiumLabel.ForeColor = System.Drawing.Color.White;
-            this.PremiumLabel.Location = new System.Drawing.Point(28, 366);
-            this.PremiumLabel.Name = "PremiumLabel";
-            this.PremiumLabel.Size = new System.Drawing.Size(117, 29);
-            this.PremiumLabel.TabIndex = 16;
-            this.PremiumLabel.Text = "Premium?";
-            // 
-            // PremiumCheck
-            // 
-            this.PremiumCheck.AutoSize = true;
-            this.PremiumCheck.Location = new System.Drawing.Point(254, 366);
-            this.PremiumCheck.Name = "PremiumCheck";
-            this.PremiumCheck.Size = new System.Drawing.Size(100, 21);
-            this.PremiumCheck.TabIndex = 17;
-            this.PremiumCheck.Text = "checkBox1";
-            this.PremiumCheck.UseVisualStyleBackColor = true;
-            // 
-            // UserAvailableLabel
-            // 
-            this.UserAvailableLabel.AutoSize = true;
-            this.UserAvailableLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserAvailableLabel.ForeColor = System.Drawing.Color.White;
-            this.UserAvailableLabel.Location = new System.Drawing.Point(456, 80);
-            this.UserAvailableLabel.Name = "UserAvailableLabel";
-            this.UserAvailableLabel.Size = new System.Drawing.Size(0, 29);
-            this.UserAvailableLabel.TabIndex = 18;
-            // 
-            // SamePassLabel
-            // 
-            this.SamePassLabel.AutoSize = true;
-            this.SamePassLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SamePassLabel.ForeColor = System.Drawing.Color.White;
-            this.SamePassLabel.Location = new System.Drawing.Point(456, 131);
-            this.SamePassLabel.Name = "SamePassLabel";
-            this.SamePassLabel.Size = new System.Drawing.Size(0, 29);
-            this.SamePassLabel.TabIndex = 19;
-            // 
-            // SamePass2Label
-            // 
-            this.SamePass2Label.AutoSize = true;
-            this.SamePass2Label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SamePass2Label.ForeColor = System.Drawing.Color.White;
-            this.SamePass2Label.Location = new System.Drawing.Point(456, 177);
-            this.SamePass2Label.Name = "SamePass2Label";
-            this.SamePass2Label.Size = new System.Drawing.Size(0, 29);
-            this.SamePass2Label.TabIndex = 20;
-            // 
-            // EmailSameLabel
-            // 
-            this.EmailSameLabel.AutoSize = true;
-            this.EmailSameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailSameLabel.ForeColor = System.Drawing.Color.White;
-            this.EmailSameLabel.Location = new System.Drawing.Point(456, 225);
-            this.EmailSameLabel.Name = "EmailSameLabel";
-            this.EmailSameLabel.Size = new System.Drawing.Size(0, 29);
-            this.EmailSameLabel.TabIndex = 21;
-            // 
-            // EmailSame2Label
-            // 
-            this.EmailSame2Label.AutoSize = true;
-            this.EmailSame2Label.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailSame2Label.ForeColor = System.Drawing.Color.White;
-            this.EmailSame2Label.Location = new System.Drawing.Point(456, 274);
-            this.EmailSame2Label.Name = "EmailSame2Label";
-            this.EmailSame2Label.Size = new System.Drawing.Size(0, 29);
-            this.EmailSame2Label.TabIndex = 22;
-            // 
-            // RegErrorLabel
-            // 
-            this.RegErrorLabel.AutoSize = true;
-            this.RegErrorLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.RegErrorLabel.Location = new System.Drawing.Point(172, 435);
-            this.RegErrorLabel.Name = "RegErrorLabel";
-            this.RegErrorLabel.Size = new System.Drawing.Size(0, 29);
-            this.RegErrorLabel.TabIndex = 23;
-            this.RegErrorLabel.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(26, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Register";
             // 
             // Form1
             // 
