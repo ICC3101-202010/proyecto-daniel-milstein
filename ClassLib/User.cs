@@ -164,7 +164,7 @@ namespace Proyecto
 
 
 
-        public void AddMedia()
+        public void OldAddMedia()
         {
             List<string> opts = new List<string>() { "Song", "Video", "Back" };
             string sel = null;
@@ -234,10 +234,12 @@ namespace Proyecto
 
 
         }
+
+        public void AddMedia(Media media)
+        {
+            Spotflix.ImportMedia(media);
+        }
     }
 }
 
 
-//string a = "sss.mp4";
-//_ = Process.Start(a);
-//private Process a = new Process();

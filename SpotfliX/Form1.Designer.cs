@@ -180,9 +180,9 @@
             this.panelRegister.Controls.Add(this.PvtRegLabel);
             this.panelRegister.Controls.Add(this.UserRegLabel);
             this.panelRegister.Controls.Add(this.label1);
-            this.panelRegister.Location = new System.Drawing.Point(179, 110);
+            this.panelRegister.Location = new System.Drawing.Point(101, 110);
             this.panelRegister.Name = "panelRegister";
-            this.panelRegister.Size = new System.Drawing.Size(680, 512);
+            this.panelRegister.Size = new System.Drawing.Size(750, 532);
             this.panelRegister.TabIndex = 1;
             this.panelRegister.Visible = false;
             // 
@@ -302,6 +302,7 @@
             // 
             // PassRegBox
             // 
+            this.PassRegBox.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.PassRegBox.Location = new System.Drawing.Point(254, 131);
             this.PassRegBox.Name = "PassRegBox";
             this.PassRegBox.PasswordChar = '•';
@@ -427,8 +428,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1002, 712);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panelRegister);
             this.Controls.Add(this.panelInicio);
+            this.Controls.Add(this.panelRegister);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
