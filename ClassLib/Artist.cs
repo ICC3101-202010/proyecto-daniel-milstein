@@ -6,14 +6,14 @@ namespace Proyecto
     [Serializable]
     public class Artist : Person
     {
-        private List<Album> Albums;
+        private Dictionary<string, Album> Albums;
         private List<Song> Songs;
         private List<User> Followers;
 
         public Artist(string name) : base(name)
         {
             Name = name;
-            List<Album> albums = new List<Album>();
+            Dictionary<string, Album> albums = new Dictionary<string, Album>();
             List<Song> songs = new List<Song>();
             List<User> followers = new List<User>();
 
@@ -33,15 +33,15 @@ namespace Proyecto
             return Followers;
         }
 
-        public List<Album> GetAlbums()
+        public Dictionary<string, Album> GetAlbums()
         {
             return Albums;
         }
 
-        public void AddAlbum(Album album)
+        public void AddAlbum(string alName, Album album)
         {
             //Event
-            Albums.Add(album);
+            Albums.Add(alName, album);
         }
 
         public void AddSong(Song song)

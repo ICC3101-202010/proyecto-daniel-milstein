@@ -48,12 +48,15 @@
             this.panelMediaType = new System.Windows.Forms.Panel();
             this.MetadataBox = new System.Windows.Forms.GroupBox();
             this.FileNameLabel = new System.Windows.Forms.Label();
+            this.MetaGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
             this.panelAddMedia.SuspendLayout();
             this.panelMediaType.SuspendLayout();
+            this.MetadataBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -254,6 +257,7 @@
             // 
             // MetadataBox
             // 
+            this.MetadataBox.Controls.Add(this.MetaGrid);
             this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetadataBox.ForeColor = System.Drawing.Color.White;
             this.MetadataBox.Location = new System.Drawing.Point(26, 218);
@@ -272,6 +276,25 @@
             this.FileNameLabel.Name = "FileNameLabel";
             this.FileNameLabel.Size = new System.Drawing.Size(0, 29);
             this.FileNameLabel.TabIndex = 8;
+            // 
+            // MetaGrid
+            // 
+            this.MetaGrid.AllowUserToAddRows = false;
+            this.MetaGrid.AllowUserToDeleteRows = false;
+            this.MetaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MetaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MetaGrid.Location = new System.Drawing.Point(3, 38);
+            this.MetaGrid.MultiSelect = false;
+            this.MetaGrid.Name = "MetaGrid";
+            this.MetaGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetaGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MetaGrid.RowTemplate.Height = 24;
+            this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.MetaGrid.Size = new System.Drawing.Size(443, 303);
+            this.MetaGrid.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -300,6 +323,8 @@
             this.panelAddMedia.PerformLayout();
             this.panelMediaType.ResumeLayout(false);
             this.panelMediaType.PerformLayout();
+            this.MetadataBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +351,6 @@
         private System.Windows.Forms.Panel panelMediaType;
         private System.Windows.Forms.GroupBox MetadataBox;
         private System.Windows.Forms.Label FileNameLabel;
+        private System.Windows.Forms.DataGridView MetaGrid;
     }
 }

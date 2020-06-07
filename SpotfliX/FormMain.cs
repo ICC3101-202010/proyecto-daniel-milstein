@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace SpotfliX
     {
         public User ActiveUser;
         public string MediaType;
+        public Dictionary<string, string> AddMediaMeta;
         public FormMain()
         {
             
@@ -55,12 +58,11 @@ namespace SpotfliX
         private void AddMedia_Click(object sender, EventArgs e)
         {
             string filename = openFileDialog1.FileName;
-            FileInfo info = new FileInfo(filename);
-            File.Copy(filename, "Current directory+filedir");
+            
             
             if (MediaType == "song")
             {
-                Song song = new Song(filename);
+                //Song song = new Song(filename);
             }
             
             else if (MediaType == "video")
@@ -85,6 +87,27 @@ namespace SpotfliX
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             FileNameLabel.Text = openFileDialog1.FileName;
+            //string path = $@"{openFileDialog1.FileName}";
+
+            //AddMediaMeta = Spotflix.ReadMeta(path);
+
+            Dictionary<string, string> a = new Dictionary<string, string>();
+            a.Add("Hola", "Chao");
+            a.Add("Prueba", "Chato");
+            MetaGrid.Columns.Add("Value", "Value");
+            
+            
+            int en = 0;
+
+            foreach  (var item in a)
+            {
+                MetaGrid.Rows.Add(item.Value);
+                MetaGrid.Rows[en].HeaderCell.Value = item.Key;
+                en++;
+                
+
+            }
+            
         }
     }
 }

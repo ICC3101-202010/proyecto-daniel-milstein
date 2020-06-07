@@ -164,76 +164,76 @@ namespace Proyecto
 
 
 
-        public void OldAddMedia()
-        {
-            List<string> opts = new List<string>() { "Song", "Video", "Back" };
-            string sel = null;
-            while (true)
-            {
-                Console.Clear();
-                sel = RegexUtilities.GetMenu(opts);
-                if (sel == opts[2]) { return; }
+        //public void OldAddMedia()
+        //{
+        //    List<string> opts = new List<string>() { "Song", "Video", "Back" };
+        //    string sel = null;
+        //    while (true)
+        //    {
+        //        Console.Clear();
+        //        sel = RegexUtilities.GetMenu(opts);
+        //        if (sel == opts[2]) { return; }
 
-                else if (sel == opts[0])
-                {
-                    Console.Clear();
-                    string fName = RegexUtilities.WriteData("File Name(with extension):  ");
-                    Console.Clear();
+        //        else if (sel == opts[0])
+        //        {
+        //            Console.Clear();
+        //            string fName = RegexUtilities.WriteData("File Name(with extension):  ");
+        //            Console.Clear();
                     
-                    try
-                    {
-                        Song song = new Song(fName);
+        //            try
+        //            {
+        //                Song song = new Song(fName);
 
 
-                        Spotflix.SaveMedia(song);
-                        Console.WriteLine("Win");
-                        Thread.Sleep(2000);
-                        return;
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Fail");
-                        Thread.Sleep(2000);
-                    }
-                }
+        //                Spotflix.SaveMedia(song);
+        //                Console.WriteLine("Win");
+        //                Thread.Sleep(2000);
+        //                return;
+        //            }
+        //            catch (Exception)
+        //            {
+        //                Console.WriteLine("Fail");
+        //                Thread.Sleep(2000);
+        //            }
+        //        }
 
-                else if (sel == opts[1])
-                {
-                    Console.Clear();
-                    string fName = RegexUtilities.WriteData("File Name(with extension):  ");
-                    Console.Clear();
+        //        else if (sel == opts[1])
+        //        {
+        //            Console.Clear();
+        //            string fName = RegexUtilities.WriteData("File Name(with extension):  ");
+        //            Console.Clear();
 
 
-                    try
-                    {
+        //            try
+        //            {
                         
-                        Video video = new Video(fName);
-                        Spotflix.SaveMedia(video);
-                        return;
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Fail");
-                        Thread.Sleep(2000);
-                    }
+        //                Video video = new Video(fName);
+        //                Spotflix.SaveMedia(video);
+        //                return;
+        //            }
+        //            catch (Exception)
+        //            {
+        //                Console.WriteLine("Fail");
+        //                Thread.Sleep(2000);
+        //            }
 
-                    //video.Get
+        //            //video.Get
 
-                    /*sMeta.GetDirector().AddVideo(video);
-                    foreach (Person ppl in sMeta.GetActors())
-                    {
-                        ppl.AddVideo(video);
-                    }*/
-                }
-
-
-            }
+        //            /*sMeta.GetDirector().AddVideo(video);
+        //            foreach (Person ppl in sMeta.GetActors())
+        //            {
+        //                ppl.AddVideo(video);
+        //            }*/
+        //        }
 
 
+        //    }
 
 
 
-        }
+
+
+        //}
 
         public void AddMedia(Media media)
         {

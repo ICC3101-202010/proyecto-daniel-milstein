@@ -9,9 +9,9 @@ namespace Proyecto
         
         private SongMetadata MetaData;
 
-        public Song(string fileName) : base(fileName)
+        public Song(string fileName, SongMetadata metadata) : base(fileName)
         {
-            SongMetadata metadata = new SongMetadata();
+            
             MetaData = metadata;
         }
 

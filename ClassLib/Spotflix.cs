@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -14,31 +15,36 @@ namespace Proyecto
     {
         private static Dictionary<string, User> UserDB;
         private static List<Media> MediaDB;
-        private static List<Person> PeopleDB;
+        private static Dictionary<string, Person> PeopleDB;
 
 
         
 
         static Spotflix()
         {
-            
-            
+
+
             var load = Load("Spotflix.bin");
 
             Dictionary<string, User> userDB = load.Item1;
             List<Media> mediaDB = load.Item2;
-            List<Person> peopleDB = load.Item3;
+            Dictionary<string, Person> peopleDB = load.Item3;
 
+            //Dictionary<string, User> userDB = new Dictionary<string, User>();
+            //List<Media> mediaDB = new List<Media>();
+            //Dictionary<string, Person> peopleDB = new Dictionary<string, Person>();
+            //User admin = new User("admin", "dnmilstein@miuandes.cl", "admin", true, true, true);
+            //userDB.Add("admin",admin);
 
             UserDB = userDB;
             MediaDB = mediaDB;
             PeopleDB = peopleDB;
-            
+            Save("Spotflix.bin");
         }
 
         
 
-        public static List<Person> GetPeopleDB
+        public static Dictionary<string, Person> GetPeopleDB
         {
             get
             {
@@ -54,7 +60,7 @@ namespace Proyecto
 
         public static void AddPerson(Person person)
         {
-            PeopleDB.Add(person);
+            PeopleDB.Add(person.GetName(), person);
         }
 
         public static void SaveMedia(Media media)
@@ -402,23 +408,42 @@ namespace Proyecto
 
 
         }
-        public static void Save(Dictionary<string, User> userDB, List<Media> mediaDB, List<Person> peopleDB, string name)
+
+        public static Dictionary<string, string> ReadMeta(string filename)
+        {
+            Process a = new Process();
+            ProcessStartInfo me = new ProcessStartInfo("exiftool(-k)", (filename));
+            me.Domain = @"Z:\";
+            a = Process.Start(me);
+            StreamReader meta = a.StandardOutput;
+            string line;
+            Dictionary<string, string> metadata = new Dictionary<string, string>();
+
+            while ((line = meta.ReadLine()) != "")
+            {
+                string[] dkey = line.Split(':');
+                metadata.Add(dkey[0].Trim(), dkey[1].Trim());
+            }
+
+            return metadata;
+        }
+        public static void Save(string name)
         {
             Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
             IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(stream, userDB);
-            formatter.Serialize(stream, mediaDB);
-            formatter.Serialize(stream, peopleDB);
+            formatter.Serialize(stream, UserDB);
+            formatter.Serialize(stream, MediaDB);
+            formatter.Serialize(stream, PeopleDB);
             stream.Close();
         }
 
-        public static (Dictionary<string, User>, List<Media>, List<Person>) Load(string name)
+        public static (Dictionary<string, User>, List<Media>, Dictionary<string, Person>) Load(string name)
         {
             Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
             IFormatter formatter = new BinaryFormatter();
             Dictionary<string, User> userDB = (Dictionary<string, User>)formatter.Deserialize(stream);
             List<Media> mediaDB = (List<Media>)formatter.Deserialize(stream);
-            List<Person> peopleDB = (List<Person>)formatter.Deserialize(stream);
+            Dictionary<string, Person> peopleDB = (Dictionary<string, Person>)formatter.Deserialize(stream);
             stream.Close();
 
             return (userDB, mediaDB, peopleDB);

@@ -75,6 +75,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\FormMain.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Album.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Artist.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Filter.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Media.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Metadata.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Person.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Playlist.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Song.datasource" />
+    <None Include="Properties\DataSources\Proyecto.SongMetadata.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Spotflix.datasource" />
+    <None Include="Properties\DataSources\Proyecto.User.datasource" />
+    <None Include="Properties\DataSources\Proyecto.Video.datasource" />
+    <None Include="Properties\DataSources\Proyecto.VideoMetadata.datasource" />
+    <None Include="Properties\DataSources\RegexUtilities.datasource" />
+    <None Include="Properties\DataSources\SpotfliX.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\SpotfliX.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
