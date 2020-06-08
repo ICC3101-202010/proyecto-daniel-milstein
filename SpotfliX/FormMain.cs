@@ -42,6 +42,7 @@ namespace SpotfliX
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //Spotflix.Save("Spotflix.bin");
             Application.Exit();
         }
 

@@ -22,7 +22,7 @@ namespace Proyecto
             Lyrics = lyrics;
             try
             {
-                Person per = Spotflix.GetPeopleDB[name];
+                Artist per = Spotflix.GetPeopleDB[name];
                 Artist art = (Artist)per;
                 Dictionary<string, Album> ls = art.GetAlbums(); 
                 if (ls.ContainsKey(album))
@@ -242,7 +242,7 @@ namespace Proyecto
             return null;
         }
 
-        public override Person GetDirector()
+        public override Artist GetDirector()
         {
             return null;
         }
@@ -252,7 +252,7 @@ namespace Proyecto
             return null;
         }
 
-        public override List<Person> GetActors()
+        public override List<Artist> GetActors()
         {
             return null;
         }

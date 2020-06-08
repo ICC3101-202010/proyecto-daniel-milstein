@@ -10,8 +10,8 @@ namespace Proyecto
         private string Creator;
         private string Genre;
         private string Category;
-        private List<Person> Actors;
-        private Person Director;
+        private List<Artist> Actors;
+        private Artist Director;
         private string Studio;
         private int PubYear;
         private string Description;
@@ -30,8 +30,8 @@ namespace Proyecto
         public override string GetStudio() { return Studio; }
         public int GetPubYear() { return PubYear; }
         public string GetDescription() { return Description; }
-        public override List<Person> GetActors() { return Actors; }
-        public override Person GetDirector() { return Director; }
+        public override List<Artist> GetActors() { return Actors; }
+        public override Artist GetDirector() { return Director; }
         public string GetResolution() { return Resolution; }
         public string GetAspectRatio() { return AspectRatio; }
 

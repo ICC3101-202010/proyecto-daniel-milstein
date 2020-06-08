@@ -38,25 +38,33 @@
             this.AdminAddMedia = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panelAddMedia = new System.Windows.Forms.Panel();
+            this.FileNameLabel = new System.Windows.Forms.Label();
+            this.MetadataBox = new System.Windows.Forms.GroupBox();
+            this.MetaGrid = new System.Windows.Forms.DataGridView();
+            this.panelMediaType = new System.Windows.Forms.Panel();
+            this.radioVideo = new System.Windows.Forms.RadioButton();
+            this.radioSong = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.FileButton = new System.Windows.Forms.Button();
             this.BackAddMedia = new System.Windows.Forms.Button();
             this.AddMedia = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioVideo = new System.Windows.Forms.RadioButton();
-            this.radioSong = new System.Windows.Forms.RadioButton();
-            this.panelMediaType = new System.Windows.Forms.Panel();
-            this.MetadataBox = new System.Windows.Forms.GroupBox();
-            this.FileNameLabel = new System.Windows.Forms.Label();
-            this.MetaGrid = new System.Windows.Forms.DataGridView();
+            this.panelAddArtist = new System.Windows.Forms.Panel();
+            this.AddArtistButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BackAddArtist = new System.Windows.Forms.Button();
+            this.ArtistNameBox = new System.Windows.Forms.TextBox();
+            this.ArtistNameLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
             this.panelAddMedia.SuspendLayout();
-            this.panelMediaType.SuspendLayout();
             this.MetadataBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).BeginInit();
+            this.panelMediaType.SuspendLayout();
+            this.panelAddArtist.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,7 +74,7 @@
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1718, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(1922, 104);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -74,9 +82,9 @@
             // 
             this.panelPlayer.Controls.Add(this.axWindowsMediaPlayer1);
             this.panelPlayer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPlayer.Location = new System.Drawing.Point(0, 770);
+            this.panelPlayer.Location = new System.Drawing.Point(0, 954);
             this.panelPlayer.Name = "panelPlayer";
-            this.panelPlayer.Size = new System.Drawing.Size(1718, 80);
+            this.panelPlayer.Size = new System.Drawing.Size(1922, 80);
             this.panelPlayer.TabIndex = 8;
             // 
             // axWindowsMediaPlayer1
@@ -86,7 +94,7 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 33);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1718, 47);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1922, 47);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // ProfileButton
@@ -107,6 +115,7 @@
             // 
             // panelAdmin
             // 
+            this.panelAdmin.Controls.Add(this.AddArtistButton);
             this.panelAdmin.Controls.Add(this.UsersButton);
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Location = new System.Drawing.Point(457, 104);
@@ -118,7 +127,7 @@
             // 
             this.UsersButton.AutoSize = true;
             this.UsersButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersButton.Location = new System.Drawing.Point(86, 260);
+            this.UsersButton.Location = new System.Drawing.Point(86, 326);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(169, 49);
             this.UsersButton.TabIndex = 1;
@@ -162,10 +171,99 @@
             this.panelAddMedia.Controls.Add(this.BackAddMedia);
             this.panelAddMedia.Controls.Add(this.AddMedia);
             this.panelAddMedia.ForeColor = System.Drawing.Color.Black;
-            this.panelAddMedia.Location = new System.Drawing.Point(981, 104);
+            this.panelAddMedia.Location = new System.Drawing.Point(1393, 110);
             this.panelAddMedia.Name = "panelAddMedia";
             this.panelAddMedia.Size = new System.Drawing.Size(504, 660);
             this.panelAddMedia.TabIndex = 11;
+            // 
+            // FileNameLabel
+            // 
+            this.FileNameLabel.AutoSize = true;
+            this.FileNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FileNameLabel.ForeColor = System.Drawing.Color.White;
+            this.FileNameLabel.Location = new System.Drawing.Point(230, 53);
+            this.FileNameLabel.Name = "FileNameLabel";
+            this.FileNameLabel.Size = new System.Drawing.Size(0, 29);
+            this.FileNameLabel.TabIndex = 8;
+            // 
+            // MetadataBox
+            // 
+            this.MetadataBox.Controls.Add(this.MetaGrid);
+            this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetadataBox.ForeColor = System.Drawing.Color.White;
+            this.MetadataBox.Location = new System.Drawing.Point(26, 218);
+            this.MetadataBox.Name = "MetadataBox";
+            this.MetadataBox.Size = new System.Drawing.Size(449, 344);
+            this.MetadataBox.TabIndex = 7;
+            this.MetadataBox.TabStop = false;
+            this.MetadataBox.Text = "Metadata";
+            // 
+            // MetaGrid
+            // 
+            this.MetaGrid.AllowUserToAddRows = false;
+            this.MetaGrid.AllowUserToDeleteRows = false;
+            this.MetaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MetaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MetaGrid.Location = new System.Drawing.Point(3, 38);
+            this.MetaGrid.MultiSelect = false;
+            this.MetaGrid.Name = "MetaGrid";
+            this.MetaGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MetaGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
+            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MetaGrid.RowTemplate.Height = 24;
+            this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.MetaGrid.Size = new System.Drawing.Size(443, 303);
+            this.MetaGrid.TabIndex = 0;
+            // 
+            // panelMediaType
+            // 
+            this.panelMediaType.Controls.Add(this.radioVideo);
+            this.panelMediaType.Controls.Add(this.radioSong);
+            this.panelMediaType.Location = new System.Drawing.Point(250, 120);
+            this.panelMediaType.Name = "panelMediaType";
+            this.panelMediaType.Size = new System.Drawing.Size(124, 92);
+            this.panelMediaType.TabIndex = 6;
+            // 
+            // radioVideo
+            // 
+            this.radioVideo.AutoSize = true;
+            this.radioVideo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioVideo.ForeColor = System.Drawing.Color.White;
+            this.radioVideo.Location = new System.Drawing.Point(3, 40);
+            this.radioVideo.Name = "radioVideo";
+            this.radioVideo.Size = new System.Drawing.Size(83, 28);
+            this.radioVideo.TabIndex = 4;
+            this.radioVideo.TabStop = true;
+            this.radioVideo.Text = "Video";
+            this.radioVideo.UseVisualStyleBackColor = true;
+            this.radioVideo.CheckedChanged += new System.EventHandler(this.radioVideo_CheckedChanged);
+            // 
+            // radioSong
+            // 
+            this.radioSong.AutoSize = true;
+            this.radioSong.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioSong.ForeColor = System.Drawing.Color.White;
+            this.radioSong.Location = new System.Drawing.Point(0, 0);
+            this.radioSong.Name = "radioSong";
+            this.radioSong.Size = new System.Drawing.Size(75, 28);
+            this.radioSong.TabIndex = 5;
+            this.radioSong.TabStop = true;
+            this.radioSong.Text = "Song";
+            this.radioSong.UseVisualStyleBackColor = true;
+            this.radioSong.CheckedChanged += new System.EventHandler(this.radioSong_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(30, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 39);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Type of Media";
             // 
             // FileButton
             // 
@@ -207,101 +305,88 @@
             this.openFileDialog1.Title = "Add Media";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // label1
+            // panelAddArtist
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(30, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 39);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Type of Media";
+            this.panelAddArtist.Controls.Add(this.BackAddArtist);
+            this.panelAddArtist.Controls.Add(this.button1);
+            this.panelAddArtist.Controls.Add(this.ArtistNameBox);
+            this.panelAddArtist.Controls.Add(this.ArtistNameLabel);
+            this.panelAddArtist.Controls.Add(this.label2);
+            this.panelAddArtist.Location = new System.Drawing.Point(863, 115);
+            this.panelAddArtist.Name = "panelAddArtist";
+            this.panelAddArtist.Size = new System.Drawing.Size(506, 654);
+            this.panelAddArtist.TabIndex = 14;
             // 
-            // radioVideo
+            // AddArtistButton
             // 
-            this.radioVideo.AutoSize = true;
-            this.radioVideo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioVideo.ForeColor = System.Drawing.Color.White;
-            this.radioVideo.Location = new System.Drawing.Point(3, 40);
-            this.radioVideo.Name = "radioVideo";
-            this.radioVideo.Size = new System.Drawing.Size(83, 28);
-            this.radioVideo.TabIndex = 4;
-            this.radioVideo.TabStop = true;
-            this.radioVideo.Text = "Video";
-            this.radioVideo.UseVisualStyleBackColor = true;
-            this.radioVideo.CheckedChanged += new System.EventHandler(this.radioVideo_CheckedChanged);
+            this.AddArtistButton.AutoSize = true;
+            this.AddArtistButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddArtistButton.Location = new System.Drawing.Point(86, 242);
+            this.AddArtistButton.Name = "AddArtistButton";
+            this.AddArtistButton.Size = new System.Drawing.Size(169, 49);
+            this.AddArtistButton.TabIndex = 2;
+            this.AddArtistButton.Text = "Add Artist";
+            this.AddArtistButton.UseVisualStyleBackColor = true;
             // 
-            // radioSong
+            // button1
             // 
-            this.radioSong.AutoSize = true;
-            this.radioSong.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioSong.ForeColor = System.Drawing.Color.White;
-            this.radioSong.Location = new System.Drawing.Point(0, 0);
-            this.radioSong.Name = "radioSong";
-            this.radioSong.Size = new System.Drawing.Size(75, 28);
-            this.radioSong.TabIndex = 5;
-            this.radioSong.TabStop = true;
-            this.radioSong.Text = "Song";
-            this.radioSong.UseVisualStyleBackColor = true;
-            this.radioSong.CheckedChanged += new System.EventHandler(this.radioSong_CheckedChanged);
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(301, 583);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 49);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Add Artist";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // panelMediaType
+            // BackAddArtist
             // 
-            this.panelMediaType.Controls.Add(this.radioVideo);
-            this.panelMediaType.Controls.Add(this.radioSong);
-            this.panelMediaType.Location = new System.Drawing.Point(250, 120);
-            this.panelMediaType.Name = "panelMediaType";
-            this.panelMediaType.Size = new System.Drawing.Size(124, 92);
-            this.panelMediaType.TabIndex = 6;
+            this.BackAddArtist.AutoSize = true;
+            this.BackAddArtist.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackAddArtist.Location = new System.Drawing.Point(44, 583);
+            this.BackAddArtist.Name = "BackAddArtist";
+            this.BackAddArtist.Size = new System.Drawing.Size(169, 49);
+            this.BackAddArtist.TabIndex = 4;
+            this.BackAddArtist.Text = "Back";
+            this.BackAddArtist.UseVisualStyleBackColor = true;
             // 
-            // MetadataBox
+            // ArtistNameBox
             // 
-            this.MetadataBox.Controls.Add(this.MetaGrid);
-            this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetadataBox.ForeColor = System.Drawing.Color.White;
-            this.MetadataBox.Location = new System.Drawing.Point(26, 218);
-            this.MetadataBox.Name = "MetadataBox";
-            this.MetadataBox.Size = new System.Drawing.Size(449, 344);
-            this.MetadataBox.TabIndex = 7;
-            this.MetadataBox.TabStop = false;
-            this.MetadataBox.Text = "Metadata";
+            this.ArtistNameBox.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArtistNameBox.Location = new System.Drawing.Point(160, 104);
+            this.ArtistNameBox.Name = "ArtistNameBox";
+            this.ArtistNameBox.Size = new System.Drawing.Size(186, 32);
+            this.ArtistNameBox.TabIndex = 7;
             // 
-            // FileNameLabel
+            // ArtistNameLabel
             // 
-            this.FileNameLabel.AutoSize = true;
-            this.FileNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FileNameLabel.ForeColor = System.Drawing.Color.White;
-            this.FileNameLabel.Location = new System.Drawing.Point(230, 53);
-            this.FileNameLabel.Name = "FileNameLabel";
-            this.FileNameLabel.Size = new System.Drawing.Size(0, 29);
-            this.FileNameLabel.TabIndex = 8;
+            this.ArtistNameLabel.AutoSize = true;
+            this.ArtistNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArtistNameLabel.ForeColor = System.Drawing.Color.White;
+            this.ArtistNameLabel.Location = new System.Drawing.Point(54, 104);
+            this.ArtistNameLabel.Name = "ArtistNameLabel";
+            this.ArtistNameLabel.Size = new System.Drawing.Size(73, 29);
+            this.ArtistNameLabel.TabIndex = 1;
+            this.ArtistNameLabel.Text = "Name";
             // 
-            // MetaGrid
+            // label2
             // 
-            this.MetaGrid.AllowUserToAddRows = false;
-            this.MetaGrid.AllowUserToDeleteRows = false;
-            this.MetaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MetaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MetaGrid.Location = new System.Drawing.Point(3, 38);
-            this.MetaGrid.MultiSelect = false;
-            this.MetaGrid.Name = "MetaGrid";
-            this.MetaGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.MetaGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MetaGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
-            this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MetaGrid.RowTemplate.Height = 24;
-            this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.MetaGrid.Size = new System.Drawing.Size(443, 303);
-            this.MetaGrid.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(37, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Add Artist";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1718, 850);
+            this.ClientSize = new System.Drawing.Size(1922, 1034);
+            this.Controls.Add(this.panelAddArtist);
             this.Controls.Add(this.panelAddMedia);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.panelAdmin);
@@ -321,10 +406,12 @@
             this.panelAdmin.PerformLayout();
             this.panelAddMedia.ResumeLayout(false);
             this.panelAddMedia.PerformLayout();
-            this.panelMediaType.ResumeLayout(false);
-            this.panelMediaType.PerformLayout();
             this.MetadataBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).EndInit();
+            this.panelMediaType.ResumeLayout(false);
+            this.panelMediaType.PerformLayout();
+            this.panelAddArtist.ResumeLayout(false);
+            this.panelAddArtist.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +439,12 @@
         private System.Windows.Forms.GroupBox MetadataBox;
         private System.Windows.Forms.Label FileNameLabel;
         private System.Windows.Forms.DataGridView MetaGrid;
+        private System.Windows.Forms.Button AddArtistButton;
+        private System.Windows.Forms.Panel panelAddArtist;
+        private System.Windows.Forms.Button BackAddArtist;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox ArtistNameBox;
+        private System.Windows.Forms.Label ArtistNameLabel;
+        private System.Windows.Forms.Label label2;
     }
 }

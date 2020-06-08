@@ -58,7 +58,7 @@ namespace Proyecto
                 Options2.Add(o8);
                 try
                 {
-                    foreach (Person actor in v.GetMetadata().GetActors())
+                    foreach (Artist actor in v.GetMetadata().GetActors())
                     {
                         Options2.Add(actor.GetName());
                     }

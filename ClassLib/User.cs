@@ -8,7 +8,7 @@ namespace Proyecto
     [Serializable]
     public class User
     {
-        private List<object> UserData;
+
         private string UserName;
         private string Email;
         private string Password;
@@ -16,7 +16,8 @@ namespace Proyecto
         private List<User> Followers;
         private List<Object> Following;
         private Queue<Media> Queue;
-        private Dictionary<object, List<object>> Favorites;
+        private List<Song> FavoriteMusic;
+        private List<Video> FavoriteVideos;
         private List<object> Likes;
         private bool Premium;
         private List<Playlist> Playlists;
@@ -28,7 +29,8 @@ namespace Proyecto
             Email = email;
             Password = password;
             PrivateAccount = privateAccount;
-            Dictionary<object, List<object>> favorites = new Dictionary<object, List<object>>();
+            List<Song> favoriteMusic = new List<Song>();
+            List<Video> favoriteVideos = new List<Video>();
             List<object> likes = new List<object>();
             Queue<Media> queue = new Queue<Media>();
             List<Playlist> playlists = new List<Playlist>();
@@ -36,7 +38,8 @@ namespace Proyecto
             List<Object> following = new List<object>();
             Followers = followers;
             Following = following;
-            Favorites = favorites;
+            FavoriteMusic = favoriteMusic;
+            FavoriteVideos = favoriteVideos;
             Likes = likes;
             Queue = queue;
             Playlists = playlists;
@@ -98,26 +101,19 @@ namespace Proyecto
 
         public void AddToPlaylist(Media media, Playlist plName)
         {
-            if (Playlists.Count == 0)
-            {
-                Console.WriteLine("You have no playlists, to create one go to new playlist.");  //placeholder
-            }
+            
+            Playlist a = Playlists.Find(x => x.GetName() == plName.GetName());
 
+            if (a.GetList().Contains(media))
+            {
+                return;
+            }
+            
             else
             {
-                Playlist a = Playlists.Find(x => x.GetName() == plName.GetName());
-
-                if (a.GetList().Contains(media))
-                {
-                    Console.WriteLine($"Playlist already contains {0}" , media);    //placeholder
-                }
-
-                else
-                {
-
-                    a.AddMedia(media);
-                }
+                a.AddMedia(media);
             }
+            
         }
 
         public void LikeMedia(Media media)
@@ -125,115 +121,40 @@ namespace Proyecto
             if (Likes.Contains(media))
             {
                 media.AddLike(false);
+                Likes.Remove(media);
             }
             else
             {
                 media.AddLike(true);
+                Likes.Add(media);
             }
             
         }
 
-        public void NewPlaylist()
+        public void NewPlaylist(string name, bool privateList)
         {
-            Console.Write("Playlist name: ");
-            string name = Console.ReadLine();
-            bool privateList = false;
-            if (PrivateAccount == true)
-            {
-                privateList = true;
-            }
-            else
-            {
-                Console.WriteLine("Do you want your playlist to be private? y/n");
-                int read = Console.Read();
-                if (read == 'y')
-                {
-                    privateList = true;
-                }
-            }
-
             Playlist a = new Playlist(name, privateList, UserName);
+            
             Playlists.Add(a);
         }
 
-        public void Follow(object follow)
+        public void FollowArtist(Artist follow)
         {
+            Following.Add(follow);
+            follow.AddFollower(this);
+        }
 
+        public void UnfollowArtist(Artist follow)
+        {
+            if (Following.Contains(follow))
+            {
+                Following.Remove(follow);
+                follow.AddFollower(this);
+            }
         }
 
 
-
-
-        //public void OldAddMedia()
-        //{
-        //    List<string> opts = new List<string>() { "Song", "Video", "Back" };
-        //    string sel = null;
-        //    while (true)
-        //    {
-        //        Console.Clear();
-        //        sel = RegexUtilities.GetMenu(opts);
-        //        if (sel == opts[2]) { return; }
-
-        //        else if (sel == opts[0])
-        //        {
-        //            Console.Clear();
-        //            string fName = RegexUtilities.WriteData("File Name(with extension):  ");
-        //            Console.Clear();
-                    
-        //            try
-        //            {
-        //                Song song = new Song(fName);
-
-
-        //                Spotflix.SaveMedia(song);
-        //                Console.WriteLine("Win");
-        //                Thread.Sleep(2000);
-        //                return;
-        //            }
-        //            catch (Exception)
-        //            {
-        //                Console.WriteLine("Fail");
-        //                Thread.Sleep(2000);
-        //            }
-        //        }
-
-        //        else if (sel == opts[1])
-        //        {
-        //            Console.Clear();
-        //            string fName = RegexUtilities.WriteData("File Name(with extension):  ");
-        //            Console.Clear();
-
-
-        //            try
-        //            {
-                        
-        //                Video video = new Video(fName);
-        //                Spotflix.SaveMedia(video);
-        //                return;
-        //            }
-        //            catch (Exception)
-        //            {
-        //                Console.WriteLine("Fail");
-        //                Thread.Sleep(2000);
-        //            }
-
-        //            //video.Get
-
-        //            /*sMeta.GetDirector().AddVideo(video);
-        //            foreach (Person ppl in sMeta.GetActors())
-        //            {
-        //                ppl.AddVideo(video);
-        //            }*/
-        //        }
-
-
-        //    }
-
-
-
-
-
-        //}
+        
 
         public void AddMedia(Media media)
         {
