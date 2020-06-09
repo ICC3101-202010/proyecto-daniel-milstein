@@ -17,6 +17,8 @@ namespace Proyecto
         {
             Name = name;
             Artist = artist;
+            List<Song> songs = new List<Song>();
+            SongList = songs;
         }
 
         

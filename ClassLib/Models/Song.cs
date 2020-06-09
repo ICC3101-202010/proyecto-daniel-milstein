@@ -40,6 +40,7 @@ namespace Proyecto
                 newAl.AddSong(this);
                 per.AddAlbum(album,newAl);
             }
+            Spotflix.ImportMedia(this);
         }
 
        

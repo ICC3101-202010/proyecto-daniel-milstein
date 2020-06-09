@@ -20,6 +20,8 @@ namespace Proyecto
             Dictionary<string, Album> albums = new Dictionary<string, Album>();
             List<Media> songs = new List<Media>();
             List<User> followers = new List<User>();
+            List<string> profs = new List<string>();
+            Professions = profs;
             Work = songs;
             Albums = albums;
             Followers = followers;

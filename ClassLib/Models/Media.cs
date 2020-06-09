@@ -26,6 +26,12 @@ namespace Proyecto
             Views = 0;
         }
 
+        public string GetFileName()
+        {
+            string fn = Information["filename"];
+            return fn;
+        }
+
         public void MetadataInfo()
         {
 
@@ -61,6 +67,7 @@ namespace Proyecto
             TimeSpan time = new TimeSpan(hrs, min, sec);
             durNum = time.TotalSeconds;
             Dictionary<string, string> info = new Dictionary<string, string>();
+            info.Add("filename", fileName);
             info.Add("format", format);
             duration = $"{durNum}";
             info.Add("duration", duration);
@@ -73,15 +80,7 @@ namespace Proyecto
         public void Play()
         {
 
-            Process ps = new Process();
-
-            ps.StartInfo.FileName = "mplayer";
-
-            ps.StartInfo.UseShellExecute = false;
-            ps.StartInfo.RedirectStandardInput = true;
-            string args = "-nofs -really-quiet -identify -slave -nomouseinput -sub-fuzziness 1 ";
-            ps.StartInfo.Arguments = args + " \"" + FileName + "\"";
-            ps.Start();
+            
             
         }
 

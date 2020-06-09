@@ -59,6 +59,9 @@ namespace Proyecto
         {
             List<string> TagList = new List<string>();
             Dictionary<string, string> meta = new Dictionary<string, string>();
+            meta.Add("File name", filename);
+            meta.Add("Format", "");
+            meta.Add("Duration HH:MM:SS", "");
             if (type == "song")
             {
                 meta.Add("Name", "");

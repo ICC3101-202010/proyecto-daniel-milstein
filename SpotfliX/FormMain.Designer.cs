@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPlayer = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.panelAdmin = new System.Windows.Forms.Panel();
-            this.AddArtistButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
             this.AdminAddMedia = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.TextBox();
@@ -50,15 +52,15 @@
             this.BackAddMedia = new System.Windows.Forms.Button();
             this.AddMedia = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panelAddArtist = new System.Windows.Forms.Panel();
-            this.TestLabel = new System.Windows.Forms.Label();
-            this.BackAddArtist = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.ArtistNameBox = new System.Windows.Forms.TextBox();
-            this.ArtistNameLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelShowMedia = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MediaGrid = new System.Windows.Forms.DataGridView();
+            this.spotflixBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArtistCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowMediaButton = new System.Windows.Forms.Button();
+            this.BackMediaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -67,7 +69,9 @@
             this.MetadataBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).BeginInit();
             this.panelMediaType.SuspendLayout();
-            this.panelAddArtist.SuspendLayout();
+            this.panelShowMedia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MediaGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spotflixBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -99,6 +103,7 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1922, 47);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // ProfileButton
             // 
@@ -118,24 +123,13 @@
             // 
             // panelAdmin
             // 
-            this.panelAdmin.Controls.Add(this.AddArtistButton);
+            this.panelAdmin.Controls.Add(this.ShowMediaButton);
             this.panelAdmin.Controls.Add(this.UsersButton);
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Location = new System.Drawing.Point(457, 104);
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(392, 660);
             this.panelAdmin.TabIndex = 10;
-            // 
-            // AddArtistButton
-            // 
-            this.AddArtistButton.AutoSize = true;
-            this.AddArtistButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddArtistButton.Location = new System.Drawing.Point(86, 242);
-            this.AddArtistButton.Name = "AddArtistButton";
-            this.AddArtistButton.Size = new System.Drawing.Size(169, 49);
-            this.AddArtistButton.TabIndex = 2;
-            this.AddArtistButton.Text = "Add Artist";
-            this.AddArtistButton.UseVisualStyleBackColor = true;
             // 
             // UsersButton
             // 
@@ -158,6 +152,7 @@
             this.AdminAddMedia.TabIndex = 0;
             this.AdminAddMedia.Text = "Add Media";
             this.AdminAddMedia.UseVisualStyleBackColor = true;
+            this.AdminAddMedia.Click += new System.EventHandler(this.AdminAddMedia_Click);
             // 
             // SearchBox
             // 
@@ -190,6 +185,7 @@
             this.panelAddMedia.Name = "panelAddMedia";
             this.panelAddMedia.Size = new System.Drawing.Size(504, 660);
             this.panelAddMedia.TabIndex = 11;
+            this.panelAddMedia.Visible = false;
             // 
             // FileNameLabel
             // 
@@ -207,15 +203,17 @@
             this.MetadataBox.Controls.Add(this.MetaGrid);
             this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetadataBox.ForeColor = System.Drawing.Color.White;
-            this.MetadataBox.Location = new System.Drawing.Point(26, 218);
+            this.MetadataBox.Location = new System.Drawing.Point(3, 207);
             this.MetadataBox.Name = "MetadataBox";
-            this.MetadataBox.Size = new System.Drawing.Size(449, 344);
+            this.MetadataBox.Size = new System.Drawing.Size(498, 360);
             this.MetadataBox.TabIndex = 7;
             this.MetadataBox.TabStop = false;
             this.MetadataBox.Text = "Metadata";
             // 
             // MetaGrid
             // 
+            this.MetaGrid.AllowUserToAddRows = false;
+            this.MetaGrid.AllowUserToDeleteRows = false;
             this.MetaGrid.ColumnHeadersHeight = 34;
             this.MetaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -230,9 +228,9 @@
             this.MetaGrid.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
             this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MetaGrid.RowTemplate.Height = 24;
+            this.MetaGrid.RowTemplate.Height = 26;
             this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.MetaGrid.Size = new System.Drawing.Size(443, 303);
+            this.MetaGrid.Size = new System.Drawing.Size(492, 319);
             this.MetaGrid.TabIndex = 0;
             this.MetaGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetaGrid_CellContentClick);
             // 
@@ -305,6 +303,7 @@
             this.BackAddMedia.TabIndex = 1;
             this.BackAddMedia.Text = "Back";
             this.BackAddMedia.UseVisualStyleBackColor = true;
+            this.BackAddMedia.Click += new System.EventHandler(this.BackAddMedia_Click);
             // 
             // AddMedia
             // 
@@ -324,81 +323,15 @@
             this.openFileDialog1.Title = "Add Media";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // panelAddArtist
+            // panelShowMedia
             // 
-            this.panelAddArtist.Controls.Add(this.TestLabel);
-            this.panelAddArtist.Controls.Add(this.BackAddArtist);
-            this.panelAddArtist.Controls.Add(this.button1);
-            this.panelAddArtist.Controls.Add(this.ArtistNameBox);
-            this.panelAddArtist.Controls.Add(this.ArtistNameLabel);
-            this.panelAddArtist.Controls.Add(this.label2);
-            this.panelAddArtist.Location = new System.Drawing.Point(863, 115);
-            this.panelAddArtist.Name = "panelAddArtist";
-            this.panelAddArtist.Size = new System.Drawing.Size(506, 654);
-            this.panelAddArtist.TabIndex = 14;
-            // 
-            // TestLabel
-            // 
-            this.TestLabel.AutoSize = true;
-            this.TestLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TestLabel.Location = new System.Drawing.Point(144, 315);
-            this.TestLabel.Name = "TestLabel";
-            this.TestLabel.Size = new System.Drawing.Size(74, 29);
-            this.TestLabel.TabIndex = 8;
-            this.TestLabel.Text = "label3";
-            // 
-            // BackAddArtist
-            // 
-            this.BackAddArtist.AutoSize = true;
-            this.BackAddArtist.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackAddArtist.Location = new System.Drawing.Point(44, 583);
-            this.BackAddArtist.Name = "BackAddArtist";
-            this.BackAddArtist.Size = new System.Drawing.Size(169, 49);
-            this.BackAddArtist.TabIndex = 4;
-            this.BackAddArtist.Text = "Back";
-            this.BackAddArtist.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(301, 583);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 49);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add Artist";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // ArtistNameBox
-            // 
-            this.ArtistNameBox.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArtistNameBox.Location = new System.Drawing.Point(160, 104);
-            this.ArtistNameBox.Name = "ArtistNameBox";
-            this.ArtistNameBox.Size = new System.Drawing.Size(186, 32);
-            this.ArtistNameBox.TabIndex = 7;
-            // 
-            // ArtistNameLabel
-            // 
-            this.ArtistNameLabel.AutoSize = true;
-            this.ArtistNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArtistNameLabel.ForeColor = System.Drawing.Color.White;
-            this.ArtistNameLabel.Location = new System.Drawing.Point(54, 104);
-            this.ArtistNameLabel.Name = "ArtistNameLabel";
-            this.ArtistNameLabel.Size = new System.Drawing.Size(73, 29);
-            this.ArtistNameLabel.TabIndex = 1;
-            this.ArtistNameLabel.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(37, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 39);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Add Artist";
+            this.panelShowMedia.Controls.Add(this.BackMediaButton);
+            this.panelShowMedia.Controls.Add(this.MediaGrid);
+            this.panelShowMedia.Location = new System.Drawing.Point(863, 115);
+            this.panelShowMedia.Name = "panelShowMedia";
+            this.panelShowMedia.Size = new System.Drawing.Size(506, 654);
+            this.panelShowMedia.TabIndex = 14;
+            this.panelShowMedia.Visible = false;
             // 
             // Column1
             // 
@@ -414,13 +347,93 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
             // 
+            // MediaGrid
+            // 
+            this.MediaGrid.AllowUserToAddRows = false;
+            this.MediaGrid.AllowUserToDeleteRows = false;
+            this.MediaGrid.AllowUserToOrderColumns = true;
+            this.MediaGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.MediaGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.MediaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NameCol,
+            this.ArtistCol});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MediaGrid.Location = new System.Drawing.Point(0, 0);
+            this.MediaGrid.MultiSelect = false;
+            this.MediaGrid.Name = "MediaGrid";
+            this.MediaGrid.ReadOnly = true;
+            this.MediaGrid.RowHeadersVisible = false;
+            this.MediaGrid.RowHeadersWidth = 62;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.MediaGrid.RowTemplate.Height = 24;
+            this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.MediaGrid.Size = new System.Drawing.Size(506, 654);
+            this.MediaGrid.TabIndex = 0;
+            this.MediaGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
+            // 
+            // spotflixBindingSource
+            // 
+            this.spotflixBindingSource.DataSource = typeof(Proyecto.Spotflix);
+            // 
+            // NameCol
+            // 
+            this.NameCol.HeaderText = "Name";
+            this.NameCol.MinimumWidth = 8;
+            this.NameCol.Name = "NameCol";
+            this.NameCol.ReadOnly = true;
+            this.NameCol.Width = 81;
+            // 
+            // ArtistCol
+            // 
+            this.ArtistCol.HeaderText = "Artist";
+            this.ArtistCol.MinimumWidth = 8;
+            this.ArtistCol.Name = "ArtistCol";
+            this.ArtistCol.ReadOnly = true;
+            this.ArtistCol.Width = 73;
+            // 
+            // ShowMediaButton
+            // 
+            this.ShowMediaButton.AutoSize = true;
+            this.ShowMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowMediaButton.Location = new System.Drawing.Point(86, 240);
+            this.ShowMediaButton.Name = "ShowMediaButton";
+            this.ShowMediaButton.Size = new System.Drawing.Size(188, 49);
+            this.ShowMediaButton.TabIndex = 2;
+            this.ShowMediaButton.Text = "Show Media";
+            this.ShowMediaButton.UseVisualStyleBackColor = true;
+            this.ShowMediaButton.Click += new System.EventHandler(this.ShowMediaButton_Click);
+            // 
+            // BackMediaButton
+            // 
+            this.BackMediaButton.AutoSize = true;
+            this.BackMediaButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BackMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackMediaButton.Location = new System.Drawing.Point(0, 605);
+            this.BackMediaButton.Name = "BackMediaButton";
+            this.BackMediaButton.Size = new System.Drawing.Size(506, 49);
+            this.BackMediaButton.TabIndex = 2;
+            this.BackMediaButton.Text = "Back";
+            this.BackMediaButton.UseVisualStyleBackColor = true;
+            this.BackMediaButton.Click += new System.EventHandler(this.BackMediaButton_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1922, 1034);
-            this.Controls.Add(this.panelAddArtist);
+            this.Controls.Add(this.panelShowMedia);
             this.Controls.Add(this.panelAddMedia);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.panelAdmin);
@@ -444,8 +457,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).EndInit();
             this.panelMediaType.ResumeLayout(false);
             this.panelMediaType.PerformLayout();
-            this.panelAddArtist.ResumeLayout(false);
-            this.panelAddArtist.PerformLayout();
+            this.panelShowMedia.ResumeLayout(false);
+            this.panelShowMedia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MediaGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spotflixBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,15 +488,14 @@
         private System.Windows.Forms.GroupBox MetadataBox;
         private System.Windows.Forms.Label FileNameLabel;
         private System.Windows.Forms.DataGridView MetaGrid;
-        private System.Windows.Forms.Button AddArtistButton;
-        private System.Windows.Forms.Panel panelAddArtist;
-        private System.Windows.Forms.Button BackAddArtist;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox ArtistNameBox;
-        private System.Windows.Forms.Label ArtistNameLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label TestLabel;
+        private System.Windows.Forms.Panel panelShowMedia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button ShowMediaButton;
+        private System.Windows.Forms.DataGridView MediaGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ArtistCol;
+        private System.Windows.Forms.BindingSource spotflixBindingSource;
+        private System.Windows.Forms.Button BackMediaButton;
     }
 }

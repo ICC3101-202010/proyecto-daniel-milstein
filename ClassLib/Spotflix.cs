@@ -1,7 +1,7 @@
 ﻿using System;using System.Collections.Generic;using System.Diagnostics;using System.IO;using System.Runtime.Serialization;using System.Runtime.Serialization.Formatters.Binary;using System.Threading;using System.Windows.Forms;namespace Proyecto{    [Serializable]    public static class Spotflix    {        private static Dictionary<string, User> UserDB;        private static List<Media> MediaDB;        private static Dictionary<string, Artist> PeopleDB;                static Spotflix()        {
-            Dictionary<string, User> userDB = null;
-            List<Media> mediaDB = null;
-            Dictionary<string, Artist> peopleDB = null;
+            Dictionary<string, User> userDB = new Dictionary<string, User>();
+            List<Media> mediaDB = new List<Media>();
+            Dictionary<string, Artist> peopleDB = new Dictionary<string, Artist>();
 
             try
             {

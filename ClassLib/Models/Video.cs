@@ -49,6 +49,7 @@ namespace Proyecto
                     Spotflix.AddPerson(art);
                 }
             }
+            Spotflix.ImportMedia(this);
         }
         public override Metadata GetMetadata()
         { 
