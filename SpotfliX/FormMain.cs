@@ -29,7 +29,7 @@ namespace SpotfliX
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
-
+            panelProfile.Show();
         }
 
         private void FormMain_VisibleChanged(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace SpotfliX
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Spotflix.Save("Spotflix.bin");
+            Spotflix.Save("Spotflix.bin");
             Application.Exit();
         }
 
@@ -80,6 +80,7 @@ namespace SpotfliX
 
                 SongMetadata meta = new SongMetadata(name, artist, album, genre, pubYear, label);
                 Song song = new Song(filename, meta, format, duration);
+
             }
             
             else if (MediaType == "video")
@@ -104,6 +105,7 @@ namespace SpotfliX
                 VideoMetadata meta = new VideoMetadata(name, creator, genre, category, studio, description, resolution, aspect, director, actors, pubYear);
                 Video video = new Video(filename, meta, format, duration);
             }
+            Spotflix.Save("Spotflix.bin");
             panelAddMedia.Hide();
             MetaGrid.Rows.Clear();
             panelAdmin.Show();

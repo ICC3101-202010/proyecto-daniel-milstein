@@ -20,12 +20,17 @@ namespace SpotfliX
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /* Agregar admin
-            User admin = new User("admin", "dnmilstein@miuandes.cl", "admin", true, true, true);
-            Spotflix.AddUser(admin);
-            Spotflix.Save(Spotflix.GetUserDB, Spotflix.GetMediaDB,Spotflix.GetPeopleDB, "Spotflix.bin");
-            */
-            
+
+
+            try
+            {
+                var load = Spotflix.Load("Spotflix.bin");
+
+                Spotflix.SetUserDB(load.Item1);
+                Spotflix.SetMediaDB(load.Item2);
+                Spotflix.SetPeopleDB(load.Item3);
+            }
+            catch (Exception){}
             Form1 f1 = new Form1();
             f1.Show();
             

@@ -65,6 +65,7 @@ namespace SpotfliX
                 RegErrorLabel.Show();
                 panelRegister.Hide();
                 panelInicio.Show();
+                Spotflix.Save("Spotflix.bin", Spotflix.GetUserDB);
             }
             catch (Exception)
             {

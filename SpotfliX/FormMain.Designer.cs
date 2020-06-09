@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPlayer = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -61,6 +61,7 @@
             this.ArtistCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShowMediaButton = new System.Windows.Forms.Button();
             this.BackMediaButton = new System.Windows.Forms.Button();
+            this.panelProfile = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -128,14 +129,14 @@
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Location = new System.Drawing.Point(457, 104);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(392, 660);
+            this.panelAdmin.Size = new System.Drawing.Size(280, 277);
             this.panelAdmin.TabIndex = 10;
             // 
             // UsersButton
             // 
             this.UsersButton.AutoSize = true;
             this.UsersButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersButton.Location = new System.Drawing.Point(86, 326);
+            this.UsersButton.Location = new System.Drawing.Point(38, 166);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(169, 49);
             this.UsersButton.TabIndex = 1;
@@ -146,7 +147,7 @@
             // 
             this.AdminAddMedia.AutoSize = true;
             this.AdminAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdminAddMedia.Location = new System.Drawing.Point(86, 160);
+            this.AdminAddMedia.Location = new System.Drawing.Point(38, 24);
             this.AdminAddMedia.Name = "AdminAddMedia";
             this.AdminAddMedia.Size = new System.Drawing.Size(169, 49);
             this.AdminAddMedia.TabIndex = 0;
@@ -329,7 +330,7 @@
             this.panelShowMedia.Controls.Add(this.MediaGrid);
             this.panelShowMedia.Location = new System.Drawing.Point(863, 115);
             this.panelShowMedia.Name = "panelShowMedia";
-            this.panelShowMedia.Size = new System.Drawing.Size(506, 654);
+            this.panelShowMedia.Size = new System.Drawing.Size(222, 128);
             this.panelShowMedia.TabIndex = 14;
             this.panelShowMedia.Visible = false;
             // 
@@ -358,14 +359,14 @@
             this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameCol,
             this.ArtistCol});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
             this.MediaGrid.MultiSelect = false;
@@ -373,12 +374,12 @@
             this.MediaGrid.ReadOnly = true;
             this.MediaGrid.RowHeadersVisible = false;
             this.MediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.MediaGrid.RowTemplate.Height = 24;
             this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MediaGrid.Size = new System.Drawing.Size(506, 654);
+            this.MediaGrid.Size = new System.Drawing.Size(222, 128);
             this.MediaGrid.TabIndex = 0;
             this.MediaGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
             // 
@@ -406,7 +407,7 @@
             // 
             this.ShowMediaButton.AutoSize = true;
             this.ShowMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowMediaButton.Location = new System.Drawing.Point(86, 240);
+            this.ShowMediaButton.Location = new System.Drawing.Point(38, 90);
             this.ShowMediaButton.Name = "ShowMediaButton";
             this.ShowMediaButton.Size = new System.Drawing.Size(188, 49);
             this.ShowMediaButton.TabIndex = 2;
@@ -419,13 +420,21 @@
             this.BackMediaButton.AutoSize = true;
             this.BackMediaButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BackMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackMediaButton.Location = new System.Drawing.Point(0, 605);
+            this.BackMediaButton.Location = new System.Drawing.Point(0, 79);
             this.BackMediaButton.Name = "BackMediaButton";
-            this.BackMediaButton.Size = new System.Drawing.Size(506, 49);
+            this.BackMediaButton.Size = new System.Drawing.Size(222, 49);
             this.BackMediaButton.TabIndex = 2;
             this.BackMediaButton.Text = "Back";
             this.BackMediaButton.UseVisualStyleBackColor = true;
             this.BackMediaButton.Click += new System.EventHandler(this.BackMediaButton_Click);
+            // 
+            // panelProfile
+            // 
+            this.panelProfile.Location = new System.Drawing.Point(783, 299);
+            this.panelProfile.Name = "panelProfile";
+            this.panelProfile.Size = new System.Drawing.Size(534, 592);
+            this.panelProfile.TabIndex = 15;
+            this.panelProfile.Visible = false;
             // 
             // FormMain
             // 
@@ -433,6 +442,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1922, 1034);
+            this.Controls.Add(this.panelProfile);
             this.Controls.Add(this.panelShowMedia);
             this.Controls.Add(this.panelAddMedia);
             this.Controls.Add(this.SearchBox);
@@ -497,5 +507,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ArtistCol;
         private System.Windows.Forms.BindingSource spotflixBindingSource;
         private System.Windows.Forms.Button BackMediaButton;
+        private System.Windows.Forms.Panel panelProfile;
     }
 }
