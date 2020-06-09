@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto;
 
+
 namespace SpotfliX
 {
     public partial class FormMain : Form
@@ -75,40 +76,60 @@ namespace SpotfliX
         private void radioSong_CheckedChanged(object sender, EventArgs e)
         {
             MediaType = "song";
-            Label nameLabel = new Label();
-            nameLabel.Text = "Name: ";
-            MetadataBox.Controls.Add(nameLabel);
+            FileNameLabel.Text = openFileDialog1.FileName;
+            string path = $@"{openFileDialog1.FileName}";
+            MetaDataController m1 = new MetaDataController();
+            AddMediaMeta = m1.ReadMeta(path, MediaType);
+            MetaGrid.Rows.Clear();
+            foreach (var item in AddMediaMeta)
+            {
+                MetaGrid.Rows.Add(item.Key, item.Value);
+
+            }
+
         }
 
         private void radioVideo_CheckedChanged(object sender, EventArgs e)
         {
             MediaType = "video";
+            FileNameLabel.Text = openFileDialog1.FileName;
+            string path = $@"{openFileDialog1.FileName}";
+            MetaDataController m1 = new MetaDataController();
+            AddMediaMeta = m1.ReadMeta(path, MediaType);
+            MetaGrid.Rows.Clear();
+            foreach (var item in AddMediaMeta)
+            {
+                MetaGrid.Rows.Add(item.Key, item.Value);
+
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             FileNameLabel.Text = openFileDialog1.FileName;
             //string path = $@"{openFileDialog1.FileName}";
+            //MetaDataController m1 = new MetaDataController();
+            //AddMediaMeta = m1.ReadMeta(path, MediaType);
+            //MetaGrid.Rows.Clear();
+            //foreach  (var item in AddMediaMeta)
+            //{
+            //    MetaGrid.Rows.Add(item.Key, item.Value);
 
-            //AddMediaMeta = Spotflix.ReadMeta(path);
-
-            Dictionary<string, string> a = new Dictionary<string, string>();
-            a.Add("Hola", "Chao");
-            a.Add("Prueba", "Chato");
-            MetaGrid.Columns.Add("Value", "Value");
+            //}
             
-            
-            int en = 0;
+        }
 
-            foreach  (var item in a)
+        private void MetaGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SearchBox_Leave(object sender, EventArgs e)
+        {
+            if (SearchBox.Text == "")
             {
-                MetaGrid.Rows.Add(item.Value);
-                MetaGrid.Rows[en].HeaderCell.Value = item.Key;
-                en++;
-                
-
+                SearchBox.Text = "Search";
             }
-            
         }
     }
 }

@@ -14,24 +14,25 @@ namespace Proyecto
         private string RecordLabel;
         private string Lyrics;
 
-        public SongMetadata(string name, string artist, string album, string genre, string pubYear, string label, string lyrics)
+        public SongMetadata(string name, string artist, string album, string genre, string pubYear, string label, string lyrics) 
         {
             Name = name;
             Genre = genre;
             RecordLabel = label;
             Lyrics = lyrics;
+            PublicationYear = Convert.ToInt32(pubYear);
             try
             {
-                Artist per = Spotflix.GetPeopleDB[name];
-                Artist art = (Artist)per;
-                Dictionary<string, Album> ls = art.GetAlbums(); 
+                Artist per = Spotflix.GetPeopleDB[artist];
+                Artist = per;
+                Dictionary<string, Album> ls = per.GetAlbums(); 
                 if (ls.ContainsKey(album))
                 {
                     Album = ls[album];
                 }
                 else
                 {
-                    //New album
+                    Artist art = new Artist(artist);
                 }
                 //Evento que llama al artista
             }

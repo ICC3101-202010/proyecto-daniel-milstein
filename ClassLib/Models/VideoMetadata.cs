@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Proyecto
 {
@@ -18,9 +19,42 @@ namespace Proyecto
         private string Resolution;
         private string AspectRatio;
 
-        public VideoMetadata()
+        public VideoMetadata(string name, string creator, string genre, string category, string studio, string description,
+            string resolution, string aspecRatio, string director, string actors, string pubYear)
         {
-            
+            Name = name;
+            Creator = creator;
+            Genre = genre;
+            Category = category;
+            Studio = studio;
+            Description = description;
+            Resolution = resolution;
+            AspectRatio = aspecRatio;
+            PubYear = Convert.ToInt32(pubYear);
+            try
+            {
+                Artist per = Spotflix.GetPeopleDB[director];
+                Director = per;
+
+            }
+            catch (Exception)
+            {
+                //Crear al director
+
+            }
+            string[] actorList = actors.Split(',');
+            foreach (string act in actorList)
+            {
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         public override string GetName() { return Name; }

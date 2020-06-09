@@ -14,7 +14,7 @@ namespace Proyecto
         private Dictionary<string, Album> Albums;
         private List<User> Followers;
 
-        public Artist(string name, string gender)
+        public Artist(string name)
         {
             Name = name;
             Dictionary<string, Album> albums = new Dictionary<string, Album>();
@@ -22,10 +22,23 @@ namespace Proyecto
             List<User> followers = new List<User>();
             Work = songs;
             Albums = albums;
-            Gender = gender;
-
             Followers = followers;
+        }
 
+
+
+
+        public Artist(string name, string gender)
+        {
+            
+            Name = name;
+            Dictionary<string, Album> albums = new Dictionary<string, Album>();
+            List<Media> songs = new List<Media>();
+            List<User> followers = new List<User>();
+            Work = songs;
+            Albums = albums;
+            Gender = gender;
+            Followers = followers;
         }
         public string GetName()
         {
