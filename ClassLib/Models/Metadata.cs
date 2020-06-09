@@ -15,10 +15,10 @@ namespace Proyecto
         public abstract string GetCreator();
         public abstract string GetGenre();
         public abstract string GetCategory();
-        public abstract Artist GetDirector();
+        public abstract string GetDirector();
         public abstract string GetStudio();
-        public abstract Artist GetArtist();
-        public abstract Album GetAlbum();
-        public abstract List<Artist> GetActors();
+        public abstract string GetArtist();
+        public abstract string GetAlbum();
+        public abstract string[] GetActors();
     }
 }

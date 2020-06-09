@@ -28,21 +28,17 @@ namespace Proyecto
 
 
 
-        public Artist(string name, string gender)
+        public Artist(string name, string gender):this(name)
         {
-            
-            Name = name;
-            Dictionary<string, Album> albums = new Dictionary<string, Album>();
-            List<Media> songs = new List<Media>();
-            List<User> followers = new List<User>();
-            Work = songs;
-            Albums = albums;
             Gender = gender;
-            Followers = followers;
         }
         public string GetName()
         {
             return Name;
+        }
+        public void AddWork(Media m)
+        {
+            Work.Add(m);
         }
         public string GetGender()
         {

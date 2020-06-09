@@ -11,8 +11,8 @@ namespace Proyecto
         private string Creator;
         private string Genre;
         private string Category;
-        private List<Artist> Actors;
-        private Artist Director;
+        private string[] Actors;
+        private string Director;
         private string Studio;
         private int PubYear;
         private string Description;
@@ -31,30 +31,8 @@ namespace Proyecto
             Resolution = resolution;
             AspectRatio = aspecRatio;
             PubYear = Convert.ToInt32(pubYear);
-            try
-            {
-                Artist per = Spotflix.GetPeopleDB[director];
-                Director = per;
-
-            }
-            catch (Exception)
-            {
-                //Crear al director
-
-            }
-            string[] actorList = actors.Split(',');
-            foreach (string act in actorList)
-            {
-                try
-                {
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
+            Actors = actors.Split(':');
+            
         }
 
         public override string GetName() { return Name; }
@@ -64,8 +42,8 @@ namespace Proyecto
         public override string GetStudio() { return Studio; }
         public int GetPubYear() { return PubYear; }
         public string GetDescription() { return Description; }
-        public override List<Artist> GetActors() { return Actors; }
-        public override Artist GetDirector() { return Director; }
+        public override string[] GetActors() { return Actors; }
+        public override string GetDirector() { return Director; }
         public string GetResolution() { return Resolution; }
         public string GetAspectRatio() { return AspectRatio; }
 

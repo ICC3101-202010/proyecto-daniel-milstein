@@ -69,7 +69,7 @@ namespace SpotfliX
             
             else if (MediaType == "video")
             {
-                Video video = new Video(filename);
+                //Video video = new Video(filename);
             }
         }
 

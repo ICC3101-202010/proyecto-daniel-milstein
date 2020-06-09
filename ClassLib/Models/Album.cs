@@ -7,16 +7,19 @@ namespace Proyecto
     public class Album
     {
         private string Name;
+        private Artist Artist;
         private List<Song> SongList;
         private string CoverPhoto;
 
         
 
-        public Album(string name)
+        public Album(string name, Artist artist)
         {
             Name = name;
+            Artist = artist;
         }
 
+        
         public void AddSong(Song song)
         {
             SongList.Add(song); //Event?
