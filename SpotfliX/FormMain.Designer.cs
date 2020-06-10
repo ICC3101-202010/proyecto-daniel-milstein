@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPlayer = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -193,7 +193,7 @@
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileButton.ForeColor = System.Drawing.Color.Transparent;
             this.ProfileButton.Image = ((System.Drawing.Image)(resources.GetObject("ProfileButton.Image")));
-            this.ProfileButton.Location = new System.Drawing.Point(431, 12);
+            this.ProfileButton.Location = new System.Drawing.Point(535, 12);
             this.ProfileButton.Name = "ProfileButton";
             this.ProfileButton.Size = new System.Drawing.Size(73, 73);
             this.ProfileButton.TabIndex = 9;
@@ -442,14 +442,14 @@
             this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameCol,
             this.ArtistCol});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
             this.MediaGrid.MultiSelect = false;
@@ -457,9 +457,9 @@
             this.MediaGrid.ReadOnly = true;
             this.MediaGrid.RowHeadersVisible = false;
             this.MediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.MediaGrid.RowTemplate.Height = 24;
             this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MediaGrid.Size = new System.Drawing.Size(406, 577);
@@ -529,7 +529,7 @@
             this.panelProfile.Controls.Add(this.UpdateButton);
             this.panelProfile.Controls.Add(this.BackProfileButton);
             this.panelProfile.Controls.Add(this.ProfileLabel);
-            this.panelProfile.Location = new System.Drawing.Point(391, 206);
+            this.panelProfile.Location = new System.Drawing.Point(1083, 262);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(446, 572);
             this.panelProfile.TabIndex = 15;
@@ -680,6 +680,7 @@
             this.BackProfileButton.TabIndex = 5;
             this.BackProfileButton.Text = "Back";
             this.BackProfileButton.UseVisualStyleBackColor = true;
+            this.BackProfileButton.Click += new System.EventHandler(this.BackProfileButton_Click);
             // 
             // UpdateButton
             // 
@@ -691,6 +692,7 @@
             this.UpdateButton.TabIndex = 6;
             this.UpdateButton.Text = "Update profile";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // PremiumLabel
             // 
@@ -1250,7 +1252,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1922, 1034);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.linkLabelSearch);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.SearchBox);
@@ -1262,6 +1263,7 @@
             this.Controls.Add(this.panelProfile);
             this.Controls.Add(this.panelShowMedia);
             this.Controls.Add(this.panelAddMedia);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "SpotfliX";

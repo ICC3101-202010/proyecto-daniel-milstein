@@ -70,7 +70,7 @@ namespace Proyecto
             grid.Rows.Clear();
 
             int en = 0;
-
+            grid.Columns.Add("Name", "Name");
             foreach (object ite in list)
             {
                 if(ite.GetType() == typeof(User))

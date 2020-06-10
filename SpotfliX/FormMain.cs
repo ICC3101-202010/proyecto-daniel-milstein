@@ -31,6 +31,9 @@ namespace SpotfliX
         private void ProfileButton_Click(object sender, EventArgs e)
         {
             panelProfile.Show();
+            userProfilelabel.Text = ActiveUser.GetUsername();
+            emailProfileLabel.Text = ActiveUser.GetEmail();
+            PassProfilelabel.Text = "************";
         }
 
         private void FormMain_VisibleChanged(object sender, EventArgs e)
@@ -241,11 +244,13 @@ namespace SpotfliX
         private void linkLabelSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             panelSearch.Show();
+            panelAdmin.Hide();
         }
 
         private void linkLabelEditEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            emailProfileLabel.Hide();
+            emailProfileBox.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -300,6 +305,19 @@ namespace SpotfliX
         private void BackaSearchButton_Click(object sender, EventArgs e)
         {
             panelSearch.Hide();
+        }
+
+        private void BackProfileButton_Click(object sender, EventArgs e)
+        {
+            panelProfile.Hide();
+            panelAdmin.Show();
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            //Pending
+            panelProfile.Hide();
+            panelAdmin.Show();
         }
     }
 }
