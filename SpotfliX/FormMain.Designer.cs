@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelPlayer = new System.Windows.Forms.Panel();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -69,7 +69,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.aSearchBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.BackProfileButton = new System.Windows.Forms.Button();
@@ -96,7 +96,35 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.emailProfileBox = new System.Windows.Forms.TextBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.MediaMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToQueueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.queueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playlistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decideForMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.favoritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.albumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ResultGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.BackaSearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPlayer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -110,8 +138,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.spotflixBindingSource)).BeginInit();
             this.panelProfile.SuspendLayout();
             this.panelSearch.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.panelChangePass.SuspendLayout();
+            this.MediaMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -153,7 +193,7 @@
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileButton.ForeColor = System.Drawing.Color.Transparent;
             this.ProfileButton.Image = ((System.Drawing.Image)(resources.GetObject("ProfileButton.Image")));
-            this.ProfileButton.Location = new System.Drawing.Point(907, 12);
+            this.ProfileButton.Location = new System.Drawing.Point(431, 12);
             this.ProfileButton.Name = "ProfileButton";
             this.ProfileButton.Size = new System.Drawing.Size(73, 73);
             this.ProfileButton.TabIndex = 9;
@@ -163,19 +203,21 @@
             // 
             // panelAdmin
             // 
+            this.panelAdmin.Controls.Add(this.button5);
+            this.panelAdmin.Controls.Add(this.button4);
             this.panelAdmin.Controls.Add(this.ShowMediaButton);
             this.panelAdmin.Controls.Add(this.UsersButton);
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Location = new System.Drawing.Point(0, 104);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(215, 194);
+            this.panelAdmin.Size = new System.Drawing.Size(225, 384);
             this.panelAdmin.TabIndex = 10;
             // 
             // UsersButton
             // 
             this.UsersButton.AutoSize = true;
             this.UsersButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersButton.Location = new System.Drawing.Point(12, 126);
+            this.UsersButton.Location = new System.Drawing.Point(12, 121);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(169, 49);
             this.UsersButton.TabIndex = 1;
@@ -185,6 +227,7 @@
             // AdminAddMedia
             // 
             this.AdminAddMedia.AutoSize = true;
+            this.AdminAddMedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.AdminAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminAddMedia.Location = new System.Drawing.Point(12, 11);
             this.AdminAddMedia.Name = "AdminAddMedia";
@@ -209,6 +252,7 @@
             this.SearchBox.TabIndex = 13;
             this.SearchBox.Text = "   Search";
             this.SearchBox.Click += new System.EventHandler(this.SearchBox_Click);
+            this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             this.SearchBox.Leave += new System.EventHandler(this.SearchBox_Leave);
             // 
             // panelAddMedia
@@ -221,7 +265,7 @@
             this.panelAddMedia.Controls.Add(this.BackAddMedia);
             this.panelAddMedia.Controls.Add(this.AddMedia);
             this.panelAddMedia.ForeColor = System.Drawing.Color.Black;
-            this.panelAddMedia.Location = new System.Drawing.Point(1393, 110);
+            this.panelAddMedia.Location = new System.Drawing.Point(413, 206);
             this.panelAddMedia.Name = "panelAddMedia";
             this.panelAddMedia.Size = new System.Drawing.Size(504, 660);
             this.panelAddMedia.TabIndex = 11;
@@ -367,9 +411,9 @@
             // 
             this.panelShowMedia.Controls.Add(this.BackMediaButton);
             this.panelShowMedia.Controls.Add(this.MediaGrid);
-            this.panelShowMedia.Location = new System.Drawing.Point(863, 115);
+            this.panelShowMedia.Location = new System.Drawing.Point(381, 201);
             this.panelShowMedia.Name = "panelShowMedia";
-            this.panelShowMedia.Size = new System.Drawing.Size(222, 128);
+            this.panelShowMedia.Size = new System.Drawing.Size(406, 577);
             this.panelShowMedia.TabIndex = 14;
             this.panelShowMedia.Visible = false;
             // 
@@ -398,14 +442,14 @@
             this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameCol,
             this.ArtistCol});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
             this.MediaGrid.MultiSelect = false;
@@ -413,12 +457,12 @@
             this.MediaGrid.ReadOnly = true;
             this.MediaGrid.RowHeadersVisible = false;
             this.MediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.MediaGrid.RowTemplate.Height = 24;
             this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MediaGrid.Size = new System.Drawing.Size(222, 128);
+            this.MediaGrid.Size = new System.Drawing.Size(406, 577);
             this.MediaGrid.TabIndex = 0;
             this.MediaGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
             // 
@@ -459,9 +503,9 @@
             this.BackMediaButton.AutoSize = true;
             this.BackMediaButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BackMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackMediaButton.Location = new System.Drawing.Point(0, 79);
+            this.BackMediaButton.Location = new System.Drawing.Point(0, 528);
             this.BackMediaButton.Name = "BackMediaButton";
-            this.BackMediaButton.Size = new System.Drawing.Size(222, 49);
+            this.BackMediaButton.Size = new System.Drawing.Size(406, 49);
             this.BackMediaButton.TabIndex = 2;
             this.BackMediaButton.Text = "Back";
             this.BackMediaButton.UseVisualStyleBackColor = true;
@@ -485,7 +529,7 @@
             this.panelProfile.Controls.Add(this.UpdateButton);
             this.panelProfile.Controls.Add(this.BackProfileButton);
             this.panelProfile.Controls.Add(this.ProfileLabel);
-            this.panelProfile.Location = new System.Drawing.Point(835, 280);
+            this.panelProfile.Location = new System.Drawing.Point(391, 206);
             this.panelProfile.Name = "panelProfile";
             this.panelProfile.Size = new System.Drawing.Size(446, 572);
             this.panelProfile.TabIndex = 15;
@@ -504,16 +548,14 @@
             // 
             // panelSearch
             // 
-            this.panelSearch.Controls.Add(this.groupBox5);
+            this.panelSearch.Controls.Add(this.BackaSearchButton);
             this.panelSearch.Controls.Add(this.button1);
-            this.panelSearch.Controls.Add(this.textBox1);
+            this.panelSearch.Controls.Add(this.aSearchBox);
             this.panelSearch.Controls.Add(this.groupBox4);
-            this.panelSearch.Controls.Add(this.groupBox3);
-            this.panelSearch.Controls.Add(this.groupBox2);
             this.panelSearch.Controls.Add(this.groupBox1);
-            this.panelSearch.Location = new System.Drawing.Point(258, 194);
+            this.panelSearch.Location = new System.Drawing.Point(321, 186);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(502, 324);
+            this.panelSearch.Size = new System.Drawing.Size(616, 769);
             this.panelSearch.TabIndex = 16;
             this.panelSearch.Visible = false;
             // 
@@ -533,25 +575,25 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Controls.Add(this.ResultGrid);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(0, 283);
+            this.groupBox1.Location = new System.Drawing.Point(3, 278);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(502, 41);
+            this.groupBox1.Size = new System.Drawing.Size(613, 446);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Songs";
+            this.groupBox1.Text = "Results";
             // 
             // groupBox2
             // 
             this.groupBox2.AutoSize = true;
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Controls.Add(this.dataGridView3);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(0, 242);
+            this.groupBox2.Location = new System.Drawing.Point(66, 122);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(502, 41);
+            this.groupBox2.Size = new System.Drawing.Size(498, 111);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Videos";
@@ -559,12 +601,12 @@
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Controls.Add(this.dataGridView4);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(0, 201);
+            this.groupBox3.Location = new System.Drawing.Point(66, 233);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(502, 41);
+            this.groupBox3.Size = new System.Drawing.Size(498, 102);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Artists";
@@ -572,51 +614,58 @@
             // groupBox4
             // 
             this.groupBox4.AutoSize = true;
-            this.groupBox4.Controls.Add(this.vScrollBar1);
+            this.groupBox4.Controls.Add(this.trackBar1);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.panel1);
+            this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(0, 30);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(502, 103);
+            this.groupBox4.Size = new System.Drawing.Size(613, 245);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
-            // textBox1
+            // aSearchBox
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.textBox1.BackColor = System.Drawing.SystemColors.GrayText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(502, 30);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "   Search";
+            this.aSearchBox.AcceptsReturn = true;
+            this.aSearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.aSearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.aSearchBox.BackColor = System.Drawing.SystemColors.GrayText;
+            this.aSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aSearchBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.aSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aSearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aSearchBox.Location = new System.Drawing.Point(0, 0);
+            this.aSearchBox.Name = "aSearchBox";
+            this.aSearchBox.Size = new System.Drawing.Size(616, 30);
+            this.aSearchBox.TabIndex = 14;
+            this.aSearchBox.Text = "   Search";
+            this.aSearchBox.Click += new System.EventHandler(this.SearchBox_Click);
+            this.aSearchBox.TextChanged += new System.EventHandler(this.aSearchBox_TextChanged);
+            this.aSearchBox.MouseLeave += new System.EventHandler(this.aSearchBox_MouseLeave);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(374, 0);
+            this.button1.Location = new System.Drawing.Point(488, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 30);
             this.button1.TabIndex = 15;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.AutoSize = true;
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox5.Controls.Add(this.dataGridView2);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(0, 160);
+            this.groupBox5.Location = new System.Drawing.Point(66, 338);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(502, 41);
+            this.groupBox5.Size = new System.Drawing.Size(498, 115);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Users";
@@ -785,9 +834,9 @@
             this.panelChangePass.Controls.Add(this.label7);
             this.panelChangePass.Controls.Add(this.label6);
             this.panelChangePass.Controls.Add(this.label5);
-            this.panelChangePass.Location = new System.Drawing.Point(109, 590);
+            this.panelChangePass.Location = new System.Drawing.Point(351, 339);
             this.panelChangePass.Name = "panelChangePass";
-            this.panelChangePass.Size = new System.Drawing.Size(514, 262);
+            this.panelChangePass.Size = new System.Drawing.Size(501, 281);
             this.panelChangePass.TabIndex = 18;
             this.panelChangePass.Visible = false;
             // 
@@ -891,6 +940,7 @@
             this.button3.TabIndex = 30;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // emailProfileBox
             // 
@@ -908,13 +958,291 @@
             this.emailProfileBox.TabIndex = 31;
             this.emailProfileBox.Visible = false;
             // 
-            // vScrollBar1
+            // MediaMenuStrip1
             // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(473, 38);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(26, 62);
-            this.vScrollBar1.TabIndex = 0;
+            this.MediaMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MediaMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playToolStripMenuItem,
+            this.addToQueueToolStripMenuItem,
+            this.goToToolStripMenuItem,
+            this.infoToolStripMenuItem});
+            this.MediaMenuStrip1.Name = "MediaMenuStrip1";
+            this.MediaMenuStrip1.Size = new System.Drawing.Size(153, 132);
+            // 
+            // playToolStripMenuItem
+            // 
+            this.playToolStripMenuItem.Name = "playToolStripMenuItem";
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(152, 32);
+            this.playToolStripMenuItem.Text = "Play";
+            // 
+            // addToQueueToolStripMenuItem
+            // 
+            this.addToQueueToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.queueToolStripMenuItem,
+            this.favoritesToolStripMenuItem,
+            this.playlistToolStripMenuItem,
+            this.decideForMeToolStripMenuItem});
+            this.addToQueueToolStripMenuItem.Name = "addToQueueToolStripMenuItem";
+            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(152, 32);
+            this.addToQueueToolStripMenuItem.Text = "Add to...";
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 32);
+            this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // queueToolStripMenuItem
+            // 
+            this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
+            this.queueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.queueToolStripMenuItem.Text = "Queue";
+            // 
+            // playlistToolStripMenuItem
+            // 
+            this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newToolStripMenuItem});
+            this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
+            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playlistToolStripMenuItem.Text = "Playlist";
+            // 
+            // decideForMeToolStripMenuItem
+            // 
+            this.decideForMeToolStripMenuItem.Name = "decideForMeToolStripMenuItem";
+            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.decideForMeToolStripMenuItem.Text = "Decide for me";
+            // 
+            // favoritesToolStripMenuItem
+            // 
+            this.favoritesToolStripMenuItem.Name = "favoritesToolStripMenuItem";
+            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.favoritesToolStripMenuItem.Text = "Favorites";
+            // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newToolStripMenuItem.Text = "New...";
+            // 
+            // goToToolStripMenuItem
+            // 
+            this.goToToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.artistToolStripMenuItem,
+            this.albumToolStripMenuItem});
+            this.goToToolStripMenuItem.Name = "goToToolStripMenuItem";
+            this.goToToolStripMenuItem.Size = new System.Drawing.Size(152, 32);
+            this.goToToolStripMenuItem.Text = "Go to...";
+            // 
+            // artistToolStripMenuItem
+            // 
+            this.artistToolStripMenuItem.Name = "artistToolStripMenuItem";
+            this.artistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.artistToolStripMenuItem.Text = "Artist";
+            // 
+            // albumToolStripMenuItem
+            // 
+            this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.albumToolStripMenuItem.Text = "Album";
+            // 
+            // button4
+            // 
+            this.button4.AutoSize = true;
+            this.button4.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(12, 176);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(169, 49);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "DJ Mode";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.AutoSize = true;
+            this.button5.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(12, 242);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(169, 80);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Decide \r\nfor me";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 38);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(492, 74);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // ResultGrid
+            // 
+            this.ResultGrid.AllowUserToAddRows = false;
+            this.ResultGrid.AllowUserToDeleteRows = false;
+            this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ResultGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ResultGrid.Location = new System.Drawing.Point(3, 38);
+            this.ResultGrid.Name = "ResultGrid";
+            this.ResultGrid.ReadOnly = true;
+            this.ResultGrid.RowHeadersWidth = 62;
+            this.ResultGrid.RowTemplate.Height = 24;
+            this.ResultGrid.Size = new System.Drawing.Size(607, 405);
+            this.ResultGrid.TabIndex = 0;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 38);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(492, 70);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 38);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(492, 61);
+            this.dataGridView4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(16, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 29);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Type";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.checkBox5);
+            this.panel1.Controls.Add(this.checkBox4);
+            this.panel1.Controls.Add(this.checkBox3);
+            this.panel1.Controls.Add(this.checkBox2);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Location = new System.Drawing.Point(94, 39);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(292, 78);
+            this.panel1.TabIndex = 26;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(3, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 28);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Audio";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(3, 47);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(84, 28);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Video";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 29);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Resolution";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(143, 133);
+            this.trackBar1.Maximum = 4;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(79, 69);
+            this.trackBar1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.groupBox5);
+            this.panel2.Controls.Add(this.groupBox2);
+            this.panel2.Controls.Add(this.groupBox3);
+            this.panel2.Location = new System.Drawing.Point(1121, 180);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(618, 538);
+            this.panel2.TabIndex = 20;
+            this.panel2.Visible = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(107, 7);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(81, 28);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Artist";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(107, 41);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(91, 28);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Album";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(210, 7);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(74, 28);
+            this.checkBox5.TabIndex = 4;
+            this.checkBox5.Text = "User";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // BackaSearchButton
+            // 
+            this.BackaSearchButton.AutoSize = true;
+            this.BackaSearchButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BackaSearchButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackaSearchButton.Location = new System.Drawing.Point(0, 720);
+            this.BackaSearchButton.Name = "BackaSearchButton";
+            this.BackaSearchButton.Size = new System.Drawing.Size(616, 49);
+            this.BackaSearchButton.TabIndex = 16;
+            this.BackaSearchButton.Text = "Back";
+            this.BackaSearchButton.UseVisualStyleBackColor = true;
+            this.BackaSearchButton.Click += new System.EventHandler(this.BackaSearchButton_Click);
             // 
             // FormMain
             // 
@@ -922,17 +1250,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1922, 1034);
-            this.Controls.Add(this.panelChangePass);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.linkLabelSearch);
             this.Controls.Add(this.panelSearch);
-            this.Controls.Add(this.panelProfile);
-            this.Controls.Add(this.panelShowMedia);
-            this.Controls.Add(this.panelAddMedia);
             this.Controls.Add(this.SearchBox);
             this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.ProfileButton);
             this.Controls.Add(this.panelPlayer);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelChangePass);
+            this.Controls.Add(this.panelProfile);
+            this.Controls.Add(this.panelShowMedia);
+            this.Controls.Add(this.panelAddMedia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.Text = "SpotfliX";
@@ -958,9 +1287,24 @@
             this.panelProfile.PerformLayout();
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.panelChangePass.ResumeLayout(false);
             this.panelChangePass.PerformLayout();
+            this.MediaMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResultGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1004,7 +1348,7 @@
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox aSearchBox;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1032,6 +1376,34 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox emailProfileBox;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.ContextMenuStrip MediaMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToQueueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem favoritesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decideForMeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goToToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem artistToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem albumToolStripMenuItem;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView ResultGrid;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button BackaSearchButton;
     }
 }

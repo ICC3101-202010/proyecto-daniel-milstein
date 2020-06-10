@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Proyecto
 {
@@ -10,13 +11,158 @@ namespace Proyecto
         {
         }
         
+
+        public DataGridView MediaView(List<Media> list)
+        {
+            DataGridView grid = new DataGridView();
+            grid.Rows.Clear();
+            int en = 0;
+            grid.Columns.Add("NameC", "Name");
+            grid.Columns.Add("ArtistC", "Artist");
+            grid.RowHeadersVisible = false;
+            foreach (Media item in list)
+            {
+                string name, artist;
+                name = item.GetMetadata().GetName();
+                artist = item.GetMetadata().GetArtist();
+                if (artist == null)
+                {
+                    artist = item.GetMetadata().GetDirector();
+                }
+
+
+                grid.Rows.Add(name, artist);
+                grid.Rows[en].HeaderCell.Value = item;
+                en++;
+            }
+            return grid;
+        }
+
+        public DataGridView UserView(List<User> list)
+        {
+            DataGridView grid = new DataGridView();
+            grid.Rows.Clear();
+            grid.Columns.Add("NameC", "Username");
+            grid.Columns.Add("Followers", "Name");
+            grid.Columns.Add("Following", "Name");
+            int en = 0;
+            foreach (User item in list)
+            {
+                string username, followers, following;
+                username = item.GetUsername();
+                followers = item.GetFollowers().Count.ToString();
+                following = item.GetFollowing().Count.ToString();
+                grid.Rows.Add(username, followers, following);
+                grid.Rows[en].HeaderCell.Value = item;
+                en++;
+            }
+
+
+
+
+
+            return grid;
+        }
+
+        public DataGridView ObjGrid(List<object> list)
+        {
+            DataGridView grid = new DataGridView();
+            grid.Rows.Clear();
+
+            int en = 0;
+
+            foreach (object ite in list)
+            {
+                if(ite.GetType() == typeof(User))
+                {
+                    User item = (User)ite;
+                    string username, followers, following;
+                    username = item.GetUsername();
+                    followers = item.GetFollowers().Count.ToString();
+                    following = item.GetFollowing().Count.ToString();
+                    grid.Rows.Add(username, followers, following);
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                }
+
+                else if (ite.GetType() == typeof(Media))
+                {
+                    Media item = (Media)ite;
+                    string name, artist;
+                    name = item.GetMetadata().GetName();
+                    artist = item.GetMetadata().GetArtist();
+                    if (artist == null)
+                    {
+                        artist = item.GetMetadata().GetDirector();
+                    }
+
+
+                    grid.Rows.Add(name, artist);
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                }
+
+                else if (ite.GetType() == typeof(Artist))
+                {
+                    Artist item = (Artist)ite;
+                    string name = item.GetName();
+                    grid.Rows.Add(name);
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+
+                }
+
+
+
+
+
+
+
+                
+            }
+
+
+
+
+
+            return grid;
+        }
+        public List<object> Search(string key)
+        {
+            List<object> SearchResults = new List<object>();
+            var a = Spotflix.GetMediaDB;
+            var b = Spotflix.GetPeopleDB;
+            var c = Spotflix.GetUserDB;
+            foreach (var item in a)
+            {
+                SearchResults.Add(item);
+            }
+            foreach (var item in b)
+            {
+                SearchResults.Add(item);
+            }
+            foreach (var item in c)
+            {
+                SearchResults.Add(item);
+            }
+            //Logica
+            //   ||
+            //   ||
+            //   || 
+            //   ||
+            return SearchResults;
+        }   //   ||
+        //       ||
+        //      \  /
+        //       \/
+
         //public List<Media> Search(string key)
         //{
         //    List<Media> SearchResults = new List<Media>();
 
         //    List<Media> SF = Spotflix.GetMediaDB;
-            
-            
+
+
 
         //    foreach(Media v in SF)
         //    {
@@ -64,7 +210,7 @@ namespace Proyecto
         //            }
         //        }
         //        catch { }
-                
+
         //        foreach (string i in Options2)
         //        {
         //            bool asd = i.Contains(key.ToLower());
@@ -74,11 +220,11 @@ namespace Proyecto
         //                {
         //                    SearchResults.Add(v);
         //                }
-                        
-                            
+
+
         //            }
-                    
-                    
+
+
         //        }
 
         //    }
@@ -91,9 +237,9 @@ namespace Proyecto
         //    {
         //        return SearchResults;
         //    }
-            
+
         //}
-        
+
     }
 
 }

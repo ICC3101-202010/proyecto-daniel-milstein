@@ -82,6 +82,7 @@
             // 
             // GoToRegButton
             // 
+            this.GoToRegButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.GoToRegButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoToRegButton.Location = new System.Drawing.Point(100, 240);
             this.GoToRegButton.Name = "GoToRegButton";
@@ -93,6 +94,7 @@
             // 
             // SignInButton
             // 
+            this.SignInButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.SignInButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignInButton.Location = new System.Drawing.Point(285, 240);
             this.SignInButton.Name = "SignInButton";

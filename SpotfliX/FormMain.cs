@@ -51,7 +51,8 @@ namespace SpotfliX
 
         private void SearchBox_Click(object sender, EventArgs e)
         {
-            SearchBox.Text = "";
+            System.Windows.Forms.TextBox tb = (System.Windows.Forms.TextBox)sender;
+            tb.Text = "";
         }
 
         private void FileButton_Click(object sender, EventArgs e)
@@ -204,7 +205,7 @@ namespace SpotfliX
                 
                 
                 MediaGrid.Rows.Add(name, artist);
-                MediaGrid.Rows[en].HeaderCell.Value = item.GetFileName();;
+                MediaGrid.Rows[en].HeaderCell.Value = item;
                 en++;
             }
             panelAdmin.Hide();
@@ -220,7 +221,8 @@ namespace SpotfliX
         private void MediaGrid_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //play media
-            string fname = MediaGrid.SelectedRows[0].HeaderCell.Value.ToString(); ;
+            Media file = (Media)MediaGrid.SelectedRows[0].HeaderCell.Value;
+            string fname = file.GetFileName();
             axWindowsMediaPlayer1.URL = fname;
             axWindowsMediaPlayer1.Ctlcontrols.play();
             axWindowsMediaPlayer1.windowlessVideo = true;
@@ -254,6 +256,50 @@ namespace SpotfliX
                 panelChangePass.Hide();
                 panelProfile.Show();
             }
+            else
+            {
+                
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelChangePass.Hide();
+            panelProfile.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Filter f = new Filter();
+            ResultGrid = f.ObjGrid(f.Search(aSearchBox.Text));
+        }
+
+        private void aSearchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aSearchBox_MouseLeave(object sender, EventArgs e)
+        {
+            if (aSearchBox.Text == "")
+            {
+                aSearchBox.Text = "Search";
+            }
+        }
+
+        private void SearchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackaSearchButton_Click(object sender, EventArgs e)
+        {
+            panelSearch.Hide();
         }
     }
 }
