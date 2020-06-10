@@ -52,6 +52,11 @@ namespace Proyecto
             return Password;
         }
 
+        public void SetPass(string newpass)
+        {
+            Password = newpass;
+        }
+
         public bool GetAdmin()
         {
             return Admin;

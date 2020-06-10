@@ -21,6 +21,7 @@ namespace SpotfliX
         public User ActiveUser;
         public string MediaType;
         public Dictionary<string, string> AddMediaMeta;
+        string NewPath;
         public FormMain()
         {
             
@@ -60,8 +61,9 @@ namespace SpotfliX
 
         private void AddMedia_Click(object sender, EventArgs e)
         {
-            string filename = openFileDialog1.FileName;
-            
+            string ofilename = openFileDialog1.FileName;
+            string filename = $"{NewPath}{Path.GetFileName(ofilename)}";
+            File.Copy(ofilename,filename , true);
             
             if (MediaType == "song")
             {
@@ -145,6 +147,7 @@ namespace SpotfliX
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             FileNameLabel.Text = openFileDialog1.FileName;
+            NewPath = Directory.GetCurrentDirectory() + "\\";
             //string path = $@"{openFileDialog1.FileName}";
             //MetaDataController m1 = new MetaDataController();
             //AddMediaMeta = m1.ReadMeta(path, MediaType);
@@ -226,6 +229,31 @@ namespace SpotfliX
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabelEditPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelChangePass.Show();
+        }
+
+        private void linkLabelSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panelSearch.Show();
+        }
+
+        private void linkLabelEditEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (OldpassBox.Text == ActiveUser.GetPassword() && Newpass1.Text == Newpass2.Text)
+            {
+                ActiveUser.SetPass(Newpass1.Text);
+                panelChangePass.Hide();
+                panelProfile.Show();
+            }
         }
     }
 }
