@@ -68,7 +68,7 @@ namespace Proyecto
             return null;
         }
 
-        public override string[] GetActors()
+        public override List<string> GetActors()
         {
             return null;
         }

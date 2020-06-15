@@ -11,7 +11,7 @@ namespace Proyecto
         private string Creator;
         private string Genre;
         private string Category;
-        private string[] Actors;
+        private List<string> Actors;
         private string Director;
         private string Studio;
         private int PubYear;
@@ -31,7 +31,13 @@ namespace Proyecto
             Resolution = resolution;
             AspectRatio = aspecRatio;
             PubYear = Convert.ToInt32(pubYear);
-            Actors = actors.Split(':');
+            Actors = new List<string>();
+            foreach (string item in actors.Split(','))
+            {
+                Actors.Add(item);
+            }
+
+            
             Director = director;
         }
 
@@ -42,7 +48,16 @@ namespace Proyecto
         public override string GetStudio() { return Studio; }
         public int GetPubYear() { return PubYear; }
         public string GetDescription() { return Description; }
-        public override string[] GetActors() { return Actors; }
+        public override List<string> GetActors() { return Actors; }
+        public List<string> Actors4Search()
+        {
+            List<string> ls = new List<string>();
+            foreach (string item in Actors)
+            {
+                ls.Add(item.Trim().ToLower());
+            }
+            return ls;
+        }
         public override string GetDirector() { return Director; }
         public string GetResolution() { return Resolution; }
         public string GetAspectRatio() { return AspectRatio; }

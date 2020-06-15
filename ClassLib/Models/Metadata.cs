@@ -19,6 +19,6 @@ namespace Proyecto
         public abstract string GetStudio();
         public abstract string GetArtist();
         public abstract string GetAlbum();
-        public abstract string[] GetActors();
+        public abstract List<string> GetActors();
     }
 }

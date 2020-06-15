@@ -111,6 +111,7 @@
             this.PassBox.PasswordChar = '•';
             this.PassBox.Size = new System.Drawing.Size(100, 22);
             this.PassBox.TabIndex = 3;
+            this.PassBox.Text = "admin";
             // 
             // UserBox
             // 
@@ -119,6 +120,7 @@
             this.UserBox.Name = "UserBox";
             this.UserBox.Size = new System.Drawing.Size(100, 22);
             this.UserBox.TabIndex = 2;
+            this.UserBox.Text = "admin";
             // 
             // PassLabel
             // 

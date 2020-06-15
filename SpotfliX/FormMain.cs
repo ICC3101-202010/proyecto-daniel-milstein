@@ -9,7 +9,6 @@ using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
 using Proyecto;
 
@@ -22,6 +21,12 @@ namespace SpotfliX
         public string MediaType;
         public Dictionary<string, string> AddMediaMeta;
         string NewPath;
+        public MediaController MediaControl = new MediaController();
+        public int SelectedRow;
+        public List<Type> SearchTypes = new List<Type>();
+
+
+
         public FormMain()
         {
             
@@ -166,7 +171,7 @@ namespace SpotfliX
 
         private void MetaGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //SelectedRow =  e.RowIndex;
         }
 
         private void SearchBox_Leave(object sender, EventArgs e)
@@ -224,11 +229,14 @@ namespace SpotfliX
         private void MediaGrid_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             //play media
-            Media file = (Media)MediaGrid.SelectedRows[0].HeaderCell.Value;
-            string fname = file.GetFileName();
-            axWindowsMediaPlayer1.URL = fname;
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-            axWindowsMediaPlayer1.windowlessVideo = true;
+            DataGridView grid = (DataGridView)sender;
+            if (SelectedRow != -1)
+            {
+                
+                Media file = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+                MediaControl.PlayMedia(file, axWindowsMediaPlayer1); 
+            }
+
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -281,7 +289,8 @@ namespace SpotfliX
         private void button1_Click(object sender, EventArgs e)
         {
             Filter f = new Filter();
-            ResultGrid = f.ObjGrid(f.Search(aSearchBox.Text));
+            
+            f.ObjGrid(f.Search(aSearchBox.Text.ToLower()), ResultGrid, SearchTypes);
         }
 
         private void aSearchBox_TextChanged(object sender, EventArgs e)
@@ -305,6 +314,8 @@ namespace SpotfliX
         private void BackaSearchButton_Click(object sender, EventArgs e)
         {
             panelSearch.Hide();
+            ResultGrid.Rows.Clear();
+            panelAdmin.Show();
         }
 
         private void BackProfileButton_Click(object sender, EventArgs e)
@@ -318,6 +329,116 @@ namespace SpotfliX
             //Pending
             panelProfile.Hide();
             panelAdmin.Show();
+        }
+
+        private void playToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
+            ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)menu.SourceControl; //csm
+            Media file = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+            MediaControl.PlayMedia(file, axWindowsMediaPlayer1);
+        }
+
+        private void MediaGrid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //Cambiar color
+        }
+
+        private void MediaGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            //No sirve
+            //int mouseLoc = MediaGrid.HitTest(e.X, e.Y).RowIndex;
+            //SelectedRow = mouseLoc;
+        }
+
+        private void MediaGrid_MouseClick(object sender, EventArgs e)
+        {
+            //Nada
+        }
+
+        private void MediaGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            /*
+            if (e.Button == MouseButtons.Right)
+            {
+                SelectedRow = e.RowIndex;
+            }*/
+            
+        }
+
+        private void MediaGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //if (e.Button == MouseButtons.Right)
+            //{
+                
+            //}
+            SelectedRow = e.RowIndex;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(Song));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(Song));
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(Video));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(Video));
+            }
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(Artist));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(Artist));
+            }
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(Album));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(Album));
+            }
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(User));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(User));
+            }
         }
     }
 }

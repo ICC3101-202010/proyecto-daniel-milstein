@@ -12,9 +12,9 @@ namespace Proyecto
         }
         
 
-        public DataGridView MediaView(List<Media> list)
+        public void MediaView(List<Media> list, DataGridView grid)
         {
-            DataGridView grid = new DataGridView();
+            
             grid.Rows.Clear();
             int en = 0;
             grid.Columns.Add("NameC", "Name");
@@ -35,12 +35,12 @@ namespace Proyecto
                 grid.Rows[en].HeaderCell.Value = item;
                 en++;
             }
-            return grid;
+            
         }
 
-        public DataGridView UserView(List<User> list)
+        public void UserView(List<User> list, DataGridView grid)
         {
-            DataGridView grid = new DataGridView();
+            
             grid.Rows.Clear();
             grid.Columns.Add("NameC", "Username");
             grid.Columns.Add("Followers", "Name");
@@ -61,63 +61,56 @@ namespace Proyecto
 
 
 
-            return grid;
         }
 
-        public DataGridView ObjGrid(List<object> list)
+        public void ObjGrid(List<object> list, DataGridView grid, List<Type> types) 
         {
-            DataGridView grid = new DataGridView();
+            
             grid.Rows.Clear();
-
+            grid.RowHeadersVisible = false;
+            grid.ForeColor = System.Drawing.Color.Black;
+            grid.Columns.Clear();
+            
             int en = 0;
             grid.Columns.Add("Name", "Name");
-            foreach (object ite in list)
-            {
-                if(ite.GetType() == typeof(User))
+                foreach (object ite in list)
                 {
-                    User item = (User)ite;
-                    string username, followers, following;
-                    username = item.GetUsername();
-                    followers = item.GetFollowers().Count.ToString();
-                    following = item.GetFollowing().Count.ToString();
-                    grid.Rows.Add(username, followers, following);
-                    grid.Rows[en].HeaderCell.Value = item;
-                    en++;
-                }
-
-                else if (ite.GetType() == typeof(Media))
-                {
-                    Media item = (Media)ite;
-                    string name, artist;
-                    name = item.GetMetadata().GetName();
-                    artist = item.GetMetadata().GetArtist();
-                    if (artist == null)
+                    if (ite.GetType() == typeof(User))
                     {
-                        artist = item.GetMetadata().GetDirector();
+                        User item = (User)ite;
+                        string username, followers, following;
+                        username = item.GetUsername();
+                        followers = item.GetFollowers().Count.ToString();
+                        following = item.GetFollowing().Count.ToString();
+                        grid.Rows.Add(username, followers, following);
+                        grid.Rows[en].HeaderCell.Value = item;
+                        en++;
                     }
 
+                    else if (ite.GetType() == typeof(Song))
+                    {
+                        Song item = (Song)ite;
+                        string name, artist;
+                        name = item.GetMetadata().GetName();
+                        artist = item.GetMetadata().GetArtist();
+                        if (artist == null)
+                        {
+                            artist = item.GetMetadata().GetDirector();
+                        }
+                        grid.Rows.Add(name, artist);
+                        grid.Rows[en].HeaderCell.Value = item;
+                        en++;
+                    }
 
-                    grid.Rows.Add(name, artist);
-                    grid.Rows[en].HeaderCell.Value = item;
-                    en++;
-                }
+                    else if (ite.GetType() == typeof(Artist))
+                    {
+                        Artist item = (Artist)ite;
+                        string name = item.GetName();
+                        grid.Rows.Add(name);
+                        grid.Rows[en].HeaderCell.Value = item;
+                        en++;
 
-                else if (ite.GetType() == typeof(Artist))
-                {
-                    Artist item = (Artist)ite;
-                    string name = item.GetName();
-                    grid.Rows.Add(name);
-                    grid.Rows[en].HeaderCell.Value = item;
-                    en++;
-
-                }
-
-
-
-
-
-
-
+                    }
                 
             }
 
@@ -125,36 +118,96 @@ namespace Proyecto
 
 
 
-            return grid;
         }
-        public List<object> Search(string key)
+        public (List<Media>, List<Artist>, List<User>) Search(string Hkey)
         {
-            List<object> SearchResults = new List<object>();
-            var a = Spotflix.GetMediaDB;
-            var b = Spotflix.GetPeopleDB;
-            var c = Spotflix.GetUserDB;
-            foreach (var item in a)
+            List<Media> Res1 = new List<Media>();
+            List<Artist> Res2 = new List<Artist>();
+            List<User> Res3 = new List<User>();
+
+            List<Media> a = Spotflix.GetMediaDB;
+            List<Artist> b = new List<Artist>();
+            List<User> c = new List<User>();
+            string key = Hkey.ToLower();
+
+
+
+            foreach (Artist item in Spotflix.GetPeopleDB.Values)
             {
-                SearchResults.Add(item);
+                b.Add(item);
             }
-            foreach (var item in b)
+            foreach (User item in Spotflix.GetUserDB.Values)
             {
-                SearchResults.Add(item);
+                c.Add(item);
             }
-            foreach (var item in c)
+
+            foreach  (Media media in a)
             {
-                SearchResults.Add(item);
+                if (media.GetType() == typeof(Song))
+                {
+                    SongMetadata meta = (SongMetadata)media.GetMetadata();
+                    bool IN, Year;
+                    IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
+                        || meta.GetGenre().Contains(key) || meta.GetLabel().Contains(key) || meta.GetLyrics().Contains(key);
+                    try
+                    {
+                        int year = Convert.ToInt32(key);
+                        Year = (meta.GetPublicationYear() == year);
+                    }
+                    catch (Exception)
+                    {
+                        Year = false;
+                    }
+
+
+                    if (IN || Year)
+                    {
+                        Res1.Add(media);
+                    }
+                    
+                }
+                else //video
+                {
+                    VideoMetadata meta = (VideoMetadata)media.GetMetadata();
+                    bool IN, Year;
+                    IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
+                        || meta.GetGenre().Contains(key) || meta.Actors4Search().Contains(key) || meta.GetAspectRatio().Contains(key)
+                        || meta.GetResolution().Contains(key) || meta.GetDirector().Contains(key) || meta.GetStudio().Contains(key)
+                        || meta.GetCategory().Contains(key) || meta.GetCreator().Contains(key);
+                    try
+                    {
+                        int year = Convert.ToInt32(key);
+                        Year = (meta.GetPubYear() == year);
+                    }
+                    catch (Exception)
+                    {
+                        Year = false;
+                    }
+
+
+                    if (IN || Year)
+                    {
+                        Res1.Add(media);
+                    }
+                }
             }
-            //Logica
-            //   ||
-            //   ||
-            //   || 
-            //   ||
+
+
+
+
+
+
+
+
+
+
+
+
+
+            (List<Media>, List<Artist>, List<User>) SearchResults = (Res1, Res2, Res3);
             return SearchResults;
-        }   //   ||
-        //       ||
-        //      \  /
-        //       \/
+        }
+
 
         //public List<Media> Search(string key)
         //{
