@@ -201,8 +201,7 @@ namespace SpotfliX
                     UserLogIn = true;
                 }
                 thisUser = Spotflix.GetUserDB[activeUser];
-                FormMain main = new FormMain();
-                main.ActiveUser = thisUser;
+                FormMain main = new FormMain(thisUser);
                 main.Show();
                 Hide();
             }
@@ -256,6 +255,16 @@ namespace SpotfliX
                 SamePass2Label.ForeColor = Color.Red;
             }
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

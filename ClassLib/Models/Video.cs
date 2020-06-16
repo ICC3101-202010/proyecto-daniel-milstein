@@ -30,7 +30,7 @@ namespace Proyecto
                 Spotflix.AddPerson(per);
 
             }
-            string[] actorList = vm.GetActors();
+            List<string> actorList = vm.GetActors();
             foreach (string act in actorList)
             {
                 Artist art;

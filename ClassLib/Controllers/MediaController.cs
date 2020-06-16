@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AxWMPLib;
 
 namespace Proyecto
@@ -12,7 +13,7 @@ namespace Proyecto
     
 
 
-        public void PlayMedia(Media media, AxWindowsMediaPlayer player)
+        public void PlayMedia(Media media, AxWindowsMediaPlayer player, Label nameLabel, Label artistLabel)
         {
             //play media
             // Media file = (Media)MediaGrid.SelectedRows[0].HeaderCell.Value;
@@ -20,6 +21,17 @@ namespace Proyecto
             player.URL = fname;
             player.Ctlcontrols.play();
             player.windowlessVideo = false;
+            nameLabel.Show();
+            artistLabel.Show();
+            nameLabel.Text = media.GetMetadata().GetName();
+            try
+            {
+                artistLabel.Text = media.GetMetadata().GetArtist();
+            }
+            catch (Exception)
+            {
+                artistLabel.Text = media.GetMetadata().GetDirector();
+            }
         } 
     
     }

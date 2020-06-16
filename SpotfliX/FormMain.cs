@@ -23,14 +23,23 @@ namespace SpotfliX
         string NewPath;
         public MediaController MediaControl = new MediaController();
         public int SelectedRow;
-        public List<Type> SearchTypes = new List<Type>();
+        public List<Type> SearchTypes = new List<Type>() { typeof(Song), typeof(Video), typeof(User), typeof(Artist), typeof(Playlist), typeof(Album) };
 
 
 
-        public FormMain()
+        public FormMain(User user)
         {
-            
+            ActiveUser = user;
             InitializeComponent();
+            if (ActiveUser.GetPremium())
+            {
+                DJButton.Show();
+            }
+            if (ActiveUser.GetAdmin())
+            {
+                AdminAddMedia.Show();
+                UsersButton.Show();
+            }
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)
@@ -60,7 +69,7 @@ namespace SpotfliX
         private void SearchBox_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox tb = (System.Windows.Forms.TextBox)sender;
-            tb.Text = "";
+            //tb.Text = ""; if empty
         }
 
         private void FileButton_Click(object sender, EventArgs e)
@@ -113,13 +122,13 @@ namespace SpotfliX
 
 
 
-                VideoMetadata meta = new VideoMetadata(name, creator, genre, category, studio, description, resolution, aspect, director, actors, pubYear);
+                VideoMetadata meta = new VideoMetadata(name, creator, genre, category, studio, description, 
+                    resolution, aspect, director, actors, pubYear);
                 Video video = new Video(filename, meta, format, duration);
             }
             Spotflix.Save("Spotflix.bin");
             panelAddMedia.Hide();
             MetaGrid.Rows.Clear();
-            panelAdmin.Show();
         }
 
         private void radioSong_CheckedChanged(object sender, EventArgs e)
@@ -185,13 +194,11 @@ namespace SpotfliX
         private void AdminAddMedia_Click(object sender, EventArgs e)
         {
             panelAddMedia.Show();
-            panelAdmin.Hide();
         }
 
         private void BackAddMedia_Click(object sender, EventArgs e)
         {
             panelAddMedia.Hide();
-            panelAdmin.Show();
             MetaGrid.Rows.Clear();
             radioSong.Checked = false;
             radioVideo.Checked = false;
@@ -216,14 +223,12 @@ namespace SpotfliX
                 MediaGrid.Rows[en].HeaderCell.Value = item;
                 en++;
             }
-            panelAdmin.Hide();
         }
 
         private void BackMediaButton_Click(object sender, EventArgs e)
         {
             panelShowMedia.Hide();
             MediaGrid.Rows.Clear();
-            panelAdmin.Show();
         }
 
         private void MediaGrid_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -232,9 +237,47 @@ namespace SpotfliX
             DataGridView grid = (DataGridView)sender;
             if (SelectedRow != -1)
             {
-                
-                Media file = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
-                MediaControl.PlayMedia(file, axWindowsMediaPlayer1); 
+                object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+                if (sel.GetType() == typeof(Song))
+                {
+                    Song file = (Song)sel;
+                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                }
+
+                else if (sel.GetType() == typeof(Video))
+                {
+                    Video file = (Video)sel;
+                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                }
+
+                else if (sel.GetType() == typeof(Artist))
+                {
+                    Artist file = (Artist)sel;
+                    panelArtist.Show();
+                    ArtistNameLabel.Text = file.GetName();
+                    FollowerQLabel.Text = file.GetFollowers().Count().ToString();
+                    JobsBox.Text = "";
+                    string jobs = "";
+                    foreach (string item in file.GetProfessions())
+                    {
+                        jobs += $"{item}, ";
+                    }
+                    string njobs = jobs.Substring(0, jobs.Length - 2);
+                    njobs += ".";
+                    JobsBox.Text = njobs;
+
+                    Filter f = new Filter();
+                    f.ObjGrid(f.CastToObj(file.GetWork()), ArtistMediaGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
+                    try
+                    {
+                        f.ObjGrid(f.CastToObj(file), ArtistAlbumGrid, new List<Type>() { typeof(Album) });
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                }
+
             }
 
         }
@@ -252,7 +295,6 @@ namespace SpotfliX
         private void linkLabelSearch_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             panelSearch.Show();
-            panelAdmin.Hide();
         }
 
         private void linkLabelEditEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -278,7 +320,6 @@ namespace SpotfliX
         private void button3_Click(object sender, EventArgs e)
         {
             panelChangePass.Hide();
-            panelProfile.Show();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -289,13 +330,17 @@ namespace SpotfliX
         private void button1_Click(object sender, EventArgs e)
         {
             Filter f = new Filter();
-            
-            f.ObjGrid(f.Search(aSearchBox.Text.ToLower()), ResultGrid, SearchTypes);
+            (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
+            List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
+            f.ObjGrid(res, ResultGrid, SearchTypes);
         }
 
         private void aSearchBox_TextChanged(object sender, EventArgs e)
         {
-
+            Filter f = new Filter();
+            (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
+            List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
+            f.ObjGrid(res, ResultGrid, SearchTypes);
         }
 
         private void aSearchBox_MouseLeave(object sender, EventArgs e)
@@ -315,20 +360,17 @@ namespace SpotfliX
         {
             panelSearch.Hide();
             ResultGrid.Rows.Clear();
-            panelAdmin.Show();
         }
 
         private void BackProfileButton_Click(object sender, EventArgs e)
         {
             panelProfile.Hide();
-            panelAdmin.Show();
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             //Pending
             panelProfile.Hide();
-            panelAdmin.Show();
         }
 
         private void playToolStripMenuItem_Click(object sender, EventArgs e)
@@ -336,8 +378,20 @@ namespace SpotfliX
             ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
             ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
             DataGridView grid = (DataGridView)menu.SourceControl; //csm
-            Media file = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
-            MediaControl.PlayMedia(file, axWindowsMediaPlayer1);
+
+            object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel.GetType() == typeof(Song))
+            {
+                Song file = (Song)sel;
+                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+            }
+
+            else if (sel.GetType() == typeof(Video))
+            {
+                Video file = (Video)sel;
+                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+            }
+
         }
 
         private void MediaGrid_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -439,6 +493,39 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(User));
             }
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox check = (CheckBox)sender;
+            if (check.Checked)
+            {
+                SearchTypes.Add(typeof(Playlist));
+            }
+            else
+            {
+                SearchTypes.Remove(typeof(Playlist));
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Artist art = Spotflix.GetPeopleDB[ArtistNameLabel.Text];
+            if (button6.Text == "Follow")
+            {
+                
+                ActiveUser.FollowArtist(art);
+                button6.Text = "Unfollow";
+                button6.BackColor = Color.CornflowerBlue;
+            }
+            else if(button6.Text == "Unfollow")
+            {
+                ActiveUser.UnfollowArtist(art);
+                button6.Text = "Follow";
+                button6.BackColor = Color.MidnightBlue;
+            }
+
+            FollowerQLabel.Text = art.GetFollowers().Count().ToString();
         }
     }
 }

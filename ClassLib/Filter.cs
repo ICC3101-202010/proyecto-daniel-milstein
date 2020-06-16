@@ -73,55 +73,64 @@ namespace Proyecto
             
             int en = 0;
             grid.Columns.Add("Name", "Name");
-                foreach (object ite in list)
+            grid.Columns.Add("Type", "Type");
+            foreach (object ite in list)
+            {
+                if (ite.GetType() == typeof(User) && types.Contains(typeof(User)))
                 {
-                    if (ite.GetType() == typeof(User))
-                    {
-                        User item = (User)ite;
-                        string username, followers, following;
-                        username = item.GetUsername();
-                        followers = item.GetFollowers().Count.ToString();
-                        following = item.GetFollowing().Count.ToString();
-                        grid.Rows.Add(username, followers, following);
-                        grid.Rows[en].HeaderCell.Value = item;
-                        en++;
-                    }
+                    User item = (User)ite;
+                    string username, followers, following;
+                    username = item.GetUsername();
+                    followers = item.GetFollowers().Count.ToString();
+                    following = item.GetFollowing().Count.ToString();
+                    grid.Rows.Add(username, "User");
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                }
 
-                    else if (ite.GetType() == typeof(Song))
-                    {
-                        Song item = (Song)ite;
-                        string name, artist;
-                        name = item.GetMetadata().GetName();
-                        artist = item.GetMetadata().GetArtist();
-                        if (artist == null)
-                        {
-                            artist = item.GetMetadata().GetDirector();
-                        }
-                        grid.Rows.Add(name, artist);
-                        grid.Rows[en].HeaderCell.Value = item;
-                        en++;
-                    }
-
-                    else if (ite.GetType() == typeof(Artist))
-                    {
-                        Artist item = (Artist)ite;
-                        string name = item.GetName();
-                        grid.Rows.Add(name);
-                        grid.Rows[en].HeaderCell.Value = item;
-                        en++;
-
-                    }
-
-                else if (ite.GetType() == typeof(Playlist))
+                else if (ite.GetType() == typeof(Song) && types.Contains(typeof(Song)))
                 {
-                    Playlist item = (Playlist)ite;
+                    Song item = (Song)ite;
+                    string name, artist;
+                    name = item.GetMetadata().GetName();
+                    artist = item.GetMetadata().GetArtist();
+                    if (artist == null)
+                    {
+                        artist = item.GetMetadata().GetDirector();
+                    }
+                    grid.Rows.Add(name, "Song");
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                }
+
+                else if (ite.GetType() == typeof(Artist) && types.Contains(typeof(Artist)))
+                {
+                    Artist item = (Artist)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name);
+                    grid.Rows.Add(name, "Artist");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
                 }
 
+                else if (ite.GetType() == typeof(Playlist) && types.Contains(typeof(Playlist)))
+                {
+                    Playlist item = (Playlist)ite;
+                    string name = item.GetName();
+                    grid.Rows.Add(name, "Playlist");
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+
+                }
+                else if (ite.GetType() == typeof(Album) && types.Contains(typeof(Album)))
+                {
+                    Album item = (Album)ite;
+                    string name = item.GetName();
+                    grid.Rows.Add(name, "Album");
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+
+                }
             }
 
 
@@ -129,17 +138,19 @@ namespace Proyecto
 
 
         }
-        public (List<Media>, List<Artist>, List<User>, List<Playlist>) Search(string Hkey)
+        public (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Search(string Hkey)
         {
             List<Media> Res1 = new List<Media>();
             List<Artist> Res2 = new List<Artist>();
             List<User> Res3 = new List<User>();
             List<Playlist> Res4 = new List<Playlist>();
+            List<Album> Res5 = new List<Album>();
 
             List<Media> a = Spotflix.GetMediaDB;
             List<Artist> b = new List<Artist>();
             List<User> c = new List<User>();
             List<Playlist> d = new List<Playlist>();
+            List<Album> e = new List<Album>();
 
             string key = Hkey.ToLower();
 
@@ -148,6 +159,10 @@ namespace Proyecto
             foreach (Artist item in Spotflix.GetPeopleDB.Values)
             {
                 b.Add(item);
+                foreach (Album al in item.GetAlbums().Values)
+                {
+                    e.Add(al);
+                }
             }
             foreach (User item in Spotflix.GetUserDB.Values)
             {
@@ -164,11 +179,17 @@ namespace Proyecto
                 {
                     SongMetadata meta = (SongMetadata)media.GetMetadata();
                     bool IN, Year, rIN;
-                    IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
-                        || meta.GetGenre().Contains(key) || meta.GetLabel().Contains(key) || meta.GetLyrics().Contains(key);
-
-                    rIN = key.Contains(meta.GetName()) || key.Contains(meta.GetArtist()) || key.Contains(meta.GetAlbum()) ||
-                        key.Contains(meta.GetGenre()) || key.Contains(meta.GetLabel()) || key.Contains(meta.GetLyrics());
+                    IN = meta.GetName().ToLower().Contains(key) || meta.GetArtist().ToLower().Contains(key) || meta.GetAlbum().ToLower().Contains(key)
+                        || meta.GetGenre().ToLower().Contains(key) || meta.GetLabel().ToLower().Contains(key);
+                    if (key != "")
+                    {
+                        rIN = key.Contains(meta.GetName().ToLower()) || key.Contains(meta.GetArtist().ToLower()) || key.Contains(meta.GetAlbum().ToLower()) ||
+                            key.Contains(meta.GetGenre().ToLower()) || key.Contains(meta.GetLabel().ToLower());
+                    }
+                    else
+                    {
+                        rIN = false;
+                    }
                     string year = meta.GetPublicationYear().ToString();
                     Year = (year.Contains(key)||key.Contains(year));
 
@@ -183,15 +204,15 @@ namespace Proyecto
                 {
                     VideoMetadata meta = (VideoMetadata)media.GetMetadata();
                     bool IN, Year, rIN;
-                    IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
-                        || meta.GetGenre().Contains(key) || meta.Actors4Search().Contains(key) || meta.GetAspectRatio().Contains(key)
-                        || meta.GetResolution().Contains(key) || meta.GetDirector().Contains(key) || meta.GetStudio().Contains(key)
-                        || meta.GetCategory().Contains(key) || meta.GetCreator().Contains(key);
+                    IN = meta.GetName().ToLower().Contains(key) || meta.GetArtist().ToLower().Contains(key) || meta.GetAlbum().ToLower().Contains(key)
+                        || meta.GetGenre().ToLower().Contains(key) || meta.Actors4Search().Contains(key) || meta.GetAspectRatio().ToLower().Contains(key)
+                        || meta.GetResolution().ToLower().Contains(key) || meta.GetDirector().ToLower().Contains(key) || meta.GetStudio().ToLower().Contains(key)
+                        || meta.GetCategory().ToLower().Contains(key) || meta.GetCreator().ToLower().Contains(key);
                     
-                    rIN = key.Contains(meta.GetName()) || key.Contains(meta.GetArtist()) || key.Contains(meta.GetAlbum()) ||
-                        key.Contains(meta.GetGenre()) || key.Contains(meta.GetAspectRatio()) || key.Contains(meta.GetCategory())
-                         || key.Contains(meta.GetResolution()) || key.Contains(meta.GetDirector()) || key.Contains(meta.GetStudio())
-                          || key.Contains(meta.GetCreator());
+                    rIN = key.Contains(meta.GetName().ToLower()) || key.Contains(meta.GetArtist().ToLower()) || key.Contains(meta.GetAlbum().ToLower()) ||
+                        key.Contains(meta.GetGenre().ToLower()) || key.Contains(meta.GetAspectRatio().ToLower()) || key.Contains(meta.GetCategory().ToLower())
+                         || key.Contains(meta.GetResolution().ToLower()) || key.Contains(meta.GetDirector().ToLower()) || key.Contains(meta.GetStudio().ToLower())
+                          || key.Contains(meta.GetCreator().ToLower());
 
 
                     string year = meta.GetPubYear().ToString();
@@ -207,15 +228,29 @@ namespace Proyecto
 
             foreach (Artist item in b)
             {
-                if (item.GetName().Contains(key) || key.Contains(item.GetName()))
+                if (item.GetName().ToLower().Contains(key) || key.Contains(item.GetName().ToLower()))
                 {
                     Res2.Add(item);
+                }
+                foreach (Album al in e)
+                {
+                    if (al.GetName().ToLower().Contains(key))
+                    {
+                        Res5.Add(al);
+                    }
+                    foreach (Media m in al.GetSongs())
+                    {
+                        if (Res1.Contains(m) && !Res5.Contains(al))
+                        {
+                            Res5.Add(al);
+                        }
+                    }
                 }
             }
 
             foreach (User item in c)
             {
-                if (item.GetUsername().Contains(key) || key.Contains(item.GetUsername()))
+                if (item.GetUsername().ToLower().Contains(key) || key.Contains(item.GetUsername().ToLower()))
                 {
                     Res3.Add(item);
                 }
@@ -223,7 +258,7 @@ namespace Proyecto
 
             foreach (Playlist item in d)
             {
-                if (item.GetName().Contains(key) || key.Contains(item.GetName()) && !item.GetPrivate() )
+                if (item.GetName().ToLower().Contains(key) || key.Contains(item.GetName().ToLower()) && !item.GetPrivate() )
                 {
                     Res4.Add(item);
                 }
@@ -243,95 +278,67 @@ namespace Proyecto
 
 
 
-            (List<Media>, List<Artist>, List<User>, List<Playlist>) SearchResults = (Res1, Res2, Res3, Res4);
+            (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) SearchResults = (Res1, Res2, Res3, Res4, Res5);
             return SearchResults;
         }
 
 
-        //public List<Media> Search(string key)
-        //{
-        //    List<Media> SearchResults = new List<Media>();
 
-        //    List<Media> SF = Spotflix.GetMediaDB;
+        public List<object> CastToObj(List<Media> a, List<Artist> b, List<User> c, List<Playlist> d, List<Album> e)
+        {
+            List<object> result = new List<object>();
 
+            foreach (Media item in a)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            foreach (Artist item in b)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            foreach (User item in c)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            foreach (Playlist item in d)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            foreach (Album item in e)
+            {
+                object r = item;
+                result.Add(r);
+            }
 
+            return result;
+        }
+        public List<object> CastToObj(List<Media> a)
+        {
+            List<object> result = new List<object>();
 
-        //    foreach(Media v in SF)
-        //    {
-        //        List<string> Options2 = new List<string>();
-        //        string o1, o2, o3, o4, o5, o6, o7, o8;
-        //        o1 = o2 = o3 = o4 = o5 = o6 = o7 = o8 = "";
+            foreach (Media item in a)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
 
-        //        try
-        //        {
+        public List<object> CastToObj(Artist a)
+        {
+            List<object> result = new List<object>();
 
-        //            o1 = v.GetMetadata().GetName().ToLower();
-        //        }
-        //        catch { }
-        //        try
-        //        {
-        //            o2 = v.GetMetadata().GetCreator().ToLower();
-        //        }
-        //        catch { }
-        //        try { o3 = v.GetMetadata().GetGenre().ToLower(); }
-        //        catch { }
-        //        try { o4 = v.GetMetadata().GetCategory().ToLower(); }
-        //        catch { }
-        //        try { o5 = v.GetMetadata().GetDirector().GetName().ToLower(); }
-        //        catch { }
-        //        try { o6 = v.GetMetadata().GetStudio().ToLower(); }
-        //        catch { }
-        //        try { o7 = v.GetMetadata().GetArtist().GetName().ToLower(); }
-        //        catch { }
-        //        try { o8 = v.GetMetadata().GetAlbum().GetName().ToLower(); }
-        //        catch { }
-
-        //        Options2.Add(o1);
-        //        Options2.Add(o2);
-        //        Options2.Add(o3);
-        //        Options2.Add(o4);
-        //        Options2.Add(o5);
-        //        Options2.Add(o6);
-        //        Options2.Add(o7);
-        //        Options2.Add(o8);
-        //        try
-        //        {
-        //            foreach (Artist actor in v.GetMetadata().GetActors())
-        //            {
-        //                Options2.Add(actor.GetName());
-        //            }
-        //        }
-        //        catch { }
-
-        //        foreach (string i in Options2)
-        //        {
-        //            bool asd = i.Contains(key.ToLower());
-        //            if (asd == true)
-        //            {
-        //                if (SearchResults.Contains(v) == false)
-        //                {
-        //                    SearchResults.Add(v);
-        //                }
-
-
-        //            }
-
-
-        //        }
-
-        //    }
-        //    if (SearchResults.Count == 0)
-        //    {
-        //        Console.WriteLine("Your search has returned no results");
-        //        return SearchResults;
-        //    }
-        //    else
-        //    {
-        //        return SearchResults;
-        //    }
-
-        //}
-
+            foreach (Album item in a.GetAlbums().Values)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
     }
 
 }
