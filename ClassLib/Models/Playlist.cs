@@ -34,5 +34,7 @@ namespace Proyecto
         {
             return PList;
         }
+
+        public bool GetPrivate() { return PrivateList; }
     }
 }

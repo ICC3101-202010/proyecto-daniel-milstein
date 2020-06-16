@@ -111,7 +111,17 @@ namespace Proyecto
                         en++;
 
                     }
-                
+
+                else if (ite.GetType() == typeof(Playlist))
+                {
+                    Playlist item = (Playlist)ite;
+                    string name = item.GetName();
+                    grid.Rows.Add(name);
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+
+                }
+
             }
 
 
@@ -119,15 +129,18 @@ namespace Proyecto
 
 
         }
-        public (List<Media>, List<Artist>, List<User>) Search(string Hkey)
+        public (List<Media>, List<Artist>, List<User>, List<Playlist>) Search(string Hkey)
         {
             List<Media> Res1 = new List<Media>();
             List<Artist> Res2 = new List<Artist>();
             List<User> Res3 = new List<User>();
+            List<Playlist> Res4 = new List<Playlist>();
 
             List<Media> a = Spotflix.GetMediaDB;
             List<Artist> b = new List<Artist>();
             List<User> c = new List<User>();
+            List<Playlist> d = new List<Playlist>();
+
             string key = Hkey.ToLower();
 
 
@@ -139,6 +152,10 @@ namespace Proyecto
             foreach (User item in Spotflix.GetUserDB.Values)
             {
                 c.Add(item);
+                foreach  (Playlist pl in item.GetPlaylist())
+                {
+                    d.Add(pl);
+                }
             }
 
             foreach  (Media media in a)
@@ -146,21 +163,17 @@ namespace Proyecto
                 if (media.GetType() == typeof(Song))
                 {
                     SongMetadata meta = (SongMetadata)media.GetMetadata();
-                    bool IN, Year;
+                    bool IN, Year, rIN;
                     IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
                         || meta.GetGenre().Contains(key) || meta.GetLabel().Contains(key) || meta.GetLyrics().Contains(key);
-                    try
-                    {
-                        int year = Convert.ToInt32(key);
-                        Year = (meta.GetPublicationYear() == year);
-                    }
-                    catch (Exception)
-                    {
-                        Year = false;
-                    }
+
+                    rIN = key.Contains(meta.GetName()) || key.Contains(meta.GetArtist()) || key.Contains(meta.GetAlbum()) ||
+                        key.Contains(meta.GetGenre()) || key.Contains(meta.GetLabel()) || key.Contains(meta.GetLyrics());
+                    string year = meta.GetPublicationYear().ToString();
+                    Year = (year.Contains(key)||key.Contains(year));
 
 
-                    if (IN || Year)
+                    if (IN || Year || rIN)
                     {
                         Res1.Add(media);
                     }
@@ -169,25 +182,56 @@ namespace Proyecto
                 else //video
                 {
                     VideoMetadata meta = (VideoMetadata)media.GetMetadata();
-                    bool IN, Year;
+                    bool IN, Year, rIN;
                     IN = meta.GetName().Contains(key) || meta.GetArtist().Contains(key) || meta.GetAlbum().Contains(key)
                         || meta.GetGenre().Contains(key) || meta.Actors4Search().Contains(key) || meta.GetAspectRatio().Contains(key)
                         || meta.GetResolution().Contains(key) || meta.GetDirector().Contains(key) || meta.GetStudio().Contains(key)
                         || meta.GetCategory().Contains(key) || meta.GetCreator().Contains(key);
-                    try
-                    {
-                        int year = Convert.ToInt32(key);
-                        Year = (meta.GetPubYear() == year);
-                    }
-                    catch (Exception)
-                    {
-                        Year = false;
-                    }
+                    
+                    rIN = key.Contains(meta.GetName()) || key.Contains(meta.GetArtist()) || key.Contains(meta.GetAlbum()) ||
+                        key.Contains(meta.GetGenre()) || key.Contains(meta.GetAspectRatio()) || key.Contains(meta.GetCategory())
+                         || key.Contains(meta.GetResolution()) || key.Contains(meta.GetDirector()) || key.Contains(meta.GetStudio())
+                          || key.Contains(meta.GetCreator());
 
 
-                    if (IN || Year)
+                    string year = meta.GetPubYear().ToString();
+                    Year = (year.Contains(key) || key.Contains(year));
+
+
+                    if (IN || Year || rIN)
                     {
                         Res1.Add(media);
+                    }
+                }
+            }
+
+            foreach (Artist item in b)
+            {
+                if (item.GetName().Contains(key) || key.Contains(item.GetName()))
+                {
+                    Res2.Add(item);
+                }
+            }
+
+            foreach (User item in c)
+            {
+                if (item.GetUsername().Contains(key) || key.Contains(item.GetUsername()))
+                {
+                    Res3.Add(item);
+                }
+            }
+
+            foreach (Playlist item in d)
+            {
+                if (item.GetName().Contains(key) || key.Contains(item.GetName()) && !item.GetPrivate() )
+                {
+                    Res4.Add(item);
+                }
+                foreach  (Media m in item.GetList())
+                {
+                    if (Res1.Contains(m) && !Res4.Contains(item))
+                    {
+                        Res4.Add(item);
                     }
                 }
             }
@@ -199,12 +243,7 @@ namespace Proyecto
 
 
 
-
-
-
-
-
-            (List<Media>, List<Artist>, List<User>) SearchResults = (Res1, Res2, Res3);
+            (List<Media>, List<Artist>, List<User>, List<Playlist>) SearchResults = (Res1, Res2, Res3, Res4);
             return SearchResults;
         }
 

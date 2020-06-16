@@ -71,7 +71,7 @@
     <Compile Include="Filter.cs" />
     <Compile Include="Models\Media.cs" />
     <Compile Include="Models\Metadata.cs" />
-    <Compile Include="Playlist.cs" />
+    <Compile Include="Models\Playlist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\RegexUtilities.cs" />
     <Compile Include="Models\Song.cs" />
