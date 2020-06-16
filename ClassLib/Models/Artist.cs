@@ -68,6 +68,12 @@ namespace Proyecto
             return Work;
         }
 
+        public void SetWork(List<Media> work)
+        {
+            Work = work;
+        }
+
+
         public List<User> GetFollowers()
         {
             return Followers;

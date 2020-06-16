@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace Proyecto
 {
@@ -33,6 +34,11 @@ namespace Proyecto
         }
 
         public List<Song> GetSongs() { return SongList; }
+
+        public void SetSongs(List<Song> songs)
+        {
+            SongList = songs;
+        }
 
         public Artist GetArtist() { return Artist; }
     }

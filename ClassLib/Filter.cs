@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Proyecto
@@ -204,12 +205,12 @@ namespace Proyecto
                 {
                     VideoMetadata meta = (VideoMetadata)media.GetMetadata();
                     bool IN, Year, rIN;
-                    IN = meta.GetName().ToLower().Contains(key) || meta.GetArtist().ToLower().Contains(key) || meta.GetAlbum().ToLower().Contains(key)
+                    IN = meta.GetName().ToLower().Contains(key) 
                         || meta.GetGenre().ToLower().Contains(key) || meta.Actors4Search().Contains(key) || meta.GetAspectRatio().ToLower().Contains(key)
                         || meta.GetResolution().ToLower().Contains(key) || meta.GetDirector().ToLower().Contains(key) || meta.GetStudio().ToLower().Contains(key)
                         || meta.GetCategory().ToLower().Contains(key) || meta.GetCreator().ToLower().Contains(key);
                     
-                    rIN = key.Contains(meta.GetName().ToLower()) || key.Contains(meta.GetArtist().ToLower()) || key.Contains(meta.GetAlbum().ToLower()) ||
+                    rIN = key.Contains(meta.GetName().ToLower()) || 
                         key.Contains(meta.GetGenre().ToLower()) || key.Contains(meta.GetAspectRatio().ToLower()) || key.Contains(meta.GetCategory().ToLower())
                          || key.Contains(meta.GetResolution().ToLower()) || key.Contains(meta.GetDirector().ToLower()) || key.Contains(meta.GetStudio().ToLower())
                           || key.Contains(meta.GetCreator().ToLower());
@@ -313,8 +314,10 @@ namespace Proyecto
                 object r = item;
                 result.Add(r);
             }
+            HashSet<object> results = new HashSet<object>(result);
 
-            return result;
+
+            return results.ToList();
         }
         public List<object> CastToObj(List<Media> a)
         {

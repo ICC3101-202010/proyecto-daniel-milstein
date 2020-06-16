@@ -158,14 +158,7 @@ namespace Proyecto
             
         }
 
-        public void UnfollowArtist(Artist follow)
-        {
-            if (Following.Contains(follow))
-            {
-                Following.Remove(follow);
-                follow.AddFollower(this);
-            }
-        }
+        
 
 
         

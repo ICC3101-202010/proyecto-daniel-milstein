@@ -28,4 +28,29 @@
         {
             Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite                );            IFormatter formatter = new BinaryFormatter();
             formatter.Serialize(stream, users);            formatter.Serialize(stream, MediaDB);            formatter.Serialize(stream, PeopleDB);            stream.Close();
-        }        public static void Save(string name, Dictionary<string, Artist> artists)        {            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);            IFormatter formatter = new BinaryFormatter();            formatter.Serialize(stream, UserDB);            formatter.Serialize(stream, MediaDB);            formatter.Serialize(stream, artists);            stream.Close();        }    }}
+        }        public static void Save(string name, Dictionary<string, Artist> artists)        {            Stream stream = new FileStream(name, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);            IFormatter formatter = new BinaryFormatter();            formatter.Serialize(stream, UserDB);            formatter.Serialize(stream, MediaDB);            formatter.Serialize(stream, artists);            stream.Close();        }        public static void DeleteMedia(Song s)
+        {
+            MediaDB.Remove(s);
+            Artist a = PeopleDB[s.GetMetadata().GetArtist()];
+            List<Media> l = a.GetWork();
+            l.Remove(s);
+            a.SetWork(l);
+            Album al = a.GetAlbums()[s.GetMetadata().GetAlbum()];
+            List<Song> sl = al.GetSongs();
+            sl.Remove(s);
+            al.SetSongs(sl);
+        }        public static void DeleteMedia(Video v)
+        {
+            MediaDB.Remove(v);
+            Artist a = PeopleDB[v.GetMetadata().GetDirector()];
+            List<Media> l = a.GetWork();
+            l.Remove(v);
+            a.SetWork(l);
+            foreach (string item in v.GetMetadata().GetActors())
+            {
+                a = PeopleDB[item];
+                l = a.GetWork();
+                l.Remove(v);
+                a.SetWork(l);
+            }
+        }    }}

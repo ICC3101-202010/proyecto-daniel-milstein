@@ -24,14 +24,16 @@ namespace Proyecto
             nameLabel.Show();
             artistLabel.Show();
             nameLabel.Text = media.GetMetadata().GetName();
-            try
+            string artist = media.GetMetadata().GetArtist();
+            if (artist == null)
             {
-                artistLabel.Text = media.GetMetadata().GetArtist();
+                artist = media.GetMetadata().GetCreator();
+                
             }
-            catch (Exception)
-            {
-                artistLabel.Text = media.GetMetadata().GetDirector();
-            }
+
+            artistLabel.Text = artist;
+
+            
         } 
     
     }

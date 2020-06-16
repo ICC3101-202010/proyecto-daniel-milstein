@@ -205,20 +205,31 @@ namespace SpotfliX
 
         private void ShowMediaButton_Click(object sender, EventArgs e)
         {
-            MediaGrid.Rows.Clear();
-            panelShowMedia.Show();
-            List<Media> every = Spotflix.GetMediaDB;
-            int en = 0;
-            foreach  (Media item in every)
+
+            if (!panelShowMedia.Visible)
             {
-                string name, artist;
-                name = item.GetMetadata().GetName();
-                artist = item.GetMetadata().GetArtist();
-                
-                
-                MediaGrid.Rows.Add(name, artist);
-                MediaGrid.Rows[en].HeaderCell.Value = item;
-                en++;
+                MediaGrid.Rows.Clear();
+                panelShowMedia.Show();
+                List<Media> every = Spotflix.GetMediaDB;
+                int en = 0;
+                foreach (Media item in every)
+                {
+                    string name, artist;
+                    name = item.GetMetadata().GetName();
+                    artist = item.GetMetadata().GetArtist();
+                    if (artist == null)
+                    {
+                        artist = item.GetMetadata().GetCreator();
+                    }
+
+                    MediaGrid.Rows.Add(name, artist);
+                    MediaGrid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                } 
+            }
+            else
+            {
+                panelShowMedia.Hide();
             }
         }
 
@@ -278,6 +289,14 @@ namespace SpotfliX
                         button6.Text = "Unfollow";
                         button6.BackColor = Color.CornflowerBlue;
                     }
+
+                }
+                else if (true)
+                {
+
+                }
+                else if (true)
+                {
 
                 }
 
@@ -516,7 +535,7 @@ namespace SpotfliX
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e) //FollowButton
         {
             Artist art = Spotflix.GetPeopleDB[ArtistNameLabel.Text];
             if (button6.Text == "Follow")
@@ -539,6 +558,28 @@ namespace SpotfliX
         private void button4_Click(object sender, EventArgs e)
         {
             panelSearch.Show();
+        }
+
+        private void mediaToolStripMenuItem_Click(object sender, EventArgs e) //DeleteMediaMenuItem
+        {
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu menudrop = (ToolStripDropDownMenu)menuItem.Owner;
+            ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)menu.SourceControl; //csm
+
+            object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel.GetType() == typeof(Song))
+            {
+                Song file = (Song)sel;
+                Spotflix.DeleteMedia(file);
+
+            }
+
+            else if (sel.GetType() == typeof(Video))
+            {
+                Video file = (Video)sel;
+                Spotflix.DeleteMedia(file);
+            }
         }
     }
 }
