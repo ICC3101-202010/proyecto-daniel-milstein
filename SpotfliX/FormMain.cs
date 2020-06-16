@@ -68,8 +68,8 @@ namespace SpotfliX
 
         private void SearchBox_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.TextBox tb = (System.Windows.Forms.TextBox)sender;
-            //tb.Text = ""; if empty
+            TextBox tb = (TextBox)sender;
+            tb.Text = "";
         }
 
         private void FileButton_Click(object sender, EventArgs e)
@@ -185,10 +185,7 @@ namespace SpotfliX
 
         private void SearchBox_Leave(object sender, EventArgs e)
         {
-            if (SearchBox.Text == "")
-            {
-                SearchBox.Text = "Search";
-            }
+            
         }
 
         private void AdminAddMedia_Click(object sender, EventArgs e)
@@ -275,6 +272,12 @@ namespace SpotfliX
                     catch (Exception)
                     {
                     }
+                    if (file.GetFollowers().Contains(ActiveUser))
+                    {
+                        //Boton unfollow
+                        button6.Text = "Unfollow";
+                        button6.BackColor = Color.CornflowerBlue;
+                    }
 
                 }
 
@@ -337,10 +340,15 @@ namespace SpotfliX
 
         private void aSearchBox_TextChanged(object sender, EventArgs e)
         {
-            Filter f = new Filter();
-            (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
-            List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
-            f.ObjGrid(res, ResultGrid, SearchTypes);
+            TextBox txt = (TextBox)sender;
+            if(txt.Text != "")
+            {
+                Filter f = new Filter();
+                (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
+                List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
+                f.ObjGrid(res, ResultGrid, SearchTypes);
+            }
+            
         }
 
         private void aSearchBox_MouseLeave(object sender, EventArgs e)
@@ -520,12 +528,17 @@ namespace SpotfliX
             }
             else if(button6.Text == "Unfollow")
             {
-                ActiveUser.UnfollowArtist(art);
+                ActiveUser.FollowArtist(art);
                 button6.Text = "Follow";
                 button6.BackColor = Color.MidnightBlue;
             }
 
             FollowerQLabel.Text = art.GetFollowers().Count().ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelSearch.Show();
         }
     }
 }

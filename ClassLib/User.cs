@@ -145,8 +145,17 @@ namespace Proyecto
 
         public void FollowArtist(Artist follow)
         {
-            Following.Add(follow);
-            follow.AddFollower(this);
+            if (Following.Contains(follow))
+            {
+                Following.Remove(follow);
+                follow.AddFollower(this);
+            }
+            else
+            {
+                Following.Add(follow);
+                follow.AddFollower(this);
+            }
+            
         }
 
         public void UnfollowArtist(Artist follow)
