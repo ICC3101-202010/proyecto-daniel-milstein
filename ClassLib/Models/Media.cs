@@ -43,7 +43,7 @@ namespace Proyecto
 
         public void Viewed()
         {
-            //Event con play
+            Views++;
         }
 
         public abstract Metadata GetMetadata();

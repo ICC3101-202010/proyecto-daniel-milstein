@@ -11,7 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto;
-
+using WMPLib;
+using AxWMPLib;
 
 namespace SpotfliX
 {
@@ -24,7 +25,7 @@ namespace SpotfliX
         public MediaController MediaControl = new MediaController();
         public int SelectedRow;
         public List<Type> SearchTypes = new List<Type>() { typeof(Song), typeof(Video), typeof(User), typeof(Artist), typeof(Playlist), typeof(Album) };
-
+        public Media ActiveMedia;
 
 
         public FormMain(User user)
@@ -250,12 +251,14 @@ namespace SpotfliX
                 {
                     Song file = (Song)sel;
                     MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                    ActiveMedia = file;
                 }
 
                 else if (sel.GetType() == typeof(Video))
                 {
                     Video file = (Video)sel;
                     MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                    ActiveMedia = file;
                 }
 
                 else if (sel.GetType() == typeof(Artist))
@@ -411,12 +414,14 @@ namespace SpotfliX
             {
                 Song file = (Song)sel;
                 MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                ActiveMedia = file;
             }
 
             else if (sel.GetType() == typeof(Video))
             {
                 Video file = (Video)sel;
                 MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                ActiveMedia = file;
             }
 
         }
@@ -562,16 +567,19 @@ namespace SpotfliX
 
         private void mediaToolStripMenuItem_Click(object sender, EventArgs e) //DeleteMediaMenuItem
         {
-            ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
-            ToolStripDropDownMenu menudrop = (ToolStripDropDownMenu)menuItem.Owner;
-            ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
-            DataGridView grid = (DataGridView)menu.SourceControl; //csm
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
 
             object sel = grid.Rows[SelectedRow].HeaderCell.Value;
             if (sel.GetType() == typeof(Song))
             {
                 Song file = (Song)sel;
                 Spotflix.DeleteMedia(file);
+
 
             }
 
@@ -580,6 +588,58 @@ namespace SpotfliX
                 Video file = (Video)sel;
                 Spotflix.DeleteMedia(file);
             }
+        }
+
+        private void queueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+            //IWMPMedia mediaF = axWindowsMediaPlayer1.newMedia(media.GetFileName());
+            //axWindowsMediaPlayer1.currentPlaylist.appendItem(mediaF);
+            ActiveUser.AddToQueue(media);
+
+        }
+
+        private void axWindowsMediaPlayer1_MediaChange(object sender, _WMPOCXEvents_MediaChangeEvent e)
+        {
+            //AxWindowsMediaPlayer wmp = (AxWindowsMediaPlayer)sender;
+
+            //if (ActiveUser.GetQueue().Count() != 0)
+            //{
+            //    ActiveMedia = ActiveUser.GetQueue().Dequeue();
+            //}            
+            //Media media = Spotflix.FindMedia(ActiveMedia.GetFileName());
+            //MediaControl.PlayMedia(media, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+            //string mediaName = media.GetMetadata().GetName();
+            //string creator;
+            //if (media.GetType() == typeof(Song))
+            //{
+            //    creator = media.GetMetadata().GetArtist();
+            //}
+            //else
+            //{
+            //    creator = media.GetMetadata().GetCreator();
+            //}
+
+
+            //ArtistPlayingLabel.Text = creator;
+            //MediaPlayingLabel.Text = mediaName;
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            if (ActiveUser.GetQueue().Count() != 0)
+            {
+                ActiveMedia = ActiveUser.GetQueue().Dequeue();
+                Media media = Spotflix.FindMedia(ActiveMedia.GetFileName());
+                MediaControl.PlayMedia(media, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+            }
+            
         }
     }
 }

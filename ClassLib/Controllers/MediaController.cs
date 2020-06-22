@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AxWMPLib;
 
+
 namespace Proyecto
 {
     public class MediaController
@@ -32,7 +33,7 @@ namespace Proyecto
             }
 
             artistLabel.Text = artist;
-
+            media.Viewed();
             
         } 
     

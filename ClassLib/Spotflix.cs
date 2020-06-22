@@ -53,4 +53,14 @@
                 l.Remove(v);
                 a.SetWork(l);
             }
+        }        public static Media FindMedia(string url)
+        {
+            foreach (Media item in MediaDB)
+            {
+                if(item.GetFileName() == url)
+                {
+                    return item;
+                }
+            }
+            return null;
         }    }}

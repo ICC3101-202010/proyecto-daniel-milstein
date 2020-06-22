@@ -30,27 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ArtistPlayingLabel = new System.Windows.Forms.Label();
             this.MediaPlayingLabel = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SearchButtton = new System.Windows.Forms.Button();
             this.LibraryButton = new System.Windows.Forms.Button();
             this.DecideButton = new System.Windows.Forms.Button();
             this.DJButton = new System.Windows.Forms.Button();
@@ -88,6 +90,9 @@
             this.artistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.albumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteMediaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spotflixBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelProfile = new System.Windows.Forms.Panel();
             this.emailProfileBox = new System.Windows.Forms.TextBox();
@@ -106,9 +111,9 @@
             this.BackProfileButton = new System.Windows.Forms.Button();
             this.ProfileLabel = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.aSearchBox = new System.Windows.Forms.TextBox();
             this.ResultGrid = new System.Windows.Forms.DataGridView();
             this.BackaSearchButton = new System.Windows.Forms.Button();
-            this.aSearchBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
@@ -130,6 +135,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelArtist = new System.Windows.Forms.Panel();
+            this.FollowingQLabel = new System.Windows.Forms.Label();
+            this.FollowingLabel = new System.Windows.Forms.Label();
             this.JobsBox = new System.Windows.Forms.RichTextBox();
             this.FollowerQLabel = new System.Windows.Forms.Label();
             this.Followers = new System.Windows.Forms.Label();
@@ -139,16 +146,18 @@
             this.ArtistMediaGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArtistNameLabel = new System.Windows.Forms.Label();
-            this.SearchButtton = new System.Windows.Forms.Button();
-            this.FollowingQLabel = new System.Windows.Forms.Label();
-            this.FollowingLabel = new System.Windows.Forms.Label();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteMediaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fromPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.PlayButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panelAddMedia.SuspendLayout();
             this.MetadataBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MetaGrid)).BeginInit();
@@ -167,7 +176,18 @@
             this.panelArtist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistAlbumGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistMediaGrid)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -216,6 +236,7 @@
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(249, 247);
             this.axWindowsMediaPlayer1.TabIndex = 0;
+            this.axWindowsMediaPlayer1.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.axWindowsMediaPlayer1_MediaChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // ProfileButton
@@ -238,6 +259,7 @@
             // 
             // panelAdmin
             // 
+            this.panelAdmin.Controls.Add(this.linkLabel1);
             this.panelAdmin.Controls.Add(this.panel1);
             this.panelAdmin.Controls.Add(this.ArtistPlayingLabel);
             this.panelAdmin.Controls.Add(this.SearchButtton);
@@ -254,6 +276,37 @@
             this.panelAdmin.Name = "panelAdmin";
             this.panelAdmin.Size = new System.Drawing.Size(249, 981);
             this.panelAdmin.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 734);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(249, 247);
+            this.panel1.TabIndex = 30;
+            // 
+            // SearchButtton
+            // 
+            this.SearchButtton.AutoSize = true;
+            this.SearchButtton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(169)))));
+            this.SearchButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SearchButtton.FlatAppearance.BorderSize = 0;
+            this.SearchButtton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(208)))), ((int)(((byte)(207)))));
+            this.SearchButtton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(84)))));
+            this.SearchButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButtton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButtton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.SearchButtton.Location = new System.Drawing.Point(3, 1);
+            this.SearchButtton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchButtton.Name = "SearchButtton";
+            this.SearchButtton.Size = new System.Drawing.Size(247, 85);
+            this.SearchButtton.TabIndex = 6;
+            this.SearchButtton.Text = "Search";
+            this.SearchButtton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SearchButtton.UseVisualStyleBackColor = false;
+            this.SearchButtton.Click += new System.EventHandler(this.button4_Click);
             // 
             // LibraryButton
             // 
@@ -286,10 +339,12 @@
             this.DecideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DecideButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DecideButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
+            this.DecideButton.Image = ((System.Drawing.Image)(resources.GetObject("DecideButton.Image")));
+            this.DecideButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DecideButton.Location = new System.Drawing.Point(2, 243);
             this.DecideButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DecideButton.Name = "DecideButton";
-            this.DecideButton.Size = new System.Drawing.Size(247, 85);
+            this.DecideButton.Size = new System.Drawing.Size(247, 102);
             this.DecideButton.TabIndex = 4;
             this.DecideButton.Text = "Decide \r\nfor me";
             this.DecideButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -306,7 +361,7 @@
             this.DJButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DJButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DJButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.DJButton.Location = new System.Drawing.Point(2, 327);
+            this.DJButton.Location = new System.Drawing.Point(2, 344);
             this.DJButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DJButton.Name = "DJButton";
             this.DJButton.Size = new System.Drawing.Size(247, 85);
@@ -591,27 +646,27 @@
             this.MediaGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MediaGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.MediaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameCol,
             this.ArtistCol});
             this.MediaGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
@@ -619,19 +674,19 @@
             this.MediaGrid.MultiSelect = false;
             this.MediaGrid.Name = "MediaGrid";
             this.MediaGrid.ReadOnly = true;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.MediaGrid.RowHeadersVisible = false;
             this.MediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
-            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.MediaGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.MediaGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -653,14 +708,14 @@
             // 
             // NameCol
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NameCol.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.NameCol.DefaultCellStyle = dataGridViewCellStyle2;
             this.NameCol.HeaderText = "Name";
             this.NameCol.MinimumWidth = 8;
             this.NameCol.Name = "NameCol";
@@ -669,14 +724,14 @@
             // 
             // ArtistCol
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistCol.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistCol.DefaultCellStyle = dataGridViewCellStyle3;
             this.ArtistCol.HeaderText = "Artist";
             this.ArtistCol.MinimumWidth = 8;
             this.ArtistCol.Name = "ArtistCol";
@@ -718,13 +773,14 @@
             // queueToolStripMenuItem
             // 
             this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
-            this.queueToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
+            this.queueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.queueToolStripMenuItem.Text = "Queue";
+            this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
             // 
             // favoritesToolStripMenuItem
             // 
             this.favoritesToolStripMenuItem.Name = "favoritesToolStripMenuItem";
-            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
+            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.favoritesToolStripMenuItem.Text = "Favorites";
             // 
             // playlistToolStripMenuItem
@@ -732,7 +788,7 @@
             this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
-            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
+            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.playlistToolStripMenuItem.Text = "Playlist";
             // 
             // newToolStripMenuItem
@@ -744,7 +800,7 @@
             // decideForMeToolStripMenuItem
             // 
             this.decideForMeToolStripMenuItem.Name = "decideForMeToolStripMenuItem";
-            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
+            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.decideForMeToolStripMenuItem.Text = "Decide for me";
             // 
             // goToToolStripMenuItem
@@ -773,6 +829,28 @@
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
             this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeleteMediaMenuItem,
+            this.fromPlaylistToolStripMenuItem});
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
+            this.deleteToolStripMenuItem.Text = "Delete...";
+            // 
+            // DeleteMediaMenuItem
+            // 
+            this.DeleteMediaMenuItem.Name = "DeleteMediaMenuItem";
+            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(203, 34);
+            this.DeleteMediaMenuItem.Text = "Media";
+            this.DeleteMediaMenuItem.Click += new System.EventHandler(this.mediaToolStripMenuItem_Click);
+            // 
+            // fromPlaylistToolStripMenuItem
+            // 
+            this.fromPlaylistToolStripMenuItem.Name = "fromPlaylistToolStripMenuItem";
+            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(203, 34);
+            this.fromPlaylistToolStripMenuItem.Text = "From playlist";
             // 
             // spotflixBindingSource
             // 
@@ -991,20 +1069,40 @@
             this.panelSearch.TabIndex = 16;
             this.panelSearch.Visible = false;
             // 
+            // aSearchBox
+            // 
+            this.aSearchBox.AcceptsReturn = true;
+            this.aSearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.aSearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
+            this.aSearchBox.BackColor = System.Drawing.SystemColors.GrayText;
+            this.aSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aSearchBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.aSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.aSearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aSearchBox.Location = new System.Drawing.Point(0, 0);
+            this.aSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.aSearchBox.Name = "aSearchBox";
+            this.aSearchBox.Size = new System.Drawing.Size(1730, 30);
+            this.aSearchBox.TabIndex = 14;
+            this.aSearchBox.Text = "   Search";
+            this.aSearchBox.Click += new System.EventHandler(this.SearchBox_Click);
+            this.aSearchBox.TextChanged += new System.EventHandler(this.aSearchBox_TextChanged);
+            this.aSearchBox.MouseLeave += new System.EventHandler(this.aSearchBox_MouseLeave);
+            // 
             // ResultGrid
             // 
             this.ResultGrid.AllowUserToAddRows = false;
             this.ResultGrid.AllowUserToDeleteRows = false;
             this.ResultGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ResultGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultGrid.ContextMenuStrip = this.MediaMenuStrip1;
             this.ResultGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1043,26 +1141,6 @@
             this.BackaSearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BackaSearchButton.UseVisualStyleBackColor = true;
             this.BackaSearchButton.Click += new System.EventHandler(this.BackaSearchButton_Click);
-            // 
-            // aSearchBox
-            // 
-            this.aSearchBox.AcceptsReturn = true;
-            this.aSearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.aSearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.aSearchBox.BackColor = System.Drawing.SystemColors.GrayText;
-            this.aSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.aSearchBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.aSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.aSearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aSearchBox.Location = new System.Drawing.Point(0, 0);
-            this.aSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.aSearchBox.Name = "aSearchBox";
-            this.aSearchBox.Size = new System.Drawing.Size(1730, 30);
-            this.aSearchBox.TabIndex = 14;
-            this.aSearchBox.Text = "   Search";
-            this.aSearchBox.Click += new System.EventHandler(this.SearchBox_Click);
-            this.aSearchBox.TextChanged += new System.EventHandler(this.aSearchBox_TextChanged);
-            this.aSearchBox.MouseLeave += new System.EventHandler(this.aSearchBox_MouseLeave);
             // 
             // groupBox4
             // 
@@ -1363,6 +1441,30 @@
             this.panelArtist.TabIndex = 19;
             this.panelArtist.Visible = false;
             // 
+            // FollowingQLabel
+            // 
+            this.FollowingQLabel.AutoSize = true;
+            this.FollowingQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FollowingQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FollowingQLabel.Location = new System.Drawing.Point(570, 35);
+            this.FollowingQLabel.Name = "FollowingQLabel";
+            this.FollowingQLabel.Size = new System.Drawing.Size(49, 59);
+            this.FollowingQLabel.TabIndex = 13;
+            this.FollowingQLabel.Text = "0";
+            this.FollowingQLabel.Visible = false;
+            // 
+            // FollowingLabel
+            // 
+            this.FollowingLabel.AutoSize = true;
+            this.FollowingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FollowingLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FollowingLabel.Location = new System.Drawing.Point(538, 98);
+            this.FollowingLabel.Name = "FollowingLabel";
+            this.FollowingLabel.Size = new System.Drawing.Size(109, 29);
+            this.FollowingLabel.TabIndex = 12;
+            this.FollowingLabel.Text = "Following";
+            this.FollowingLabel.Visible = false;
+            // 
             // JobsBox
             // 
             this.JobsBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -1425,26 +1527,26 @@
             this.ArtistAlbumGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ArtistAlbumGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistAlbumGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistAlbumGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistAlbumGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.ArtistAlbumGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArtistAlbumGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3});
             this.ArtistAlbumGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArtistAlbumGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArtistAlbumGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.ArtistAlbumGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistAlbumGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistAlbumGrid.Location = new System.Drawing.Point(0, 491);
@@ -1452,19 +1554,19 @@
             this.ArtistAlbumGrid.MultiSelect = false;
             this.ArtistAlbumGrid.Name = "ArtistAlbumGrid";
             this.ArtistAlbumGrid.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistAlbumGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistAlbumGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.ArtistAlbumGrid.RowHeadersVisible = false;
             this.ArtistAlbumGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.ArtistAlbumGrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.ArtistAlbumGrid.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1494,26 +1596,26 @@
             this.ArtistMediaGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ArtistMediaGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistMediaGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistMediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistMediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.ArtistMediaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArtistMediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
             this.ArtistMediaGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArtistMediaGrid.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArtistMediaGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.ArtistMediaGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistMediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistMediaGrid.Location = new System.Drawing.Point(0, 726);
@@ -1521,19 +1623,19 @@
             this.ArtistMediaGrid.MultiSelect = false;
             this.ArtistMediaGrid.Name = "ArtistMediaGrid";
             this.ArtistMediaGrid.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistMediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistMediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.ArtistMediaGrid.RowHeadersVisible = false;
             this.ArtistMediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.ArtistMediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.ArtistMediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.ArtistMediaGrid.RowTemplate.ContextMenuStrip = this.MediaMenuStrip1;
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -1568,81 +1670,123 @@
             this.ArtistNameLabel.TabIndex = 5;
             this.ArtistNameLabel.Text = "ArtistName";
             // 
-            // SearchButtton
+            // NextButton
             // 
-            this.SearchButtton.AutoSize = true;
-            this.SearchButtton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(169)))));
-            this.SearchButtton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.SearchButtton.FlatAppearance.BorderSize = 0;
-            this.SearchButtton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(208)))), ((int)(((byte)(207)))));
-            this.SearchButtton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(84)))));
-            this.SearchButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SearchButtton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButtton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.SearchButtton.Location = new System.Drawing.Point(3, 1);
-            this.SearchButtton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchButtton.Name = "SearchButtton";
-            this.SearchButtton.Size = new System.Drawing.Size(247, 85);
-            this.SearchButtton.TabIndex = 6;
-            this.SearchButtton.Text = "Search";
-            this.SearchButtton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SearchButtton.UseVisualStyleBackColor = false;
-            this.SearchButtton.Click += new System.EventHandler(this.button4_Click);
+            this.NextButton.AutoSize = true;
+            this.NextButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.NextButton.Image = ((System.Drawing.Image)(resources.GetObject("NextButton.Image")));
+            this.NextButton.Location = new System.Drawing.Point(0, 0);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(54, 61);
+            this.NextButton.TabIndex = 31;
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
-            // FollowingQLabel
+            // linkLabel1
             // 
-            this.FollowingQLabel.AutoSize = true;
-            this.FollowingQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FollowingQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingQLabel.Location = new System.Drawing.Point(570, 35);
-            this.FollowingQLabel.Name = "FollowingQLabel";
-            this.FollowingQLabel.Size = new System.Drawing.Size(49, 59);
-            this.FollowingQLabel.TabIndex = 13;
-            this.FollowingQLabel.Text = "0";
-            this.FollowingQLabel.Visible = false;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
+            this.linkLabel1.Location = new System.Drawing.Point(13, 608);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(131, 19);
+            this.linkLabel1.TabIndex = 31;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://icons8.com";
             // 
-            // FollowingLabel
+            // splitContainer1
             // 
-            this.FollowingLabel.AutoSize = true;
-            this.FollowingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FollowingLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingLabel.Location = new System.Drawing.Point(538, 98);
-            this.FollowingLabel.Name = "FollowingLabel";
-            this.FollowingLabel.Size = new System.Drawing.Size(109, 29);
-            this.FollowingLabel.TabIndex = 12;
-            this.FollowingLabel.Text = "Following";
-            this.FollowingLabel.Visible = false;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 186);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // deleteToolStripMenuItem
+            // splitContainer1.Panel1
             // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DeleteMediaMenuItem,
-            this.fromPlaylistToolStripMenuItem});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
-            this.deleteToolStripMenuItem.Text = "Delete...";
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             // 
-            // DeleteMediaMenuItem
+            // splitContainer1.Panel2
             // 
-            this.DeleteMediaMenuItem.Name = "DeleteMediaMenuItem";
-            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.DeleteMediaMenuItem.Text = "Media";
-            this.DeleteMediaMenuItem.Click += new System.EventHandler(this.mediaToolStripMenuItem_Click);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer1.Size = new System.Drawing.Size(249, 61);
+            this.splitContainer1.SplitterDistance = 83;
+            this.splitContainer1.TabIndex = 28;
             // 
-            // fromPlaylistToolStripMenuItem
+            // splitContainer2
             // 
-            this.fromPlaylistToolStripMenuItem.Name = "fromPlaylistToolStripMenuItem";
-            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.fromPlaylistToolStripMenuItem.Text = "From playlist";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // panel1
+            // splitContainer2.Panel1
             // 
-            this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 734);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 247);
-            this.panel1.TabIndex = 30;
+            this.splitContainer2.Panel1.Controls.Add(this.button4);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.PlayButton);
+            this.splitContainer2.Size = new System.Drawing.Size(83, 61);
+            this.splitContainer2.SplitterDistance = 27;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.NextButton);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.button1);
+            this.splitContainer3.Size = new System.Drawing.Size(162, 61);
+            this.splitContainer3.SplitterDistance = 54;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.AutoSize = true;
+            this.PlayButton.BackColor = System.Drawing.Color.Transparent;
+            this.PlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayButton.Image = ((System.Drawing.Image)(resources.GetObject("PlayButton.Image")));
+            this.PlayButton.Location = new System.Drawing.Point(0, 0);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(52, 61);
+            this.PlayButton.TabIndex = 0;
+            this.PlayButton.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 61);
+            this.button1.TabIndex = 32;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.AutoSize = true;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.ForeColor = System.Drawing.Color.Transparent;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(0, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(27, 61);
+            this.button4.TabIndex = 1;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // FormMain
             // 
@@ -1672,6 +1816,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.panelAdmin.ResumeLayout(false);
             this.panelAdmin.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panelAddMedia.ResumeLayout(false);
             this.panelAddMedia.PerformLayout();
             this.MetadataBox.ResumeLayout(false);
@@ -1699,7 +1844,22 @@
             this.panelArtist.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistAlbumGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistMediaGrid)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1808,5 +1968,13 @@
         private System.Windows.Forms.ToolStripMenuItem DeleteMediaMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromPlaylistToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PlayButton;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Button button1;
     }
 }

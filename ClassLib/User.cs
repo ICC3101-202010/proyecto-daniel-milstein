@@ -104,6 +104,11 @@ namespace Proyecto
             Queue.Enqueue(nextMedia);
         }
 
+        public Queue<Media> GetQueue()
+        {
+            return Queue;
+        }
+
         public void AddToPlaylist(Media media, Playlist plName)
         {
             
