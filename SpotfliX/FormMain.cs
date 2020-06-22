@@ -26,6 +26,7 @@ namespace SpotfliX
         public int SelectedRow;
         public List<Type> SearchTypes = new List<Type>() { typeof(Song), typeof(Video), typeof(User), typeof(Artist), typeof(Playlist), typeof(Album) };
         public Media ActiveMedia;
+        public int Vol;
 
 
         public FormMain(User user)
@@ -191,7 +192,14 @@ namespace SpotfliX
 
         private void AdminAddMedia_Click(object sender, EventArgs e)
         {
-            panelAddMedia.Show();
+            if (!panelAddMedia.Visible)
+            {
+                panelAddMedia.Show(); 
+            }
+            else
+            {
+                panelAddMedia.Hide();
+            }
         }
 
         private void BackAddMedia_Click(object sender, EventArgs e)
@@ -244,20 +252,21 @@ namespace SpotfliX
         {
             //play media
             DataGridView grid = (DataGridView)sender;
+            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
             if (SelectedRow != -1)
             {
                 object sel = grid.Rows[SelectedRow].HeaderCell.Value;
                 if (sel.GetType() == typeof(Song))
                 {
                     Song file = (Song)sel;
-                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
                     ActiveMedia = file;
                 }
 
                 else if (sel.GetType() == typeof(Video))
                 {
                     Video file = (Video)sel;
-                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                    MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
                     ActiveMedia = file;
                 }
 
@@ -408,19 +417,19 @@ namespace SpotfliX
             ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
             ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
             DataGridView grid = (DataGridView)menu.SourceControl; //csm
-
+            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
             object sel = grid.Rows[SelectedRow].HeaderCell.Value;
             if (sel.GetType() == typeof(Song))
             {
                 Song file = (Song)sel;
-                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
                 ActiveMedia = file;
             }
 
             else if (sel.GetType() == typeof(Video))
             {
                 Video file = (Video)sel;
-                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
                 ActiveMedia = file;
             }
 
@@ -562,7 +571,14 @@ namespace SpotfliX
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panelSearch.Show();
+            if (!panelSearch.Visible)
+            {
+                panelSearch.Show(); 
+            }
+            else
+            {
+                panelSearch.Hide();
+            }
         }
 
         private void mediaToolStripMenuItem_Click(object sender, EventArgs e) //DeleteMediaMenuItem
@@ -633,13 +649,67 @@ namespace SpotfliX
 
         private void NextButton_Click(object sender, EventArgs e)
         {
+            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
             if (ActiveUser.GetQueue().Count() != 0)
             {
                 ActiveMedia = ActiveUser.GetQueue().Dequeue();
                 Media media = Spotflix.FindMedia(ActiveMedia.GetFileName());
-                MediaControl.PlayMedia(media, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel);
+                MediaControl.PlayMedia(media, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
             }
             
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            Image pauseImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
+            Image playImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-play-button-48.png");
+            Button pB = (Button)sender;
+            bool playing = axWindowsMediaPlayer1.playState == WMPPlayState.wmppsPlaying;
+
+            if (playing)
+            {
+                pB.Image = playImg;
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+            }
+            else
+            {
+                pB.Image = pauseImg;
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+        }
+
+        private void PrevButton_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+            //axWindowsMediaPlayer1.Ctlcontrols.previous();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (!axWindowsMediaPlayer1.settings.mute)
+            {
+                Vol = axWindowsMediaPlayer1.settings.volume;
+                axWindowsMediaPlayer1.settings.mute = true;
+                
+                b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-mute-48.png");
+            }
+
+            else
+            {
+                axWindowsMediaPlayer1.settings.mute = false;
+                axWindowsMediaPlayer1.settings.volume = Vol;
+                b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-audio-48.png");
+            }
+
+            
+        }
+
+        private void VolumeBar_Scroll(object sender, EventArgs e)
+        {
+            TrackBar tb = (TrackBar)sender;
+            axWindowsMediaPlayer1.settings.volume = tb.Value;
         }
     }
 }

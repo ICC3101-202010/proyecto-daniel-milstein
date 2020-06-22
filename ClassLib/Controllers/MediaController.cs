@@ -14,7 +14,7 @@ namespace Proyecto
     
 
 
-        public void PlayMedia(Media media, AxWindowsMediaPlayer player, Label nameLabel, Label artistLabel)
+        public void PlayMedia(Media media, AxWindowsMediaPlayer player, Label nameLabel, Label artistLabel, Button playB, System.Drawing.Image img)
         {
             //play media
             // Media file = (Media)MediaGrid.SelectedRows[0].HeaderCell.Value;
@@ -34,7 +34,8 @@ namespace Proyecto
 
             artistLabel.Text = artist;
             media.Viewed();
-            
+
+            playB.Image = img;
         } 
     
     }
