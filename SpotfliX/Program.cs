@@ -30,7 +30,11 @@ namespace SpotfliX
                 Spotflix.SetMediaDB(load.Item2);
                 Spotflix.SetPeopleDB(load.Item3);
             }
-            catch (Exception){}
+            catch (Exception)
+            {
+                
+            
+            }
             Form1 f1 = new Form1();
             f1.Show();
             

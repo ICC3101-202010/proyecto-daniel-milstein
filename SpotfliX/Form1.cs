@@ -208,7 +208,8 @@ namespace SpotfliX
 
             catch
             {
-                
+                MessageBoxButtons bts = MessageBoxButtons.OKCancel;
+                MessageBox.Show("Que paso", "No se", bts);
             }
 
             

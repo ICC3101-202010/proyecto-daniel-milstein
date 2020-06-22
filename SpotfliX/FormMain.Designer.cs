@@ -51,7 +51,12 @@
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PrevButton = new System.Windows.Forms.Button();
+            this.PlayButton = new System.Windows.Forms.Button();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.ShuffleButton = new System.Windows.Forms.Button();
             this.SearchButtton = new System.Windows.Forms.Button();
             this.LibraryButton = new System.Windows.Forms.Button();
             this.DecideButton = new System.Windows.Forms.Button();
@@ -146,14 +151,9 @@
             this.ArtistMediaGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArtistNameLabel = new System.Windows.Forms.Label();
-            this.NextButton = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.PlayButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
@@ -176,18 +176,18 @@
             this.panelArtist.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistAlbumGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistMediaGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -196,9 +196,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1979, 130);
+            this.pictureBox1.Size = new System.Drawing.Size(1853, 104);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -207,7 +206,7 @@
             this.ArtistPlayingLabel.AutoSize = true;
             this.ArtistPlayingLabel.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArtistPlayingLabel.ForeColor = System.Drawing.Color.White;
-            this.ArtistPlayingLabel.Location = new System.Drawing.Point(12, 682);
+            this.ArtistPlayingLabel.Location = new System.Drawing.Point(11, 546);
             this.ArtistPlayingLabel.Name = "ArtistPlayingLabel";
             this.ArtistPlayingLabel.Size = new System.Drawing.Size(55, 24);
             this.ArtistPlayingLabel.TabIndex = 29;
@@ -219,7 +218,7 @@
             this.MediaPlayingLabel.AutoSize = true;
             this.MediaPlayingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediaPlayingLabel.ForeColor = System.Drawing.Color.White;
-            this.MediaPlayingLabel.Location = new System.Drawing.Point(12, 654);
+            this.MediaPlayingLabel.Location = new System.Drawing.Point(11, 523);
             this.MediaPlayingLabel.Name = "MediaPlayingLabel";
             this.MediaPlayingLabel.Size = new System.Drawing.Size(77, 29);
             this.MediaPlayingLabel.TabIndex = 28;
@@ -228,13 +227,12 @@
             // 
             // axWindowsMediaPlayer1
             // 
-            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Top;
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(249, 247);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(221, 198);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             this.axWindowsMediaPlayer1.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.axWindowsMediaPlayer1_MediaChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
@@ -248,10 +246,9 @@
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileButton.ForeColor = System.Drawing.Color.Transparent;
             this.ProfileButton.Image = ((System.Drawing.Image)(resources.GetObject("ProfileButton.Image")));
-            this.ProfileButton.Location = new System.Drawing.Point(602, 15);
-            this.ProfileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ProfileButton.Location = new System.Drawing.Point(629, 12);
             this.ProfileButton.Name = "ProfileButton";
-            this.ProfileButton.Size = new System.Drawing.Size(82, 91);
+            this.ProfileButton.Size = new System.Drawing.Size(73, 73);
             this.ProfileButton.TabIndex = 9;
             this.ProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ProfileButton.UseVisualStyleBackColor = false;
@@ -271,21 +268,104 @@
             this.panelAdmin.Controls.Add(this.UsersButton);
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAdmin.Location = new System.Drawing.Point(0, 130);
-            this.panelAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelAdmin.Location = new System.Drawing.Point(0, 104);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(249, 981);
+            this.panelAdmin.Size = new System.Drawing.Size(221, 891);
             this.panelAdmin.TabIndex = 10;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 486);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(131, 19);
+            this.linkLabel1.TabIndex = 31;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://icons8.com";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.splitContainer1);
+            this.panel1.Controls.Add(this.splitContainer4);
             this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 734);
+            this.panel1.Location = new System.Drawing.Point(0, 693);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 247);
+            this.panel1.Size = new System.Drawing.Size(221, 198);
             this.panel1.TabIndex = 30;
+            // 
+            // PrevButton
+            // 
+            this.PrevButton.AutoSize = true;
+            this.PrevButton.BackColor = System.Drawing.Color.Transparent;
+            this.PrevButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PrevButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PrevButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.PrevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrevButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PrevButton.Image = ((System.Drawing.Image)(resources.GetObject("PrevButton.Image")));
+            this.PrevButton.Location = new System.Drawing.Point(0, 0);
+            this.PrevButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PrevButton.MaximumSize = new System.Drawing.Size(53, 57);
+            this.PrevButton.MinimumSize = new System.Drawing.Size(53, 57);
+            this.PrevButton.Name = "PrevButton";
+            this.PrevButton.Size = new System.Drawing.Size(53, 57);
+            this.PrevButton.TabIndex = 1;
+            this.PrevButton.UseVisualStyleBackColor = false;
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.AutoSize = true;
+            this.PlayButton.BackColor = System.Drawing.Color.Transparent;
+            this.PlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlayButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayButton.Image = ((System.Drawing.Image)(resources.GetObject("PlayButton.Image")));
+            this.PlayButton.Location = new System.Drawing.Point(0, 0);
+            this.PlayButton.Margin = new System.Windows.Forms.Padding(0);
+            this.PlayButton.MaximumSize = new System.Drawing.Size(53, 57);
+            this.PlayButton.MinimumSize = new System.Drawing.Size(53, 57);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(53, 57);
+            this.PlayButton.TabIndex = 0;
+            this.PlayButton.UseVisualStyleBackColor = false;
+            // 
+            // NextButton
+            // 
+            this.NextButton.AutoSize = true;
+            this.NextButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextButton.Image = ((System.Drawing.Image)(resources.GetObject("NextButton.Image")));
+            this.NextButton.Location = new System.Drawing.Point(0, 0);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(0);
+            this.NextButton.MaximumSize = new System.Drawing.Size(53, 57);
+            this.NextButton.MinimumSize = new System.Drawing.Size(53, 57);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(53, 57);
+            this.NextButton.TabIndex = 31;
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // ShuffleButton
+            // 
+            this.ShuffleButton.AutoSize = true;
+            this.ShuffleButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShuffleButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.ShuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShuffleButton.Image = ((System.Drawing.Image)(resources.GetObject("ShuffleButton.Image")));
+            this.ShuffleButton.Location = new System.Drawing.Point(0, 0);
+            this.ShuffleButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ShuffleButton.MaximumSize = new System.Drawing.Size(53, 57);
+            this.ShuffleButton.MinimumSize = new System.Drawing.Size(53, 57);
+            this.ShuffleButton.Name = "ShuffleButton";
+            this.ShuffleButton.Size = new System.Drawing.Size(53, 57);
+            this.ShuffleButton.TabIndex = 32;
+            this.ShuffleButton.UseVisualStyleBackColor = true;
             // 
             // SearchButtton
             // 
@@ -299,9 +379,8 @@
             this.SearchButtton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButtton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.SearchButtton.Location = new System.Drawing.Point(3, 1);
-            this.SearchButtton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchButtton.Name = "SearchButtton";
-            this.SearchButtton.Size = new System.Drawing.Size(247, 85);
+            this.SearchButtton.Size = new System.Drawing.Size(220, 68);
             this.SearchButtton.TabIndex = 6;
             this.SearchButtton.Text = "Search";
             this.SearchButtton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -319,10 +398,9 @@
             this.LibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LibraryButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LibraryButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.LibraryButton.Location = new System.Drawing.Point(2, 78);
-            this.LibraryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LibraryButton.Location = new System.Drawing.Point(2, 62);
             this.LibraryButton.Name = "LibraryButton";
-            this.LibraryButton.Size = new System.Drawing.Size(247, 85);
+            this.LibraryButton.Size = new System.Drawing.Size(220, 68);
             this.LibraryButton.TabIndex = 5;
             this.LibraryButton.Text = "My Library";
             this.LibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -341,10 +419,9 @@
             this.DecideButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.DecideButton.Image = ((System.Drawing.Image)(resources.GetObject("DecideButton.Image")));
             this.DecideButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DecideButton.Location = new System.Drawing.Point(2, 243);
-            this.DecideButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DecideButton.Location = new System.Drawing.Point(2, 194);
             this.DecideButton.Name = "DecideButton";
-            this.DecideButton.Size = new System.Drawing.Size(247, 102);
+            this.DecideButton.Size = new System.Drawing.Size(220, 94);
             this.DecideButton.TabIndex = 4;
             this.DecideButton.Text = "Decide \r\nfor me";
             this.DecideButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,10 +438,9 @@
             this.DJButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DJButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DJButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.DJButton.Location = new System.Drawing.Point(2, 344);
-            this.DJButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DJButton.Location = new System.Drawing.Point(2, 275);
             this.DJButton.Name = "DJButton";
-            this.DJButton.Size = new System.Drawing.Size(247, 85);
+            this.DJButton.Size = new System.Drawing.Size(220, 68);
             this.DJButton.TabIndex = 3;
             this.DJButton.Text = "DJ Mode";
             this.DJButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -382,10 +458,9 @@
             this.ShowMediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowMediaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.ShowMediaButton.Location = new System.Drawing.Point(2, 160);
-            this.ShowMediaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ShowMediaButton.Location = new System.Drawing.Point(2, 128);
             this.ShowMediaButton.Name = "ShowMediaButton";
-            this.ShowMediaButton.Size = new System.Drawing.Size(247, 85);
+            this.ShowMediaButton.Size = new System.Drawing.Size(220, 68);
             this.ShowMediaButton.TabIndex = 2;
             this.ShowMediaButton.Text = "Show Media";
             this.ShowMediaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -403,10 +478,9 @@
             this.UsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UsersButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.UsersButton.Location = new System.Drawing.Point(3, 429);
-            this.UsersButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UsersButton.Location = new System.Drawing.Point(3, 343);
             this.UsersButton.Name = "UsersButton";
-            this.UsersButton.Size = new System.Drawing.Size(247, 85);
+            this.UsersButton.Size = new System.Drawing.Size(220, 68);
             this.UsersButton.TabIndex = 1;
             this.UsersButton.Text = "Users";
             this.UsersButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -424,10 +498,9 @@
             this.AdminAddMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminAddMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-            this.AdminAddMedia.Location = new System.Drawing.Point(3, 508);
-            this.AdminAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AdminAddMedia.Location = new System.Drawing.Point(3, 406);
             this.AdminAddMedia.Name = "AdminAddMedia";
-            this.AdminAddMedia.Size = new System.Drawing.Size(247, 85);
+            this.AdminAddMedia.Size = new System.Drawing.Size(220, 68);
             this.AdminAddMedia.TabIndex = 0;
             this.AdminAddMedia.Text = "Add Media";
             this.AdminAddMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,10 +518,9 @@
             this.panelAddMedia.Controls.Add(this.BackAddMedia);
             this.panelAddMedia.Controls.Add(this.AddMedia);
             this.panelAddMedia.ForeColor = System.Drawing.Color.Black;
-            this.panelAddMedia.Location = new System.Drawing.Point(465, 258);
-            this.panelAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelAddMedia.Location = new System.Drawing.Point(413, 206);
             this.panelAddMedia.Name = "panelAddMedia";
-            this.panelAddMedia.Size = new System.Drawing.Size(567, 825);
+            this.panelAddMedia.Size = new System.Drawing.Size(504, 660);
             this.panelAddMedia.TabIndex = 11;
             this.panelAddMedia.Visible = false;
             // 
@@ -457,7 +529,7 @@
             this.FileNameLabel.AutoSize = true;
             this.FileNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FileNameLabel.ForeColor = System.Drawing.Color.White;
-            this.FileNameLabel.Location = new System.Drawing.Point(259, 66);
+            this.FileNameLabel.Location = new System.Drawing.Point(230, 53);
             this.FileNameLabel.Name = "FileNameLabel";
             this.FileNameLabel.Size = new System.Drawing.Size(0, 29);
             this.FileNameLabel.TabIndex = 8;
@@ -468,11 +540,9 @@
             this.MetadataBox.Controls.Add(this.MetaGrid);
             this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetadataBox.ForeColor = System.Drawing.Color.White;
-            this.MetadataBox.Location = new System.Drawing.Point(3, 259);
-            this.MetadataBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MetadataBox.Location = new System.Drawing.Point(3, 207);
             this.MetadataBox.Name = "MetadataBox";
-            this.MetadataBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MetadataBox.Size = new System.Drawing.Size(560, 450);
+            this.MetadataBox.Size = new System.Drawing.Size(498, 360);
             this.MetadataBox.TabIndex = 7;
             this.MetadataBox.TabStop = false;
             this.MetadataBox.Text = "Metadata";
@@ -486,8 +556,7 @@
             this.Column1,
             this.Column2});
             this.MetaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MetaGrid.Location = new System.Drawing.Point(3, 39);
-            this.MetaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MetaGrid.Location = new System.Drawing.Point(3, 38);
             this.MetaGrid.MultiSelect = false;
             this.MetaGrid.Name = "MetaGrid";
             this.MetaGrid.RowHeadersVisible = false;
@@ -498,7 +567,7 @@
             this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MetaGrid.RowTemplate.Height = 26;
             this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.MetaGrid.Size = new System.Drawing.Size(554, 407);
+            this.MetaGrid.Size = new System.Drawing.Size(492, 319);
             this.MetaGrid.TabIndex = 0;
             this.MetaGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetaGrid_CellContentClick);
             // 
@@ -520,10 +589,9 @@
             // 
             this.panelMediaType.Controls.Add(this.radioVideo);
             this.panelMediaType.Controls.Add(this.radioSong);
-            this.panelMediaType.Location = new System.Drawing.Point(281, 150);
-            this.panelMediaType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelMediaType.Location = new System.Drawing.Point(250, 120);
             this.panelMediaType.Name = "panelMediaType";
-            this.panelMediaType.Size = new System.Drawing.Size(140, 115);
+            this.panelMediaType.Size = new System.Drawing.Size(124, 92);
             this.panelMediaType.TabIndex = 6;
             // 
             // radioVideo
@@ -531,8 +599,7 @@
             this.radioVideo.AutoSize = true;
             this.radioVideo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioVideo.ForeColor = System.Drawing.Color.White;
-            this.radioVideo.Location = new System.Drawing.Point(3, 50);
-            this.radioVideo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioVideo.Location = new System.Drawing.Point(3, 40);
             this.radioVideo.Name = "radioVideo";
             this.radioVideo.Size = new System.Drawing.Size(83, 28);
             this.radioVideo.TabIndex = 4;
@@ -547,7 +614,6 @@
             this.radioSong.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioSong.ForeColor = System.Drawing.Color.White;
             this.radioSong.Location = new System.Drawing.Point(0, 0);
-            this.radioSong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioSong.Name = "radioSong";
             this.radioSong.Size = new System.Drawing.Size(75, 28);
             this.radioSong.TabIndex = 5;
@@ -561,7 +627,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(34, 150);
+            this.label1.Location = new System.Drawing.Point(30, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 39);
             this.label1.TabIndex = 3;
@@ -570,10 +636,9 @@
             // FileButton
             // 
             this.FileButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FileButton.Location = new System.Drawing.Point(42, 48);
-            this.FileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FileButton.Location = new System.Drawing.Point(37, 38);
             this.FileButton.Name = "FileButton";
-            this.FileButton.Size = new System.Drawing.Size(178, 68);
+            this.FileButton.Size = new System.Drawing.Size(158, 54);
             this.FileButton.TabIndex = 2;
             this.FileButton.Text = "File...";
             this.FileButton.UseVisualStyleBackColor = true;
@@ -583,10 +648,9 @@
             // 
             this.BackAddMedia.AutoSize = true;
             this.BackAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackAddMedia.Location = new System.Drawing.Point(29, 735);
-            this.BackAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BackAddMedia.Location = new System.Drawing.Point(26, 588);
             this.BackAddMedia.Name = "BackAddMedia";
-            this.BackAddMedia.Size = new System.Drawing.Size(190, 61);
+            this.BackAddMedia.Size = new System.Drawing.Size(169, 49);
             this.BackAddMedia.TabIndex = 1;
             this.BackAddMedia.Text = "Back";
             this.BackAddMedia.UseVisualStyleBackColor = true;
@@ -596,10 +660,9 @@
             // 
             this.AddMedia.AutoSize = true;
             this.AddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMedia.Location = new System.Drawing.Point(344, 735);
-            this.AddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddMedia.Location = new System.Drawing.Point(306, 588);
             this.AddMedia.Name = "AddMedia";
-            this.AddMedia.Size = new System.Drawing.Size(190, 61);
+            this.AddMedia.Size = new System.Drawing.Size(169, 49);
             this.AddMedia.TabIndex = 0;
             this.AddMedia.Text = "Add Media";
             this.AddMedia.UseVisualStyleBackColor = true;
@@ -616,10 +679,9 @@
             this.panelShowMedia.AutoSize = true;
             this.panelShowMedia.Controls.Add(this.BackMediaButton);
             this.panelShowMedia.Controls.Add(this.MediaGrid);
-            this.panelShowMedia.Location = new System.Drawing.Point(255, 134);
-            this.panelShowMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelShowMedia.Location = new System.Drawing.Point(227, 107);
             this.panelShowMedia.Name = "panelShowMedia";
-            this.panelShowMedia.Size = new System.Drawing.Size(797, 739);
+            this.panelShowMedia.Size = new System.Drawing.Size(708, 591);
             this.panelShowMedia.TabIndex = 14;
             this.panelShowMedia.Visible = false;
             // 
@@ -628,10 +690,9 @@
             this.BackMediaButton.AutoSize = true;
             this.BackMediaButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BackMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackMediaButton.Location = new System.Drawing.Point(0, 678);
-            this.BackMediaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BackMediaButton.Location = new System.Drawing.Point(0, 542);
             this.BackMediaButton.Name = "BackMediaButton";
-            this.BackMediaButton.Size = new System.Drawing.Size(797, 61);
+            this.BackMediaButton.Size = new System.Drawing.Size(708, 49);
             this.BackMediaButton.TabIndex = 2;
             this.BackMediaButton.Text = "Back";
             this.BackMediaButton.UseVisualStyleBackColor = true;
@@ -670,7 +731,6 @@
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
-            this.MediaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MediaGrid.MultiSelect = false;
             this.MediaGrid.Name = "MediaGrid";
             this.MediaGrid.ReadOnly = true;
@@ -696,7 +756,7 @@
             this.MediaGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.MediaGrid.RowTemplate.Height = 24;
             this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MediaGrid.Size = new System.Drawing.Size(797, 739);
+            this.MediaGrid.Size = new System.Drawing.Size(708, 591);
             this.MediaGrid.TabIndex = 0;
             this.MediaGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetaGrid_CellContentClick);
             this.MediaGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseClick);
@@ -773,14 +833,14 @@
             // queueToolStripMenuItem
             // 
             this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
-            this.queueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.queueToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.queueToolStripMenuItem.Text = "Queue";
             this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
             // 
             // favoritesToolStripMenuItem
             // 
             this.favoritesToolStripMenuItem.Name = "favoritesToolStripMenuItem";
-            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.favoritesToolStripMenuItem.Text = "Favorites";
             // 
             // playlistToolStripMenuItem
@@ -788,7 +848,7 @@
             this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
-            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.playlistToolStripMenuItem.Text = "Playlist";
             // 
             // newToolStripMenuItem
@@ -800,7 +860,7 @@
             // decideForMeToolStripMenuItem
             // 
             this.decideForMeToolStripMenuItem.Name = "decideForMeToolStripMenuItem";
-            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.decideForMeToolStripMenuItem.Text = "Decide for me";
             // 
             // goToToolStripMenuItem
@@ -873,10 +933,9 @@
             this.panelProfile.Controls.Add(this.UserRegLabel);
             this.panelProfile.Controls.Add(this.BackProfileButton);
             this.panelProfile.Controls.Add(this.ProfileLabel);
-            this.panelProfile.Location = new System.Drawing.Point(629, 130);
-            this.panelProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelProfile.Location = new System.Drawing.Point(559, 104);
             this.panelProfile.Name = "panelProfile";
-            this.panelProfile.Size = new System.Drawing.Size(542, 731);
+            this.panelProfile.Size = new System.Drawing.Size(482, 585);
             this.panelProfile.TabIndex = 15;
             this.panelProfile.Visible = false;
             // 
@@ -889,11 +948,10 @@
             this.emailProfileBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailProfileBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.emailProfileBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailProfileBox.Location = new System.Drawing.Point(248, 194);
-            this.emailProfileBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.emailProfileBox.Location = new System.Drawing.Point(220, 155);
             this.emailProfileBox.Name = "emailProfileBox";
             this.emailProfileBox.PasswordChar = '•';
-            this.emailProfileBox.Size = new System.Drawing.Size(169, 30);
+            this.emailProfileBox.Size = new System.Drawing.Size(150, 30);
             this.emailProfileBox.TabIndex = 31;
             this.emailProfileBox.Visible = false;
             // 
@@ -902,7 +960,7 @@
             this.linkLabelEditPass.AutoSize = true;
             this.linkLabelEditPass.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkLabelEditPass.Location = new System.Drawing.Point(163, 260);
+            this.linkLabelEditPass.Location = new System.Drawing.Point(145, 208);
             this.linkLabelEditPass.Name = "linkLabelEditPass";
             this.linkLabelEditPass.Size = new System.Drawing.Size(58, 24);
             this.linkLabelEditPass.TabIndex = 30;
@@ -915,7 +973,7 @@
             this.linkLabelEditEmail.AutoSize = true;
             this.linkLabelEditEmail.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelEditEmail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkLabelEditEmail.Location = new System.Drawing.Point(163, 194);
+            this.linkLabelEditEmail.Location = new System.Drawing.Point(145, 155);
             this.linkLabelEditEmail.Name = "linkLabelEditEmail";
             this.linkLabelEditEmail.Size = new System.Drawing.Size(58, 24);
             this.linkLabelEditEmail.TabIndex = 29;
@@ -928,7 +986,7 @@
             this.PassProfilelabel.AutoSize = true;
             this.PassProfilelabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassProfilelabel.ForeColor = System.Drawing.Color.White;
-            this.PassProfilelabel.Location = new System.Drawing.Point(242, 254);
+            this.PassProfilelabel.Location = new System.Drawing.Point(215, 203);
             this.PassProfilelabel.Name = "PassProfilelabel";
             this.PassProfilelabel.Size = new System.Drawing.Size(117, 29);
             this.PassProfilelabel.TabIndex = 28;
@@ -939,7 +997,7 @@
             this.emailProfileLabel.AutoSize = true;
             this.emailProfileLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailProfileLabel.ForeColor = System.Drawing.Color.White;
-            this.emailProfileLabel.Location = new System.Drawing.Point(242, 188);
+            this.emailProfileLabel.Location = new System.Drawing.Point(215, 150);
             this.emailProfileLabel.Name = "emailProfileLabel";
             this.emailProfileLabel.Size = new System.Drawing.Size(117, 29);
             this.emailProfileLabel.TabIndex = 27;
@@ -950,7 +1008,7 @@
             this.userProfilelabel.AutoSize = true;
             this.userProfilelabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userProfilelabel.ForeColor = System.Drawing.Color.White;
-            this.userProfilelabel.Location = new System.Drawing.Point(242, 121);
+            this.userProfilelabel.Location = new System.Drawing.Point(215, 97);
             this.userProfilelabel.Name = "userProfilelabel";
             this.userProfilelabel.Size = new System.Drawing.Size(117, 29);
             this.userProfilelabel.TabIndex = 26;
@@ -959,8 +1017,7 @@
             // premiumCheckBox
             // 
             this.premiumCheckBox.AutoSize = true;
-            this.premiumCheckBox.Location = new System.Drawing.Point(272, 401);
-            this.premiumCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.premiumCheckBox.Location = new System.Drawing.Point(242, 321);
             this.premiumCheckBox.Name = "premiumCheckBox";
             this.premiumCheckBox.Size = new System.Drawing.Size(22, 21);
             this.premiumCheckBox.TabIndex = 25;
@@ -969,8 +1026,7 @@
             // pvtCheckBox
             // 
             this.pvtCheckBox.AutoSize = true;
-            this.pvtCheckBox.Location = new System.Drawing.Point(272, 334);
-            this.pvtCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pvtCheckBox.Location = new System.Drawing.Point(242, 267);
             this.pvtCheckBox.Name = "pvtCheckBox";
             this.pvtCheckBox.Size = new System.Drawing.Size(22, 21);
             this.pvtCheckBox.TabIndex = 24;
@@ -981,7 +1037,7 @@
             this.PremiumLabel.AutoSize = true;
             this.PremiumLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PremiumLabel.ForeColor = System.Drawing.Color.White;
-            this.PremiumLabel.Location = new System.Drawing.Point(32, 391);
+            this.PremiumLabel.Location = new System.Drawing.Point(28, 313);
             this.PremiumLabel.Name = "PremiumLabel";
             this.PremiumLabel.Size = new System.Drawing.Size(117, 29);
             this.PremiumLabel.TabIndex = 23;
@@ -992,7 +1048,7 @@
             this.PasswordRegLabel.AutoSize = true;
             this.PasswordRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordRegLabel.ForeColor = System.Drawing.Color.White;
-            this.PasswordRegLabel.Location = new System.Drawing.Point(32, 254);
+            this.PasswordRegLabel.Location = new System.Drawing.Point(28, 203);
             this.PasswordRegLabel.Name = "PasswordRegLabel";
             this.PasswordRegLabel.Size = new System.Drawing.Size(111, 29);
             this.PasswordRegLabel.TabIndex = 22;
@@ -1003,7 +1059,7 @@
             this.EmailRegLabel.AutoSize = true;
             this.EmailRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailRegLabel.ForeColor = System.Drawing.Color.White;
-            this.EmailRegLabel.Location = new System.Drawing.Point(32, 188);
+            this.EmailRegLabel.Location = new System.Drawing.Point(28, 150);
             this.EmailRegLabel.Name = "EmailRegLabel";
             this.EmailRegLabel.Size = new System.Drawing.Size(69, 29);
             this.EmailRegLabel.TabIndex = 20;
@@ -1014,7 +1070,7 @@
             this.PvtRegLabel.AutoSize = true;
             this.PvtRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PvtRegLabel.ForeColor = System.Drawing.Color.White;
-            this.PvtRegLabel.Location = new System.Drawing.Point(32, 322);
+            this.PvtRegLabel.Location = new System.Drawing.Point(28, 258);
             this.PvtRegLabel.Name = "PvtRegLabel";
             this.PvtRegLabel.Size = new System.Drawing.Size(179, 29);
             this.PvtRegLabel.TabIndex = 18;
@@ -1025,7 +1081,7 @@
             this.UserRegLabel.AutoSize = true;
             this.UserRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserRegLabel.ForeColor = System.Drawing.Color.White;
-            this.UserRegLabel.Location = new System.Drawing.Point(32, 121);
+            this.UserRegLabel.Location = new System.Drawing.Point(28, 97);
             this.UserRegLabel.Name = "UserRegLabel";
             this.UserRegLabel.Size = new System.Drawing.Size(117, 29);
             this.UserRegLabel.TabIndex = 17;
@@ -1035,10 +1091,9 @@
             // 
             this.BackProfileButton.AutoSize = true;
             this.BackProfileButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackProfileButton.Location = new System.Drawing.Point(32, 625);
-            this.BackProfileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BackProfileButton.Location = new System.Drawing.Point(28, 500);
             this.BackProfileButton.Name = "BackProfileButton";
-            this.BackProfileButton.Size = new System.Drawing.Size(190, 61);
+            this.BackProfileButton.Size = new System.Drawing.Size(169, 49);
             this.BackProfileButton.TabIndex = 5;
             this.BackProfileButton.Text = "Back";
             this.BackProfileButton.UseVisualStyleBackColor = true;
@@ -1049,7 +1104,7 @@
             this.ProfileLabel.AutoSize = true;
             this.ProfileLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProfileLabel.Location = new System.Drawing.Point(24, 46);
+            this.ProfileLabel.Location = new System.Drawing.Point(21, 37);
             this.ProfileLabel.Name = "ProfileLabel";
             this.ProfileLabel.Size = new System.Drawing.Size(126, 39);
             this.ProfileLabel.TabIndex = 4;
@@ -1062,10 +1117,9 @@
             this.panelSearch.Controls.Add(this.BackaSearchButton);
             this.panelSearch.Controls.Add(this.groupBox4);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSearch.Location = new System.Drawing.Point(249, 130);
-            this.panelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelSearch.Location = new System.Drawing.Point(221, 104);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1730, 981);
+            this.panelSearch.Size = new System.Drawing.Size(1632, 891);
             this.panelSearch.TabIndex = 16;
             this.panelSearch.Visible = false;
             // 
@@ -1080,9 +1134,8 @@
             this.aSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.aSearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aSearchBox.Location = new System.Drawing.Point(0, 0);
-            this.aSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aSearchBox.Name = "aSearchBox";
-            this.aSearchBox.Size = new System.Drawing.Size(1730, 30);
+            this.aSearchBox.Size = new System.Drawing.Size(1632, 30);
             this.aSearchBox.TabIndex = 14;
             this.aSearchBox.Text = "   Search";
             this.aSearchBox.Click += new System.EventHandler(this.SearchBox_Click);
@@ -1107,8 +1160,7 @@
             this.ResultGrid.ContextMenuStrip = this.MediaMenuStrip1;
             this.ResultGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ResultGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ResultGrid.Location = new System.Drawing.Point(0, 482);
-            this.ResultGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ResultGrid.Location = new System.Drawing.Point(0, 492);
             this.ResultGrid.Name = "ResultGrid";
             this.ResultGrid.ReadOnly = true;
             this.ResultGrid.RowHeadersVisible = false;
@@ -1122,7 +1174,7 @@
             this.ResultGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.ResultGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ResultGrid.RowTemplate.Height = 24;
-            this.ResultGrid.Size = new System.Drawing.Size(1730, 438);
+            this.ResultGrid.Size = new System.Drawing.Size(1632, 350);
             this.ResultGrid.TabIndex = 0;
             this.ResultGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.ResultGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
@@ -1132,10 +1184,9 @@
             this.BackaSearchButton.AutoSize = true;
             this.BackaSearchButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BackaSearchButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackaSearchButton.Location = new System.Drawing.Point(0, 920);
-            this.BackaSearchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BackaSearchButton.Location = new System.Drawing.Point(0, 842);
             this.BackaSearchButton.Name = "BackaSearchButton";
-            this.BackaSearchButton.Size = new System.Drawing.Size(1730, 61);
+            this.BackaSearchButton.Size = new System.Drawing.Size(1632, 49);
             this.BackaSearchButton.TabIndex = 16;
             this.BackaSearchButton.Text = "Back";
             this.BackaSearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1154,21 +1205,18 @@
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(1730, 981);
+            this.groupBox4.Size = new System.Drawing.Size(1632, 891);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(161, 166);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.trackBar1.Location = new System.Drawing.Point(143, 133);
             this.trackBar1.Maximum = 4;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(89, 69);
+            this.trackBar1.Size = new System.Drawing.Size(79, 69);
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Visible = false;
             // 
@@ -1177,7 +1225,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 162);
+            this.label3.Location = new System.Drawing.Point(16, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 29);
             this.label3.TabIndex = 27;
@@ -1192,10 +1240,9 @@
             this.panelTypeSearch.Controls.Add(this.checkBox3);
             this.panelTypeSearch.Controls.Add(this.checkBox2);
             this.panelTypeSearch.Controls.Add(this.checkBox1);
-            this.panelTypeSearch.Location = new System.Drawing.Point(106, 49);
-            this.panelTypeSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelTypeSearch.Location = new System.Drawing.Point(94, 39);
             this.panelTypeSearch.Name = "panelTypeSearch";
-            this.panelTypeSearch.Size = new System.Drawing.Size(354, 97);
+            this.panelTypeSearch.Size = new System.Drawing.Size(315, 78);
             this.panelTypeSearch.TabIndex = 26;
             // 
             // checkBox6
@@ -1204,8 +1251,7 @@
             this.checkBox6.Checked = true;
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox6.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(236, 51);
-            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox6.Location = new System.Drawing.Point(210, 41);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(95, 28);
             this.checkBox6.TabIndex = 5;
@@ -1219,8 +1265,7 @@
             this.checkBox5.Checked = true;
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(236, 9);
-            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox5.Location = new System.Drawing.Point(210, 7);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(74, 28);
             this.checkBox5.TabIndex = 4;
@@ -1234,8 +1279,7 @@
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(120, 51);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox4.Location = new System.Drawing.Point(107, 41);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(91, 28);
             this.checkBox4.TabIndex = 3;
@@ -1249,8 +1293,7 @@
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(120, 9);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox3.Location = new System.Drawing.Point(107, 7);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(81, 28);
             this.checkBox3.TabIndex = 2;
@@ -1264,8 +1307,7 @@
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(3, 59);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox2.Location = new System.Drawing.Point(3, 47);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(84, 28);
             this.checkBox2.TabIndex = 1;
@@ -1279,8 +1321,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(3, 9);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.checkBox1.Location = new System.Drawing.Point(3, 7);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 28);
             this.checkBox1.TabIndex = 0;
@@ -1293,7 +1334,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 48);
+            this.label2.Location = new System.Drawing.Point(16, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 29);
             this.label2.TabIndex = 25;
@@ -1309,10 +1350,9 @@
             this.panelChangePass.Controls.Add(this.label7);
             this.panelChangePass.Controls.Add(this.label6);
             this.panelChangePass.Controls.Add(this.label5);
-            this.panelChangePass.Location = new System.Drawing.Point(448, 417);
-            this.panelChangePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelChangePass.Location = new System.Drawing.Point(398, 334);
             this.panelChangePass.Name = "panelChangePass";
-            this.panelChangePass.Size = new System.Drawing.Size(564, 351);
+            this.panelChangePass.Size = new System.Drawing.Size(501, 281);
             this.panelChangePass.TabIndex = 18;
             this.panelChangePass.Visible = false;
             // 
@@ -1320,10 +1360,9 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(28, 259);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(25, 207);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 49);
+            this.button3.Size = new System.Drawing.Size(91, 39);
             this.button3.TabIndex = 30;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
@@ -1333,10 +1372,9 @@
             // 
             this.button2.AutoSize = true;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(308, 259);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Location = new System.Drawing.Point(274, 207);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(220, 49);
+            this.button2.Size = new System.Drawing.Size(196, 39);
             this.button2.TabIndex = 29;
             this.button2.Text = "Change password";
             this.button2.UseVisualStyleBackColor = true;
@@ -1351,11 +1389,10 @@
             this.Newpass2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Newpass2.Cursor = System.Windows.Forms.Cursors.Default;
             this.Newpass2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Newpass2.Location = new System.Drawing.Point(324, 170);
-            this.Newpass2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Newpass2.Location = new System.Drawing.Point(288, 136);
             this.Newpass2.Name = "Newpass2";
             this.Newpass2.PasswordChar = '•';
-            this.Newpass2.Size = new System.Drawing.Size(169, 30);
+            this.Newpass2.Size = new System.Drawing.Size(150, 30);
             this.Newpass2.TabIndex = 28;
             // 
             // OldpassBox
@@ -1367,11 +1404,10 @@
             this.OldpassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OldpassBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.OldpassBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OldpassBox.Location = new System.Drawing.Point(324, 30);
-            this.OldpassBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.OldpassBox.Location = new System.Drawing.Point(288, 24);
             this.OldpassBox.Name = "OldpassBox";
             this.OldpassBox.PasswordChar = '•';
-            this.OldpassBox.Size = new System.Drawing.Size(169, 30);
+            this.OldpassBox.Size = new System.Drawing.Size(150, 30);
             this.OldpassBox.TabIndex = 27;
             // 
             // Newpass1
@@ -1383,11 +1419,10 @@
             this.Newpass1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Newpass1.Cursor = System.Windows.Forms.Cursors.Default;
             this.Newpass1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Newpass1.Location = new System.Drawing.Point(324, 99);
-            this.Newpass1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Newpass1.Location = new System.Drawing.Point(288, 79);
             this.Newpass1.Name = "Newpass1";
             this.Newpass1.PasswordChar = '•';
-            this.Newpass1.Size = new System.Drawing.Size(169, 30);
+            this.Newpass1.Size = new System.Drawing.Size(150, 30);
             this.Newpass1.TabIndex = 26;
             // 
             // label7
@@ -1395,7 +1430,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(22, 171);
+            this.label7.Location = new System.Drawing.Point(20, 137);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(245, 29);
             this.label7.TabIndex = 25;
@@ -1406,7 +1441,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(22, 30);
+            this.label6.Location = new System.Drawing.Point(20, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 29);
             this.label6.TabIndex = 24;
@@ -1417,7 +1452,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(22, 100);
+            this.label5.Location = new System.Drawing.Point(20, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 29);
             this.label5.TabIndex = 23;
@@ -1435,9 +1470,10 @@
             this.panelArtist.Controls.Add(this.ArtistMediaGrid);
             this.panelArtist.Controls.Add(this.ArtistNameLabel);
             this.panelArtist.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelArtist.Location = new System.Drawing.Point(1061, 130);
+            this.panelArtist.Location = new System.Drawing.Point(1037, 104);
+            this.panelArtist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelArtist.Name = "panelArtist";
-            this.panelArtist.Size = new System.Drawing.Size(918, 981);
+            this.panelArtist.Size = new System.Drawing.Size(816, 891);
             this.panelArtist.TabIndex = 19;
             this.panelArtist.Visible = false;
             // 
@@ -1446,7 +1482,7 @@
             this.FollowingQLabel.AutoSize = true;
             this.FollowingQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowingQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingQLabel.Location = new System.Drawing.Point(570, 35);
+            this.FollowingQLabel.Location = new System.Drawing.Point(507, 28);
             this.FollowingQLabel.Name = "FollowingQLabel";
             this.FollowingQLabel.Size = new System.Drawing.Size(49, 59);
             this.FollowingQLabel.TabIndex = 13;
@@ -1458,7 +1494,7 @@
             this.FollowingLabel.AutoSize = true;
             this.FollowingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowingLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingLabel.Location = new System.Drawing.Point(538, 98);
+            this.FollowingLabel.Location = new System.Drawing.Point(478, 78);
             this.FollowingLabel.Name = "FollowingLabel";
             this.FollowingLabel.Size = new System.Drawing.Size(109, 29);
             this.FollowingLabel.TabIndex = 12;
@@ -1471,10 +1507,11 @@
             this.JobsBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.JobsBox.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.JobsBox.ForeColor = System.Drawing.Color.Silver;
-            this.JobsBox.Location = new System.Drawing.Point(51, 176);
+            this.JobsBox.Location = new System.Drawing.Point(45, 141);
+            this.JobsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JobsBox.Name = "JobsBox";
             this.JobsBox.ReadOnly = true;
-            this.JobsBox.Size = new System.Drawing.Size(355, 91);
+            this.JobsBox.Size = new System.Drawing.Size(316, 73);
             this.JobsBox.TabIndex = 11;
             this.JobsBox.Text = "Jobs & desc";
             // 
@@ -1483,7 +1520,7 @@
             this.FollowerQLabel.AutoSize = true;
             this.FollowerQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowerQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowerQLabel.Location = new System.Drawing.Point(458, 35);
+            this.FollowerQLabel.Location = new System.Drawing.Point(407, 28);
             this.FollowerQLabel.Name = "FollowerQLabel";
             this.FollowerQLabel.Size = new System.Drawing.Size(49, 59);
             this.FollowerQLabel.TabIndex = 10;
@@ -1494,7 +1531,7 @@
             this.Followers.AutoSize = true;
             this.Followers.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Followers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Followers.Location = new System.Drawing.Point(424, 96);
+            this.Followers.Location = new System.Drawing.Point(377, 77);
             this.Followers.Name = "Followers";
             this.Followers.Size = new System.Drawing.Size(108, 29);
             this.Followers.TabIndex = 9;
@@ -1510,7 +1547,8 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button6.Location = new System.Drawing.Point(51, 105);
+            this.button6.Location = new System.Drawing.Point(45, 84);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(89, 45);
             this.button6.TabIndex = 8;
@@ -1549,8 +1587,7 @@
             this.ArtistAlbumGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.ArtistAlbumGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistAlbumGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ArtistAlbumGrid.Location = new System.Drawing.Point(0, 491);
-            this.ArtistAlbumGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArtistAlbumGrid.Location = new System.Drawing.Point(0, 499);
             this.ArtistAlbumGrid.MultiSelect = false;
             this.ArtistAlbumGrid.Name = "ArtistAlbumGrid";
             this.ArtistAlbumGrid.ReadOnly = true;
@@ -1576,7 +1613,7 @@
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ArtistAlbumGrid.RowTemplate.Height = 24;
             this.ArtistAlbumGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ArtistAlbumGrid.Size = new System.Drawing.Size(918, 235);
+            this.ArtistAlbumGrid.Size = new System.Drawing.Size(816, 188);
             this.ArtistAlbumGrid.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn3
@@ -1618,8 +1655,7 @@
             this.ArtistMediaGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.ArtistMediaGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistMediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ArtistMediaGrid.Location = new System.Drawing.Point(0, 726);
-            this.ArtistMediaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArtistMediaGrid.Location = new System.Drawing.Point(0, 687);
             this.ArtistMediaGrid.MultiSelect = false;
             this.ArtistMediaGrid.Name = "ArtistMediaGrid";
             this.ArtistMediaGrid.ReadOnly = true;
@@ -1646,7 +1682,7 @@
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ArtistMediaGrid.RowTemplate.Height = 24;
             this.ArtistMediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ArtistMediaGrid.Size = new System.Drawing.Size(918, 255);
+            this.ArtistMediaGrid.Size = new System.Drawing.Size(816, 204);
             this.ArtistMediaGrid.TabIndex = 6;
             this.ArtistMediaGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.ArtistMediaGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
@@ -1664,137 +1700,85 @@
             this.ArtistNameLabel.AutoSize = true;
             this.ArtistNameLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArtistNameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ArtistNameLabel.Location = new System.Drawing.Point(41, 35);
+            this.ArtistNameLabel.Location = new System.Drawing.Point(36, 28);
             this.ArtistNameLabel.Name = "ArtistNameLabel";
             this.ArtistNameLabel.Size = new System.Drawing.Size(247, 59);
             this.ArtistNameLabel.TabIndex = 5;
             this.ArtistNameLabel.Text = "ArtistName";
             // 
-            // NextButton
+            // splitContainer4
             // 
-            this.NextButton.AutoSize = true;
-            this.NextButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.NextButton.Image = ((System.Drawing.Image)(resources.GetObject("NextButton.Image")));
-            this.NextButton.Location = new System.Drawing.Point(0, 0);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(54, 61);
-            this.NextButton.TabIndex = 31;
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer4.IsSplitterFixed = true;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 134);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer4.Name = "splitContainer4";
             // 
-            // linkLabel1
+            // splitContainer4.Panel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
-            this.linkLabel1.Location = new System.Drawing.Point(13, 608);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(131, 19);
-            this.linkLabel1.TabIndex = 31;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "https://icons8.com";
+            this.splitContainer4.Panel1.Controls.Add(this.splitContainer5);
+            this.splitContainer4.Panel1MinSize = 110;
             // 
-            // splitContainer1
+            // splitContainer4.Panel2
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 186);
-            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer4.Panel2.Controls.Add(this.splitContainer6);
+            this.splitContainer4.Panel2MinSize = 110;
+            this.splitContainer4.Size = new System.Drawing.Size(221, 64);
+            this.splitContainer4.SplitterDistance = 110;
+            this.splitContainer4.SplitterWidth = 1;
+            this.splitContainer4.TabIndex = 28;
             // 
-            // splitContainer1.Panel1
+            // splitContainer5
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.IsSplitterFixed = true;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer5.Name = "splitContainer5";
             // 
-            // splitContainer1.Panel2
+            // splitContainer5.Panel1
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(249, 61);
-            this.splitContainer1.SplitterDistance = 83;
-            this.splitContainer1.TabIndex = 28;
+            this.splitContainer5.Panel1.Controls.Add(this.PrevButton);
+            this.splitContainer5.Panel1MinSize = 55;
             // 
-            // splitContainer2
+            // splitContainer5.Panel2
             // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer5.Panel2.Controls.Add(this.PlayButton);
+            this.splitContainer5.Panel2MinSize = 55;
+            this.splitContainer5.Size = new System.Drawing.Size(110, 64);
+            this.splitContainer5.SplitterDistance = 57;
+            this.splitContainer5.SplitterWidth = 1;
+            this.splitContainer5.TabIndex = 0;
             // 
-            // splitContainer2.Panel1
+            // splitContainer6
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button4);
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.IsSplitterFixed = true;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer6.Name = "splitContainer6";
             // 
-            // splitContainer2.Panel2
+            // splitContainer6.Panel1
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.PlayButton);
-            this.splitContainer2.Size = new System.Drawing.Size(83, 61);
-            this.splitContainer2.SplitterDistance = 27;
-            this.splitContainer2.TabIndex = 0;
+            this.splitContainer6.Panel1.Controls.Add(this.NextButton);
+            this.splitContainer6.Panel1MinSize = 55;
             // 
-            // splitContainer3
+            // splitContainer6.Panel2
             // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.NextButton);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.button1);
-            this.splitContainer3.Size = new System.Drawing.Size(162, 61);
-            this.splitContainer3.SplitterDistance = 54;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // PlayButton
-            // 
-            this.PlayButton.AutoSize = true;
-            this.PlayButton.BackColor = System.Drawing.Color.Transparent;
-            this.PlayButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
-            this.PlayButton.Image = ((System.Drawing.Image)(resources.GetObject("PlayButton.Image")));
-            this.PlayButton.Location = new System.Drawing.Point(0, 0);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(52, 61);
-            this.PlayButton.TabIndex = 0;
-            this.PlayButton.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 61);
-            this.button1.TabIndex = 32;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(27, 61);
-            this.button4.TabIndex = 1;
-            this.button4.UseVisualStyleBackColor = false;
+            this.splitContainer6.Panel2.Controls.Add(this.ShuffleButton);
+            this.splitContainer6.Panel2MinSize = 55;
+            this.splitContainer6.Size = new System.Drawing.Size(110, 64);
+            this.splitContainer6.SplitterDistance = 57;
+            this.splitContainer6.SplitterWidth = 1;
+            this.splitContainer6.TabIndex = 0;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1979, 1111);
+            this.ClientSize = new System.Drawing.Size(1853, 995);
             this.Controls.Add(this.panelArtist);
             this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelAdmin);
@@ -1805,8 +1789,7 @@
             this.Controls.Add(this.panelProfile);
             this.Controls.Add(this.panelShowMedia);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(913, 626);
             this.Name = "FormMain";
             this.Text = "SpotfliX";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
@@ -1844,22 +1827,22 @@
             this.panelArtist.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistAlbumGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistMediaGrid)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel1.PerformLayout();
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            this.splitContainer5.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            this.splitContainer6.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1970,11 +1953,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PrevButton;
         private System.Windows.Forms.Button PlayButton;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ShuffleButton;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.SplitContainer splitContainer6;
     }
 }
