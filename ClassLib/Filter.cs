@@ -444,7 +444,7 @@ namespace Proyecto
                 }
                 resList.Add(re);
             }
-
+            List<object> res2 = new List<object>(res);
             foreach (object x in res)
             {
                 
@@ -452,14 +452,14 @@ namespace Proyecto
                 {
                     if (!ls.Contains(x))
                     {
-                        res.Remove(x);
+                        res2.Remove(x);
                     }
                 }
             }
 
 
 
-            return res;
+            return res2;
         }
     }
 

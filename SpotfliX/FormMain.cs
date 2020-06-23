@@ -1109,7 +1109,8 @@ namespace SpotfliX
                 {
                     try
                     {
-                        File.Copy(s.GetFileName(), DownloadDialog.SelectedPath + s.GetMetadata().GetName() + s.GetInfo()["format"]);
+                        File.Copy(s.GetFileName(), DownloadDialog.SelectedPath + $"{s.GetMetadata().GetName()}-{s.GetMetadata().GetArtist()}" 
+                            + s.GetInfo()["format"]);
 
                     }
                     catch (Exception)
