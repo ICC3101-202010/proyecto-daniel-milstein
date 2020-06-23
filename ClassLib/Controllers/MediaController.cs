@@ -22,6 +22,7 @@ namespace Proyecto
             player.URL = fname;
             player.Ctlcontrols.play();
             player.windowlessVideo = false;
+            player.uiMode = "none";
             nameLabel.Show();
             artistLabel.Show();
             nameLabel.Text = media.GetMetadata().GetName();

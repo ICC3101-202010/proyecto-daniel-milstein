@@ -43,14 +43,22 @@ namespace SpotfliX
                 AdminAddMedia.Show();
                 UsersButton.Show();
             }
+            axWindowsMediaPlayer1.uiMode = "none";
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)
         {
-            panelProfile.Show();
-            userProfilelabel.Text = ActiveUser.GetUsername();
-            emailProfileLabel.Text = ActiveUser.GetEmail();
-            PassProfilelabel.Text = "************";
+            if (!panelProfile.Visible)
+            {
+                HideOthers(panelProfile);
+                userProfilelabel.Text = ActiveUser.GetUsername();
+                emailProfileLabel.Text = ActiveUser.GetEmail();
+                PassProfilelabel.Text = "************"; 
+            }
+            else
+            {
+                panelProfile.Hide();
+            }
         }
 
         private void FormMain_VisibleChanged(object sender, EventArgs e)
@@ -388,9 +396,19 @@ namespace SpotfliX
             if(txt.Text != "")
             {
                 Filter f = new Filter();
-                (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
-                List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
-                f.ObjGrid(res, ResultGrid, SearchTypes);
+                if (txt.Text.Contains("&"))
+                {
+                    List<string> ls = txt.Text.Split('&').ToList();
+                    List<object> res = f.AndSearch(ls);
+                    f.ObjGrid(res, ResultGrid, SearchTypes);
+                }
+                
+                else
+                {
+                    (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
+                    List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
+                    f.ObjGrid(res, ResultGrid, SearchTypes); 
+                }
             }
             
         }
@@ -897,20 +915,39 @@ namespace SpotfliX
 
         private void playlistToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ToolStripItem item = (ToolStripItem)sender;
+            string iName = item.Text;
+            if (iName == "Playlist")
+            {
+                return;
+            }
+            else
+            {
+                ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)item.Owner;
+                ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+                ToolStripDropDownMenu drop2 = (ToolStripDropDownMenu)menuItem.Owner;
+                ToolStripMenuItem menuItem2 = (ToolStripMenuItem)drop2.OwnerItem;
+                ContextMenuStrip m = (ContextMenuStrip)menuItem2.Owner;
+                DataGridView grid = (DataGridView)m.SourceControl;
+                Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+                ActiveUser.AddToPlaylist(media, iName);
+            }
         }
 
         private void playlistToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
             ToolStripMenuItem it = (ToolStripMenuItem)sender;
             ToolStripDropDown tool = it.DropDown;
+            tool.Items.Clear();
+            tool.Items.Add(newToolStripMenuItem);
             foreach (Playlist item in ActiveUser.GetPlaylist())
             {
-                if (!tool.Items.ContainsKey(item.GetName()))
+                ToolStripMenuItem mi = new ToolStripMenuItem(item.GetName());
+                if (!tool.Items.Contains(mi))
                 {
-                    ToolStripMenuItem mi = new ToolStripMenuItem(item.GetName());
-                    mi.Click += newToolStripMenuItem_Click;
-                    tool.Items.Add(item.GetName());
+                    
+                    mi.Click += playlistToolStripMenuItem_Click;
+                    tool.Items.Add(mi);
 
                 }
                 
@@ -928,7 +965,11 @@ namespace SpotfliX
             Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
             if(media.GetType() == typeof(Video))
             {
-                DFM.Add((Video)media);
+                Video v = (Video)media;
+                if (!DFM.Contains(v))
+                {
+                    DFM.Add(v); 
+                }
             }
             
         }
@@ -1022,6 +1063,33 @@ namespace SpotfliX
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void DecideButton_Click(object sender, EventArgs e)
+        {
+            if (DFM.Count()>0)
+            {
+                Random r = new Random();
+                Video v = DFM[r.Next(DFM.Count() + 1)];
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+
+                DialogResult dr = MessageBox.Show($"The video selected was {v.GetMetadata().GetName()}. Select YES if you want to" +
+                    $"clear this list, or NO if you only want to remove this video.", "Decide for me",  buttons);
+                if (dr == DialogResult.Yes)
+                {
+                    DFM.Clear();
+                }
+                else
+                {
+                    DFM.Remove(v);
+                }
+
+
+
+                MediaControl.PlayMedia(v, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton,
+                    Properties.Resources.icons8_pause_button_48);
+                
             }
         }
     }

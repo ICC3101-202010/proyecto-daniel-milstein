@@ -403,6 +403,40 @@ namespace Proyecto
             }
             return result;
         }
+
+        public List<object> AndSearch(List<string> kWords)
+        {
+            List<object> res = new List<object>();
+            List<List<object>> resList = new List<List<object>>();
+            string item2;
+            foreach (string item in kWords)
+            {
+                item2 = item.Trim();
+                (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) x = Search(item2);
+                List<object> re = CastToObj(x.Item1, x.Item2, x.Item3, x.Item4, x.Item5);
+                foreach (object obj in re)
+                {
+                    res.Add(obj);
+                }
+                resList.Add(re);
+            }
+
+            foreach (object x in res)
+            {
+                
+                foreach (List<object> ls in resList)
+                {
+                    if (!ls.Contains(x))
+                    {
+                        res.Remove(x);
+                    }
+                }
+            }
+
+
+
+            return res;
+        }
     }
 
 }
