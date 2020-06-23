@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Proyecto;
 using WMPLib;
 using AxWMPLib;
+using ClassLib.Controllers;
 
 namespace SpotfliX
 {
@@ -28,6 +29,7 @@ namespace SpotfliX
         public Media ActiveMedia;
         public int Vol;
         public List<Video> DFM = new List<Video>();
+        public Random Randy = new Random();
 
 
         public FormMain(User user)
@@ -1091,6 +1093,66 @@ namespace SpotfliX
                     Properties.Resources.icons8_pause_button_48);
                 
             }
+        }
+
+        private void downloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            ToolStripItem item = (ToolStripItem)sender;
+            ContextMenuStrip menu = (ContextMenuStrip)item.Owner;
+            DataGridView grid = (DataGridView)menu.SourceControl;
+            if (grid.Rows[SelectedRow].HeaderCell.Value.GetType() == typeof(Song))
+            {
+                Song s = (Song)grid.Rows[SelectedRow].HeaderCell.Value;
+                DownloadDialog.ShowDialog();
+                if (ActiveUser.GetPremium())
+                {
+                    try
+                    {
+                        File.Copy(s.GetFileName(), DownloadDialog.SelectedPath + s.GetMetadata().GetName() + s.GetInfo()["format"]);
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("File already exists", "Error", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Download exclusive to premium members", "Error", MessageBoxButtons.OK);
+                }
+                           
+            }
+
+        }
+
+        private void ShuffleButton_Click(object sender, EventArgs e)
+        {
+            List<Media> shuffle = new List<Media>();
+            //foreach (Media item in ActiveUser.GetQueue())
+            //{
+            //    shuffle.Add(ActiveUser.GetQueue().Dequeue());
+            //}
+            //int len = ActiveUser.GetQueue().Count;
+            //for (int i = 0; i < len; i++)
+            //{
+            //    shuffle.Add(ActiveUser.GetQueue().Dequeue());
+            //}
+
+            while (ActiveUser.GetQueue().Count>0)
+            {
+                shuffle.Add(ActiveUser.GetQueue().Dequeue());
+            }
+            Shuffler.Shuffle(shuffle, Randy);
+            foreach (Media m in shuffle)
+            {
+                ActiveUser.AddToQueue(m);
+            }
+            Filter f = new Filter();
+            List<Type> ts = new List<Type>() { typeof(Song), typeof(Video) };
+            f.ObjGrid(f.CastToObj(ActiveUser.GetQueue()), QGrid, ts);
+
         }
     }
 }

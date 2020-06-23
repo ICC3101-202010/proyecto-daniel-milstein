@@ -38,6 +38,8 @@ namespace Proyecto
 
             playB.Image = img;
         } 
-    
+
+        
+
     }
 }

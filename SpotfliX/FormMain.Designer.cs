@@ -69,6 +69,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.SearchButtton = new System.Windows.Forms.Button();
             this.LibraryButton = new System.Windows.Forms.Button();
+            this.DecideButton = new System.Windows.Forms.Button();
             this.DJButton = new System.Windows.Forms.Button();
             this.ShowMediaButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
@@ -103,7 +104,6 @@
             this.goToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.albumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteMediaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,6 +141,13 @@
             this.panelMediaControl = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.VolumeBar = new System.Windows.Forms.TrackBar();
+            this.button10 = new System.Windows.Forms.Button();
+            this.LikeButton = new System.Windows.Forms.Button();
+            this.QueueButton = new System.Windows.Forms.Button();
+            this.ShuffleButton = new System.Windows.Forms.Button();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.PlayButton = new System.Windows.Forms.Button();
+            this.PrevButton = new System.Windows.Forms.Button();
             this.panelChangePass = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -164,27 +171,21 @@
             this.ArtistNameLabel = new System.Windows.Forms.Label();
             this.panelLibrary = new System.Windows.Forms.Panel();
             this.PlaylistGrid = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FavMGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FavVGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserLibLabel = new System.Windows.Forms.Label();
             this.panelQueue = new System.Windows.Forms.Panel();
+            this.QueueLabel = new System.Windows.Forms.Label();
             this.QGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QueueLabel = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.LikeButton = new System.Windows.Forms.Button();
-            this.QueueButton = new System.Windows.Forms.Button();
-            this.ShuffleButton = new System.Windows.Forms.Button();
-            this.NextButton = new System.Windows.Forms.Button();
-            this.PlayButton = new System.Windows.Forms.Button();
-            this.PrevButton = new System.Windows.Forms.Button();
-            this.DecideButton = new System.Windows.Forms.Button();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spotflixBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DownloadDialog = new System.Windows.Forms.FolderBrowserDialog();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -335,6 +336,28 @@
             this.LibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LibraryButton.UseVisualStyleBackColor = false;
             this.LibraryButton.Click += new System.EventHandler(this.LibraryButton_Click);
+            // 
+            // DecideButton
+            // 
+            this.DecideButton.AutoSize = true;
+            this.DecideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(169)))));
+            this.DecideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.DecideButton.FlatAppearance.BorderSize = 0;
+            this.DecideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(208)))), ((int)(((byte)(207)))));
+            this.DecideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(84)))));
+            this.DecideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DecideButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DecideButton.ForeColor = System.Drawing.Color.White;
+            this.DecideButton.Image = ((System.Drawing.Image)(resources.GetObject("DecideButton.Image")));
+            this.DecideButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DecideButton.Location = new System.Drawing.Point(2, 194);
+            this.DecideButton.Name = "DecideButton";
+            this.DecideButton.Size = new System.Drawing.Size(210, 94);
+            this.DecideButton.TabIndex = 4;
+            this.DecideButton.Text = "Decide \r\nfor me";
+            this.DecideButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DecideButton.UseVisualStyleBackColor = false;
+            this.DecideButton.Click += new System.EventHandler(this.DecideButton_Click);
             // 
             // DJButton
             // 
@@ -716,15 +739,15 @@
             this.playToolStripMenuItem,
             this.addToQueueToolStripMenuItem,
             this.goToToolStripMenuItem,
-            this.infoToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+            this.deleteToolStripMenuItem,
+            this.downloadToolStripMenuItem});
             this.MediaMenuStrip1.Name = "MediaMenuStrip1";
-            this.MediaMenuStrip1.Size = new System.Drawing.Size(144, 144);
+            this.MediaMenuStrip1.Size = new System.Drawing.Size(156, 144);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
             this.playToolStripMenuItem.Text = "Play";
             this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
             // 
@@ -736,20 +759,20 @@
             this.playlistToolStripMenuItem,
             this.decideForMeToolStripMenuItem});
             this.addToQueueToolStripMenuItem.Name = "addToQueueToolStripMenuItem";
-            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.addToQueueToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
             this.addToQueueToolStripMenuItem.Text = "Add to...";
             // 
             // queueToolStripMenuItem
             // 
             this.queueToolStripMenuItem.Name = "queueToolStripMenuItem";
-            this.queueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.queueToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.queueToolStripMenuItem.Text = "Queue";
             this.queueToolStripMenuItem.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
             // 
             // favoritesToolStripMenuItem
             // 
             this.favoritesToolStripMenuItem.Name = "favoritesToolStripMenuItem";
-            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.favoritesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.favoritesToolStripMenuItem.Text = "Favorites";
             this.favoritesToolStripMenuItem.Click += new System.EventHandler(this.favoritesToolStripMenuItem_Click);
             // 
@@ -758,7 +781,7 @@
             this.playlistToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem});
             this.playlistToolStripMenuItem.Name = "playlistToolStripMenuItem";
-            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.playlistToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.playlistToolStripMenuItem.Text = "Playlist";
             this.playlistToolStripMenuItem.DropDownOpened += new System.EventHandler(this.playlistToolStripMenuItem_DropDownOpened);
             this.playlistToolStripMenuItem.Click += new System.EventHandler(this.playlistToolStripMenuItem_Click);
@@ -766,14 +789,14 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
             this.newToolStripMenuItem.Text = "New...";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // decideForMeToolStripMenuItem
             // 
             this.decideForMeToolStripMenuItem.Name = "decideForMeToolStripMenuItem";
-            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.decideForMeToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.decideForMeToolStripMenuItem.Text = "Decide for me";
             this.decideForMeToolStripMenuItem.Click += new System.EventHandler(this.decideForMeToolStripMenuItem_Click);
             // 
@@ -783,28 +806,22 @@
             this.artistToolStripMenuItem,
             this.albumToolStripMenuItem});
             this.goToToolStripMenuItem.Name = "goToToolStripMenuItem";
-            this.goToToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.goToToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
             this.goToToolStripMenuItem.Text = "Go to...";
             // 
             // artistToolStripMenuItem
             // 
             this.artistToolStripMenuItem.Name = "artistToolStripMenuItem";
-            this.artistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.artistToolStripMenuItem.Size = new System.Drawing.Size(156, 34);
             this.artistToolStripMenuItem.Text = "Artist";
             this.artistToolStripMenuItem.Click += new System.EventHandler(this.artistToolStripMenuItem_Click);
             // 
             // albumToolStripMenuItem
             // 
             this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
-            this.albumToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(156, 34);
             this.albumToolStripMenuItem.Text = "Album";
             this.albumToolStripMenuItem.Click += new System.EventHandler(this.albumToolStripMenuItem_Click);
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
-            this.infoToolStripMenuItem.Text = "Info";
             // 
             // deleteToolStripMenuItem
             // 
@@ -812,20 +829,20 @@
             this.DeleteMediaMenuItem,
             this.fromPlaylistToolStripMenuItem});
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
             this.deleteToolStripMenuItem.Text = "Delete...";
             // 
             // DeleteMediaMenuItem
             // 
             this.DeleteMediaMenuItem.Name = "DeleteMediaMenuItem";
-            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(203, 34);
+            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(270, 34);
             this.DeleteMediaMenuItem.Text = "Media";
             this.DeleteMediaMenuItem.Click += new System.EventHandler(this.mediaToolStripMenuItem_Click);
             // 
             // fromPlaylistToolStripMenuItem
             // 
             this.fromPlaylistToolStripMenuItem.Name = "fromPlaylistToolStripMenuItem";
-            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(203, 34);
+            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.fromPlaylistToolStripMenuItem.Text = "From playlist";
             // 
             // panelProfile
@@ -1293,6 +1310,118 @@
             this.VolumeBar.Value = 100;
             this.VolumeBar.Scroll += new System.EventHandler(this.VolumeBar_Scroll);
             // 
+            // button10
+            // 
+            this.button10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.ForeColor = System.Drawing.Color.Transparent;
+            this.button10.Image = global::SpotfliX.Properties.Resources.icons8_audio_48;
+            this.button10.Location = new System.Drawing.Point(0, 0);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(34, 77);
+            this.button10.TabIndex = 1;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // LikeButton
+            // 
+            this.LikeButton.AutoSize = true;
+            this.LikeButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LikeButton.FlatAppearance.BorderSize = 0;
+            this.LikeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LikeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.LikeButton.Image = global::SpotfliX.Properties.Resources.icons8_heart_64__2_;
+            this.LikeButton.Location = new System.Drawing.Point(302, 0);
+            this.LikeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LikeButton.Name = "LikeButton";
+            this.LikeButton.Size = new System.Drawing.Size(70, 77);
+            this.LikeButton.TabIndex = 5;
+            this.LikeButton.UseVisualStyleBackColor = true;
+            this.LikeButton.Click += new System.EventHandler(this.LikeButton_Click);
+            // 
+            // QueueButton
+            // 
+            this.QueueButton.AutoSize = true;
+            this.QueueButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.QueueButton.FlatAppearance.BorderSize = 0;
+            this.QueueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.QueueButton.ForeColor = System.Drawing.Color.Transparent;
+            this.QueueButton.Image = global::SpotfliX.Properties.Resources.icons8_lounge_music_playlist_80;
+            this.QueueButton.Location = new System.Drawing.Point(216, 0);
+            this.QueueButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.QueueButton.Name = "QueueButton";
+            this.QueueButton.Size = new System.Drawing.Size(86, 77);
+            this.QueueButton.TabIndex = 4;
+            this.QueueButton.UseVisualStyleBackColor = true;
+            this.QueueButton.Click += new System.EventHandler(this.QueueButton_Click);
+            // 
+            // ShuffleButton
+            // 
+            this.ShuffleButton.AutoSize = true;
+            this.ShuffleButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ShuffleButton.FlatAppearance.BorderSize = 0;
+            this.ShuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShuffleButton.ForeColor = System.Drawing.Color.Transparent;
+            this.ShuffleButton.Image = global::SpotfliX.Properties.Resources.icons8_shuffle_48;
+            this.ShuffleButton.Location = new System.Drawing.Point(162, 0);
+            this.ShuffleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ShuffleButton.Name = "ShuffleButton";
+            this.ShuffleButton.Size = new System.Drawing.Size(54, 77);
+            this.ShuffleButton.TabIndex = 3;
+            this.ShuffleButton.UseVisualStyleBackColor = true;
+            this.ShuffleButton.Click += new System.EventHandler(this.ShuffleButton_Click);
+            // 
+            // NextButton
+            // 
+            this.NextButton.AutoSize = true;
+            this.NextButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.NextButton.FlatAppearance.BorderSize = 0;
+            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NextButton.ForeColor = System.Drawing.Color.Transparent;
+            this.NextButton.Image = global::SpotfliX.Properties.Resources.icons8_fast_forward_round_48;
+            this.NextButton.Location = new System.Drawing.Point(108, 0);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(54, 77);
+            this.NextButton.TabIndex = 2;
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.AutoSize = true;
+            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PlayButton.FlatAppearance.BorderSize = 0;
+            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayButton.Image = global::SpotfliX.Properties.Resources.icons8_play_button_48;
+            this.PlayButton.Location = new System.Drawing.Point(54, 0);
+            this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(54, 77);
+            this.PlayButton.TabIndex = 1;
+            this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            // 
+            // PrevButton
+            // 
+            this.PrevButton.AutoSize = true;
+            this.PrevButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PrevButton.FlatAppearance.BorderSize = 0;
+            this.PrevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrevButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PrevButton.Image = global::SpotfliX.Properties.Resources.icons8_rewind_button_round_48;
+            this.PrevButton.Location = new System.Drawing.Point(0, 0);
+            this.PrevButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PrevButton.Name = "PrevButton";
+            this.PrevButton.Size = new System.Drawing.Size(54, 77);
+            this.PrevButton.TabIndex = 0;
+            this.PrevButton.UseVisualStyleBackColor = true;
+            this.PrevButton.Click += new System.EventHandler(this.PrevButton_Click);
+            // 
             // panelChangePass
             // 
             this.panelChangePass.Controls.Add(this.button3);
@@ -1739,6 +1868,14 @@
             this.PlaylistGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
             this.PlaylistGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
             // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Playlists";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 122;
+            // 
             // FavMGrid
             // 
             this.FavMGrid.AllowUserToAddRows = false;
@@ -1897,11 +2034,22 @@
             this.panelQueue.Controls.Add(this.QueueLabel);
             this.panelQueue.Controls.Add(this.QGrid);
             this.panelQueue.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelQueue.Location = new System.Drawing.Point(708, 104);
+            this.panelQueue.Location = new System.Drawing.Point(631, 104);
             this.panelQueue.Name = "panelQueue";
-            this.panelQueue.Size = new System.Drawing.Size(329, 860);
+            this.panelQueue.Size = new System.Drawing.Size(406, 860);
             this.panelQueue.TabIndex = 29;
             this.panelQueue.Visible = false;
+            // 
+            // QueueLabel
+            // 
+            this.QueueLabel.AutoSize = true;
+            this.QueueLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QueueLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.QueueLabel.Location = new System.Drawing.Point(20, 9);
+            this.QueueLabel.Name = "QueueLabel";
+            this.QueueLabel.Size = new System.Drawing.Size(155, 59);
+            this.QueueLabel.TabIndex = 8;
+            this.QueueLabel.Text = "Queue";
             // 
             // QGrid
             // 
@@ -1961,7 +2109,7 @@
             this.QGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.QGrid.RowTemplate.Height = 24;
             this.QGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.QGrid.Size = new System.Drawing.Size(329, 783);
+            this.QGrid.Size = new System.Drawing.Size(406, 783);
             this.QGrid.TabIndex = 7;
             this.QGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
             this.QGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
@@ -1973,150 +2121,6 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 106;
-            // 
-            // QueueLabel
-            // 
-            this.QueueLabel.AutoSize = true;
-            this.QueueLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QueueLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QueueLabel.Location = new System.Drawing.Point(20, 9);
-            this.QueueLabel.Name = "QueueLabel";
-            this.QueueLabel.Size = new System.Drawing.Size(155, 59);
-            this.QueueLabel.TabIndex = 8;
-            this.QueueLabel.Text = "Queue";
-            // 
-            // button10
-            // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.ForeColor = System.Drawing.Color.Transparent;
-            this.button10.Image = global::SpotfliX.Properties.Resources.icons8_audio_48;
-            this.button10.Location = new System.Drawing.Point(0, 0);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(34, 77);
-            this.button10.TabIndex = 1;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // LikeButton
-            // 
-            this.LikeButton.AutoSize = true;
-            this.LikeButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LikeButton.FlatAppearance.BorderSize = 0;
-            this.LikeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LikeButton.ForeColor = System.Drawing.Color.Transparent;
-            this.LikeButton.Image = global::SpotfliX.Properties.Resources.icons8_heart_64__2_;
-            this.LikeButton.Location = new System.Drawing.Point(302, 0);
-            this.LikeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.LikeButton.Name = "LikeButton";
-            this.LikeButton.Size = new System.Drawing.Size(70, 77);
-            this.LikeButton.TabIndex = 5;
-            this.LikeButton.UseVisualStyleBackColor = true;
-            this.LikeButton.Click += new System.EventHandler(this.LikeButton_Click);
-            // 
-            // QueueButton
-            // 
-            this.QueueButton.AutoSize = true;
-            this.QueueButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.QueueButton.FlatAppearance.BorderSize = 0;
-            this.QueueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QueueButton.ForeColor = System.Drawing.Color.Transparent;
-            this.QueueButton.Image = global::SpotfliX.Properties.Resources.icons8_lounge_music_playlist_80;
-            this.QueueButton.Location = new System.Drawing.Point(216, 0);
-            this.QueueButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.QueueButton.Name = "QueueButton";
-            this.QueueButton.Size = new System.Drawing.Size(86, 77);
-            this.QueueButton.TabIndex = 4;
-            this.QueueButton.UseVisualStyleBackColor = true;
-            this.QueueButton.Click += new System.EventHandler(this.QueueButton_Click);
-            // 
-            // ShuffleButton
-            // 
-            this.ShuffleButton.AutoSize = true;
-            this.ShuffleButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ShuffleButton.FlatAppearance.BorderSize = 0;
-            this.ShuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShuffleButton.ForeColor = System.Drawing.Color.Transparent;
-            this.ShuffleButton.Image = global::SpotfliX.Properties.Resources.icons8_shuffle_48;
-            this.ShuffleButton.Location = new System.Drawing.Point(162, 0);
-            this.ShuffleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ShuffleButton.Name = "ShuffleButton";
-            this.ShuffleButton.Size = new System.Drawing.Size(54, 77);
-            this.ShuffleButton.TabIndex = 3;
-            this.ShuffleButton.UseVisualStyleBackColor = true;
-            // 
-            // NextButton
-            // 
-            this.NextButton.AutoSize = true;
-            this.NextButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.NextButton.FlatAppearance.BorderSize = 0;
-            this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NextButton.ForeColor = System.Drawing.Color.Transparent;
-            this.NextButton.Image = global::SpotfliX.Properties.Resources.icons8_fast_forward_round_48;
-            this.NextButton.Location = new System.Drawing.Point(108, 0);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(54, 77);
-            this.NextButton.TabIndex = 2;
-            this.NextButton.UseVisualStyleBackColor = true;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
-            // PlayButton
-            // 
-            this.PlayButton.AutoSize = true;
-            this.PlayButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PlayButton.FlatAppearance.BorderSize = 0;
-            this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
-            this.PlayButton.Image = global::SpotfliX.Properties.Resources.icons8_play_button_48;
-            this.PlayButton.Location = new System.Drawing.Point(54, 0);
-            this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(54, 77);
-            this.PlayButton.TabIndex = 1;
-            this.PlayButton.UseVisualStyleBackColor = true;
-            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
-            // 
-            // PrevButton
-            // 
-            this.PrevButton.AutoSize = true;
-            this.PrevButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PrevButton.FlatAppearance.BorderSize = 0;
-            this.PrevButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PrevButton.ForeColor = System.Drawing.Color.Transparent;
-            this.PrevButton.Image = global::SpotfliX.Properties.Resources.icons8_rewind_button_round_48;
-            this.PrevButton.Location = new System.Drawing.Point(0, 0);
-            this.PrevButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PrevButton.Name = "PrevButton";
-            this.PrevButton.Size = new System.Drawing.Size(54, 77);
-            this.PrevButton.TabIndex = 0;
-            this.PrevButton.UseVisualStyleBackColor = true;
-            this.PrevButton.Click += new System.EventHandler(this.PrevButton_Click);
-            // 
-            // DecideButton
-            // 
-            this.DecideButton.AutoSize = true;
-            this.DecideButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(101)))), ((int)(((byte)(169)))));
-            this.DecideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.DecideButton.FlatAppearance.BorderSize = 0;
-            this.DecideButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(208)))), ((int)(((byte)(207)))));
-            this.DecideButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(84)))));
-            this.DecideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DecideButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DecideButton.ForeColor = System.Drawing.Color.White;
-            this.DecideButton.Image = ((System.Drawing.Image)(resources.GetObject("DecideButton.Image")));
-            this.DecideButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DecideButton.Location = new System.Drawing.Point(2, 194);
-            this.DecideButton.Name = "DecideButton";
-            this.DecideButton.Size = new System.Drawing.Size(210, 94);
-            this.DecideButton.TabIndex = 4;
-            this.DecideButton.Text = "Decide \r\nfor me";
-            this.DecideButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DecideButton.UseVisualStyleBackColor = false;
-            this.DecideButton.Click += new System.EventHandler(this.DecideButton_Click);
             // 
             // ProfileButton
             // 
@@ -2150,13 +2154,12 @@
             // 
             this.spotflixBindingSource.DataSource = typeof(Proyecto.Spotflix);
             // 
-            // Column3
+            // downloadToolStripMenuItem
             // 
-            this.Column3.HeaderText = "Playlists";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 122;
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -2292,7 +2295,6 @@
         private System.Windows.Forms.ContextMenuStrip MediaMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToQueueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem favoritesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem;
@@ -2360,5 +2362,7 @@
         private System.Windows.Forms.DataGridView QGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+        private System.Windows.Forms.FolderBrowserDialog DownloadDialog;
     }
 }

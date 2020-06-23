@@ -104,6 +104,10 @@ namespace Proyecto
             
         }
 
+        public Dictionary<string, string> GetInfo()
+        {
+            return Information;
+        }
         
         
     }

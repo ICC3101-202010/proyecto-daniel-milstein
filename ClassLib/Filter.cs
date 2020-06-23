@@ -75,7 +75,10 @@ namespace Proyecto
             int en = 0;
             grid.Columns.Add("Name", "Name");
             grid.Columns.Add("Artist", "Artist");
+            grid.Columns.Add("Length", "Length");
             grid.Columns.Add("Type", "Type");
+            
+            
             foreach (object ite in list)
             {
                 if (ite.GetType() == typeof(User) && types.Contains(typeof(User)))
@@ -85,7 +88,7 @@ namespace Proyecto
                     username = item.GetUsername();
                     followers = item.GetFollowers().Count.ToString();
                     following = item.GetFollowing().Count.ToString();
-                    grid.Rows.Add(username, "","User");
+                    grid.Rows.Add(username, "","","User");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
                 }
@@ -100,7 +103,11 @@ namespace Proyecto
                     {
                         artist = item.GetMetadata().GetDirector();
                     }
-                    grid.Rows.Add(name, artist,"Song" );
+                    long l = Convert.ToInt64(item.GetInfo()["duration"])*10000000;
+                    
+                    DateTime dt = new DateTime(l);
+                    string dur = dt.ToString("HH:mm:ss");
+                    grid.Rows.Add(name, artist, dur, "Song" );
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
                 }
@@ -115,7 +122,10 @@ namespace Proyecto
                     {
                         artist = item.GetMetadata().GetCreator();
                     }
-                    grid.Rows.Add(name, artist, "Video");
+                    long l = Convert.ToInt64(item.GetInfo()["duration"]) * 10000000;
+                    DateTime dt = new DateTime(l);
+                    string dur = dt.ToString("HH:mm:ss");
+                    grid.Rows.Add(name, artist, dur, "Video");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
                 }
@@ -124,7 +134,7 @@ namespace Proyecto
                 {
                     Artist item = (Artist)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name, "", "Artist");
+                    grid.Rows.Add(name, "", "","Artist");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -134,7 +144,14 @@ namespace Proyecto
                 {
                     Playlist item = (Playlist)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name, item.GetCreator(), "Playlist");
+                    long l = 0;
+                    foreach (Media m in item.GetList())
+                    {
+                        l += Convert.ToInt64(m.GetInfo()["duration"]) * 10000000;
+                    }
+                    DateTime dt = new DateTime(l);
+                    string dur = dt.ToString("HH:mm:ss");
+                    grid.Rows.Add(name, item.GetCreator(),dur , "Playlist");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -143,6 +160,13 @@ namespace Proyecto
                 {
                     Album item = (Album)ite;
                     string name = item.GetName();
+                    long l = 0;
+                    foreach (Media m in item.GetSongs())
+                    {
+                        l += Convert.ToInt64(m.GetInfo()["duration"]) * 10000000;
+                    }
+                    DateTime dt = new DateTime(l);
+                    string dur = dt.ToString("HH:mm:ss");
                     grid.Rows.Add(name, item.GetArtist(),"Album");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;

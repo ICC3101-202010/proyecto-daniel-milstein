@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Controllers\MetadataController.cs" />
+    <Compile Include="Controllers\Shuffler.cs" />
     <Compile Include="Models\Album.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Filter.cs" />
