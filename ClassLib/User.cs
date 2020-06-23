@@ -57,6 +57,30 @@ namespace Proyecto
             Password = newpass;
         }
 
+        public List<Song> GetFavoriteMusic()
+        {
+            return FavoriteMusic;
+        }
+        public List<Video> GetFavoriteVideos()
+        {
+            return FavoriteVideos;
+        }
+
+        public List<Media> GetFavs()
+        {
+            List<Media> ls = new List<Media>();
+            foreach (Song item in FavoriteMusic)
+            {
+                Media i = (Media)item;
+                ls.Add(i);
+            }
+            foreach (Video item in FavoriteVideos)
+            {
+                Media i = (Media)item;
+                ls.Add(i);
+            }
+            return ls;
+        }
         public bool GetAdmin()
         {
             return Admin;
@@ -132,11 +156,31 @@ namespace Proyecto
             {
                 media.AddLike(false);
                 Likes.Remove(media);
+                if (media.GetType() == typeof(Song))
+                {
+                    Song s = (Song)media;
+                    FavoriteMusic.Remove(s);
+                }
+                else if (media.GetType() == typeof(Video))
+                {
+                    Video v = (Video)media;
+                    FavoriteVideos.Remove(v);
+                }
             }
             else
             {
                 media.AddLike(true);
                 Likes.Add(media);
+                if (media.GetType() == typeof(Song))
+                {
+                    Song s = (Song)media;
+                    FavoriteMusic.Add(s);
+                }
+                else if (media.GetType() == typeof(Video))
+                {
+                    Video v = (Video)media;
+                    FavoriteVideos.Add(v);
+                }
             }
             
         }
@@ -162,6 +206,8 @@ namespace Proyecto
             }
             
         }
+
+        
 
         
 

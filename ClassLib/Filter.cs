@@ -319,6 +319,28 @@ namespace Proyecto
 
             return results.ToList();
         }
+        public List<object> CastToObj(List<Song> a)
+        {
+            List<object> result = new List<object>();
+
+            foreach (Song item in a)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
+        public List<object> CastToObj(List<Video> a)
+        {
+            List<object> result = new List<object>();
+
+            foreach (Video item in a)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
         public List<object> CastToObj(List<Media> a)
         {
             List<object> result = new List<object>();
@@ -330,12 +352,23 @@ namespace Proyecto
             }
             return result;
         }
-
         public List<object> CastToObj(Artist a)
         {
             List<object> result = new List<object>();
 
             foreach (Album item in a.GetAlbums().Values)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
+
+        public List<object> CastToObj(List<Playlist> a)
+        {
+            List<object> result = new List<object>();
+
+            foreach (Playlist item in a)
             {
                 object r = item;
                 result.Add(r);

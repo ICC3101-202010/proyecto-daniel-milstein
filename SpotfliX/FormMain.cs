@@ -194,7 +194,7 @@ namespace SpotfliX
         {
             if (!panelAddMedia.Visible)
             {
-                panelAddMedia.Show(); 
+                HideOthers(panelAddMedia);
             }
             else
             {
@@ -218,7 +218,7 @@ namespace SpotfliX
             if (!panelShowMedia.Visible)
             {
                 MediaGrid.Rows.Clear();
-                panelShowMedia.Show();
+                HideOthers(panelShowMedia);
                 List<Media> every = Spotflix.GetMediaDB;
                 int en = 0;
                 foreach (Media item in every)
@@ -252,7 +252,7 @@ namespace SpotfliX
         {
             //play media
             DataGridView grid = (DataGridView)sender;
-            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
+            Image img = Properties.Resources.icons8_pause_button_48;
             if (SelectedRow != -1)
             {
                 object sel = grid.Rows[SelectedRow].HeaderCell.Value;
@@ -417,7 +417,7 @@ namespace SpotfliX
             ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
             ContextMenuStrip menu = (ContextMenuStrip)menuItem.Owner;
             DataGridView grid = (DataGridView)menu.SourceControl; //csm
-            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
+            Image img = Properties.Resources.icons8_pause_button_48;
             object sel = grid.Rows[SelectedRow].HeaderCell.Value;
             if (sel.GetType() == typeof(Song))
             {
@@ -573,7 +573,7 @@ namespace SpotfliX
         {
             if (!panelSearch.Visible)
             {
-                panelSearch.Show(); 
+                HideOthers(panelSearch);
             }
             else
             {
@@ -649,7 +649,7 @@ namespace SpotfliX
 
         private void NextButton_Click(object sender, EventArgs e)
         {
-            Image img = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
+            Image img = Properties.Resources.icons8_pause_button_48;
             if (ActiveUser.GetQueue().Count() != 0)
             {
                 ActiveMedia = ActiveUser.GetQueue().Dequeue();
@@ -661,8 +661,10 @@ namespace SpotfliX
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            Image pauseImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
-            Image playImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-play-button-48.png");
+            //Image pauseImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-pause-button-48.png");
+            //Image playImg = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-play-button-48.png");
+            Image pauseImg = Properties.Resources.icons8_pause_button_48;
+            Image playImg = Properties.Resources.icons8_play_button_48;
             Button pB = (Button)sender;
             bool playing = axWindowsMediaPlayer1.playState == WMPPlayState.wmppsPlaying;
 
@@ -685,22 +687,25 @@ namespace SpotfliX
             //axWindowsMediaPlayer1.Ctlcontrols.previous();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e) //mute
         {
             Button b = (Button)sender;
             if (!axWindowsMediaPlayer1.settings.mute)
             {
                 Vol = axWindowsMediaPlayer1.settings.volume;
                 axWindowsMediaPlayer1.settings.mute = true;
-                
-                b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-mute-48.png");
+                VolumeBar.Value = 0;
+                b.Image = Properties.Resources.icons8_mute_48;
+                //b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-mute-48.png");
             }
 
             else
             {
                 axWindowsMediaPlayer1.settings.mute = false;
                 axWindowsMediaPlayer1.settings.volume = Vol;
-                b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-audio-48.png");
+                VolumeBar.Value = Vol;
+                b.Image = Properties.Resources.icons8_audio_48;
+                //b.Image = Image.FromFile(@"Z:\proyecto-daniel-milstein\SpotfliX\icons8-audio-48.png");
             }
 
             
@@ -710,6 +715,53 @@ namespace SpotfliX
         {
             TrackBar tb = (TrackBar)sender;
             axWindowsMediaPlayer1.settings.volume = tb.Value;
+        }
+        private void HideOthers(Panel visPanel)
+        {
+            //hide todos
+            panelAddMedia.Hide();
+            panelArtist.Hide();
+            panelLibrary.Hide();
+            panelProfile.Hide();
+            panelSearch.Hide();
+            panelShowMedia.Hide();
+            //menos este
+            visPanel.Show();
+        }
+        private void LibraryButton_Click(object sender, EventArgs e)
+        {
+            if (!panelLibrary.Visible)
+            {
+                HideOthers(panelLibrary);
+                UserLibLabel.Text = ActiveUser.GetUsername();
+                Filter f = new Filter();
+                //(List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search("");
+                List<object> res = f.CastToObj(ActiveUser.GetPlaylist());
+                f.ObjGrid(res, PlaylistGrid, SearchTypes);
+                
+                List<object> res1 = f.CastToObj(ActiveUser.GetFavoriteMusic());
+                f.ObjGrid(res1, FavMGrid, SearchTypes);
+
+                List<object> res2 = f.CastToObj(ActiveUser.GetFavoriteVideos());
+                f.ObjGrid(res1, FavVGrid, SearchTypes);
+            }
+            else
+            {
+                panelLibrary.Hide();
+            }
+        }
+
+        private void LikeButton_Click(object sender, EventArgs e)
+        {
+            if (!ActiveUser.GetFavs().Contains(ActiveMedia))
+            {
+                LikeButton.Image = Properties.Resources.icons8_heart_64__3_;
+            }
+            else
+            {
+                LikeButton.Image = Properties.Resources.icons8_heart_64__2_;
+            }
+            ActiveUser.LikeMedia(ActiveMedia);
         }
     }
 }
