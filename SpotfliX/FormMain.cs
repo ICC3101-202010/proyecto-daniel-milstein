@@ -27,6 +27,7 @@ namespace SpotfliX
         public List<Type> SearchTypes = new List<Type>() { typeof(Song), typeof(Video), typeof(User), typeof(Artist), typeof(Playlist), typeof(Album) };
         public Media ActiveMedia;
         public int Vol;
+        public List<Video> DFM = new List<Video>();
 
 
         public FormMain(User user)
@@ -253,9 +254,11 @@ namespace SpotfliX
             //play media
             DataGridView grid = (DataGridView)sender;
             Image img = Properties.Resources.icons8_pause_button_48;
+            Filter f = new Filter();
             if (SelectedRow != -1)
             {
                 object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+                if(sel == null) { return; }
                 if (sel.GetType() == typeof(Song))
                 {
                     Song file = (Song)sel;
@@ -286,7 +289,7 @@ namespace SpotfliX
                     njobs += ".";
                     JobsBox.Text = njobs;
 
-                    Filter f = new Filter();
+                    
                     f.ObjGrid(f.CastToObj(file.GetWork()), ArtistMediaGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
                     try
                     {
@@ -303,12 +306,22 @@ namespace SpotfliX
                     }
 
                 }
-                else if (true)
+                else if (sel.GetType() == typeof(Playlist))
                 {
-
+                    Playlist pl = (Playlist)sel;
+                    panelArtist.Hide();
+                    panelQueue.Show();
+                    QueueLabel.Text = pl.GetName();
+                    f.ObjGrid(f.CastToObj(pl.GetList()), QGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
+                   
                 }
-                else if (true)
+                else if (sel.GetType() == typeof(Album))
                 {
+                    Album pl = (Album)sel;
+                    panelArtist.Hide();
+                    panelQueue.Show();
+                    QueueLabel.Text = pl.GetName();
+                    f.ObjGrid(f.CastToObj(pl.GetSongs()), QGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
 
                 }
 
@@ -419,6 +432,7 @@ namespace SpotfliX
             DataGridView grid = (DataGridView)menu.SourceControl; //csm
             Image img = Properties.Resources.icons8_pause_button_48;
             object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel == null) { return; }
             if (sel.GetType() == typeof(Song))
             {
                 Song file = (Song)sel;
@@ -431,6 +445,42 @@ namespace SpotfliX
                 Video file = (Video)sel;
                 MediaControl.PlayMedia(file, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
                 ActiveMedia = file;
+            }
+            else if (sel .GetType() == typeof(Playlist))
+            {
+                Playlist pl = (Playlist)sel;
+                List<Media> ls = pl.GetList();
+                
+                foreach (Media item in ls)
+                {
+                    if(item == ls[0])
+                    {
+                        MediaControl.PlayMedia(ls[0], axWindowsMediaPlayer1, MediaPlayingLabel, ArtistNameLabel,
+                            PlayButton, Properties.Resources.icons8_pause_button_48);
+                    }
+                    else
+                    {
+                        ActiveUser.AddToQueue(item); 
+                    }
+                }
+            }
+            else if(sel.GetType() == typeof(Album))
+            {
+                Album pl = (Album)sel;
+                List<Song> ls = pl.GetSongs();
+
+                foreach (Song item in ls)
+                {
+                    if (item == ls[0])
+                    {
+                        MediaControl.PlayMedia(ls[0], axWindowsMediaPlayer1, MediaPlayingLabel, ArtistNameLabel,
+                            PlayButton, Properties.Resources.icons8_pause_button_48);
+                    }
+                    else
+                    {
+                        ActiveUser.AddToQueue(item);
+                    }
+                }
             }
 
         }
@@ -618,6 +668,9 @@ namespace SpotfliX
             //IWMPMedia mediaF = axWindowsMediaPlayer1.newMedia(media.GetFileName());
             //axWindowsMediaPlayer1.currentPlaylist.appendItem(mediaF);
             ActiveUser.AddToQueue(media);
+            Filter f = new Filter();
+            List<Type> ts = new List<Type>() { typeof(Song), typeof(Video) };
+            f.ObjGrid(f.CastToObj(ActiveUser.GetQueue()), QGrid, ts);
 
         }
 
@@ -655,6 +708,9 @@ namespace SpotfliX
                 ActiveMedia = ActiveUser.GetQueue().Dequeue();
                 Media media = Spotflix.FindMedia(ActiveMedia.GetFileName());
                 MediaControl.PlayMedia(media, axWindowsMediaPlayer1, MediaPlayingLabel, ArtistPlayingLabel, PlayButton, img);
+                Filter f = new Filter();
+                List<Type> ts = new List<Type>() { typeof(Song), typeof(Video) };
+                f.ObjGrid(f.CastToObj(ActiveUser.GetQueue()), QGrid, ts);
             }
             
         }
@@ -725,6 +781,7 @@ namespace SpotfliX
             panelProfile.Hide();
             panelSearch.Hide();
             panelShowMedia.Hide();
+            panelQueue.Hide();
             //menos este
             visPanel.Show();
         }
@@ -736,14 +793,41 @@ namespace SpotfliX
                 UserLibLabel.Text = ActiveUser.GetUsername();
                 Filter f = new Filter();
                 //(List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search("");
+                List<Type> ts = new List<Type>() { typeof(Playlist) };
+                //DataTable table1 = new DataTable();
+                //table1.Columns.Add("Playlist", typeof(string));
+                //table1.Columns.Add("N of items", typeof(int));
+                //table1.Columns.Add("Object", typeof(Playlist));
+                //DataTable table2 = new DataTable();
+                ////DataGridView grid2 = new DataGridView();
+                //table2.Columns.Add("Playlist", typeof(string));
+                //table2.Columns.Add("Name", typeof(string));
+                //table2.Columns.Add("Object", typeof(Media));
+                //foreach (Playlist pl in ActiveUser.GetPlaylist())
+                //{
+                //    table1.Rows.Add(pl.GetName(), pl.GetList().Count(), pl);
+                //    foreach (Media item in pl.GetList())
+                //    {
+                //        table2.Rows.Add(pl.GetName(), item.GetMetadata().GetName(), item);
+                //    }
+                //}
+                //DataSet ds = new DataSet();
+                //ds.Tables.Add(table1);
+                //ds.Tables.Add(table2);
+                //DataRelation dr = new DataRelation("playlist_media",ds.Tables[0].Columns[0], ds.Tables[1].Columns[0] );
+                //ds.Relations.Add(dr);
+                //PlaylistGrid.DataSource = ds.Tables[0];
+                //PlaylistGrid.
                 List<object> res = f.CastToObj(ActiveUser.GetPlaylist());
-                f.ObjGrid(res, PlaylistGrid, SearchTypes);
-                
+                f.ObjGrid(res, PlaylistGrid, ts);
+                ts.Remove(typeof(Playlist));
+                ts.Add(typeof(Song));
                 List<object> res1 = f.CastToObj(ActiveUser.GetFavoriteMusic());
-                f.ObjGrid(res1, FavMGrid, SearchTypes);
-
+                f.ObjGrid(res1, FavMGrid, ts);
+                ts.Remove(typeof(Song));
+                ts.Add(typeof(Video));
                 List<object> res2 = f.CastToObj(ActiveUser.GetFavoriteVideos());
-                f.ObjGrid(res1, FavVGrid, SearchTypes);
+                f.ObjGrid(res2, FavVGrid, ts);
             }
             else
             {
@@ -762,6 +846,183 @@ namespace SpotfliX
                 LikeButton.Image = Properties.Resources.icons8_heart_64__2_;
             }
             ActiveUser.LikeMedia(ActiveMedia);
+        }
+
+        private void QueueButton_Click(object sender, EventArgs e)
+        {
+            if (!panelQueue.Visible || QueueLabel.Text != "Queue")
+            {
+                QueueLabel.Text = "Queue";
+                panelArtist.Hide();
+                panelQueue.Show();
+                Filter f = new Filter();
+                List<Type> ts = new List<Type>() { typeof(Song), typeof(Video) };
+                f.ObjGrid(f.CastToObj(ActiveUser.GetQueue()), QGrid, ts);
+            }
+            else
+            {
+                panelQueue.Hide();
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)//new playlist
+        {
+            ToolStripMenuItem subsubmenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu subsubmenudrop = (ToolStripDropDownMenu)subsubmenuItem.Owner;
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)subsubmenudrop.OwnerItem;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+            if (subsubmenuItem == subsubmenudrop.Items[0])
+            {
+                DialogForm df = new DialogForm();
+                df.ShowDialog();
+                bool pvt = ActiveUser.GetPrivate();
+                if (!pvt)
+                {
+                    pvt = df.Privacy;
+                }
+                ActiveUser.NewPlaylist(df.PLName, pvt);
+                ActiveUser.AddToPlaylist(media, df.PLName); 
+            }
+            else
+            {
+                string plname = subsubmenuItem.Text;
+                ActiveUser.AddToPlaylist(media, plname);
+            }
+        }
+
+        private void playlistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void playlistToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            ToolStripMenuItem it = (ToolStripMenuItem)sender;
+            ToolStripDropDown tool = it.DropDown;
+            foreach (Playlist item in ActiveUser.GetPlaylist())
+            {
+                if (!tool.Items.ContainsKey(item.GetName()))
+                {
+                    ToolStripMenuItem mi = new ToolStripMenuItem(item.GetName());
+                    mi.Click += newToolStripMenuItem_Click;
+                    tool.Items.Add(item.GetName());
+
+                }
+                
+                
+            }
+        }
+
+        private void decideForMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+            if(media.GetType() == typeof(Video))
+            {
+                DFM.Add((Video)media);
+            }
+            
+        }
+
+        private void favoritesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            try
+            {
+                Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+                ActiveUser.LikeMedia(media);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void artistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            Media media;
+            try
+            {
+                media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+
+            Artist file = Spotflix.GetPeopleDB[media.GetMetadata().GetArtist()];
+            
+            panelArtist.Show();
+            ArtistNameLabel.Text = file.GetName();
+            FollowerQLabel.Text = file.GetFollowers().Count().ToString();
+            JobsBox.Text = "";
+            string jobs = "";
+            foreach (string item in file.GetProfessions())
+            {
+                jobs += $"{item}, ";
+            }
+            string njobs = jobs.Substring(0, jobs.Length - 2);
+            njobs += ".";
+            JobsBox.Text = njobs;
+            Filter f = new Filter();
+
+            f.ObjGrid(f.CastToObj(file.GetWork()), ArtistMediaGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
+            try
+            {
+                f.ObjGrid(f.CastToObj(file), ArtistAlbumGrid, new List<Type>() { typeof(Album) });
+            }
+            catch (Exception)
+            {
+            }
+            if (file.GetFollowers().Contains(ActiveUser))
+            {
+                //Boton unfollow
+                button6.Text = "Unfollow";
+                button6.BackColor = Color.CornflowerBlue;
+            }
+
+        }
+
+        private void albumToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+            try
+            {
+                Media media = (Media)grid.Rows[SelectedRow].HeaderCell.Value;
+                Artist file = Spotflix.GetPeopleDB[media.GetMetadata().GetArtist()];
+                Album pl = file.GetAlbums()[media.GetMetadata().GetAlbum()];
+                Filter f = new Filter();
+                panelArtist.Hide();
+                panelQueue.Show();
+                QueueLabel.Text = pl.GetName();
+                f.ObjGrid(f.CastToObj(pl.GetSongs()), QGrid, new List<Type>() { typeof(Media), typeof(Song), typeof(Video) });
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

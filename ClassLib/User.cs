@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 
 namespace Proyecto
@@ -133,10 +134,10 @@ namespace Proyecto
             return Queue;
         }
 
-        public void AddToPlaylist(Media media, Playlist plName)
+        public void AddToPlaylist(Media media, string plName)
         {
             
-            Playlist a = Playlists.Find(x => x.GetName() == plName.GetName());
+            Playlist a = Playlists.Find(x => x.GetName() == plName);
 
             if (a.GetList().Contains(media))
             {
@@ -182,6 +183,12 @@ namespace Proyecto
                     FavoriteVideos.Add(v);
                 }
             }
+            HashSet<Song> songs = new HashSet<Song>(FavoriteMusic);
+            FavoriteMusic = songs.ToList();
+            HashSet<Video> videos = new HashSet<Video>(FavoriteVideos);
+            FavoriteVideos = videos.ToList();
+
+
             
         }
 

@@ -36,5 +36,10 @@ namespace Proyecto
         }
 
         public bool GetPrivate() { return PrivateList; }
+
+        public string GetCreator()
+        {
+            return CreatedBy;
+        }
     }
 }

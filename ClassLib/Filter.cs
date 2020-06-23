@@ -74,6 +74,7 @@ namespace Proyecto
             
             int en = 0;
             grid.Columns.Add("Name", "Name");
+            grid.Columns.Add("Artist", "Artist");
             grid.Columns.Add("Type", "Type");
             foreach (object ite in list)
             {
@@ -84,7 +85,7 @@ namespace Proyecto
                     username = item.GetUsername();
                     followers = item.GetFollowers().Count.ToString();
                     following = item.GetFollowing().Count.ToString();
-                    grid.Rows.Add(username, "User");
+                    grid.Rows.Add(username, "","User");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
                 }
@@ -99,7 +100,22 @@ namespace Proyecto
                     {
                         artist = item.GetMetadata().GetDirector();
                     }
-                    grid.Rows.Add(name, "Song");
+                    grid.Rows.Add(name, artist,"Song" );
+                    grid.Rows[en].HeaderCell.Value = item;
+                    en++;
+                }
+
+                else if (ite.GetType() == typeof(Video) && types.Contains(typeof(Video)))
+                {
+                    Video item = (Video)ite;
+                    string name, artist;
+                    name = item.GetMetadata().GetName();
+                    artist = item.GetMetadata().GetArtist();
+                    if (artist == null)
+                    {
+                        artist = item.GetMetadata().GetCreator();
+                    }
+                    grid.Rows.Add(name, artist, "Video");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
                 }
@@ -108,7 +124,7 @@ namespace Proyecto
                 {
                     Artist item = (Artist)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name, "Artist");
+                    grid.Rows.Add(name, "", "Artist");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -118,7 +134,7 @@ namespace Proyecto
                 {
                     Playlist item = (Playlist)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name, "Playlist");
+                    grid.Rows.Add(name, item.GetCreator(), "Playlist");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -127,7 +143,7 @@ namespace Proyecto
                 {
                     Album item = (Album)ite;
                     string name = item.GetName();
-                    grid.Rows.Add(name, "Album");
+                    grid.Rows.Add(name, item.GetArtist(),"Album");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -369,6 +385,18 @@ namespace Proyecto
             List<object> result = new List<object>();
 
             foreach (Playlist item in a)
+            {
+                object r = item;
+                result.Add(r);
+            }
+            return result;
+        }
+
+        public List<object> CastToObj(Queue<Media> queues)
+        {
+            List<object> result = new List<object>();
+
+            foreach (Media item in queues)
             {
                 object r = item;
                 result.Add(r);
