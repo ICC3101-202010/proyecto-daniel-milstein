@@ -30,13 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,10 +61,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ArtistPlayingLabel = new System.Windows.Forms.Label();
             this.MediaPlayingLabel = new System.Windows.Forms.Label();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
@@ -89,7 +89,6 @@
             this.AddMedia = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelShowMedia = new System.Windows.Forms.Panel();
-            this.BackMediaButton = new System.Windows.Forms.Button();
             this.MediaGrid = new System.Windows.Forms.DataGridView();
             this.NameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ArtistCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,6 +106,10 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteMediaMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromPlaylistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.artistToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.playlistToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelProfile = new System.Windows.Forms.Panel();
             this.emailProfileBox = new System.Windows.Forms.TextBox();
             this.linkLabelEditPass = new System.Windows.Forms.LinkLabel();
@@ -121,16 +124,16 @@
             this.EmailRegLabel = new System.Windows.Forms.Label();
             this.PvtRegLabel = new System.Windows.Forms.Label();
             this.UserRegLabel = new System.Windows.Forms.Label();
-            this.BackProfileButton = new System.Windows.Forms.Button();
             this.ProfileLabel = new System.Windows.Forms.Label();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.aSearchBox = new System.Windows.Forms.TextBox();
             this.ResultGrid = new System.Windows.Forms.DataGridView();
-            this.BackaSearchButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.panelTypeSearch = new System.Windows.Forms.Panel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -178,14 +181,31 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserLibLabel = new System.Windows.Forms.Label();
             this.panelQueue = new System.Windows.Forms.Panel();
-            this.QueueLabel = new System.Windows.Forms.Label();
             this.QGrid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QueueLabel = new System.Windows.Forms.Label();
             this.ProfileButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.spotflixBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DownloadDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.panelAdmin.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -217,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.QGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spotflixBindingSource)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ArtistPlayingLabel
@@ -224,7 +245,7 @@
             this.ArtistPlayingLabel.AutoSize = true;
             this.ArtistPlayingLabel.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArtistPlayingLabel.ForeColor = System.Drawing.Color.White;
-            this.ArtistPlayingLabel.Location = new System.Drawing.Point(11, 546);
+            this.ArtistPlayingLabel.Location = new System.Drawing.Point(12, 682);
             this.ArtistPlayingLabel.Name = "ArtistPlayingLabel";
             this.ArtistPlayingLabel.Size = new System.Drawing.Size(55, 24);
             this.ArtistPlayingLabel.TabIndex = 29;
@@ -236,7 +257,7 @@
             this.MediaPlayingLabel.AutoSize = true;
             this.MediaPlayingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediaPlayingLabel.ForeColor = System.Drawing.Color.White;
-            this.MediaPlayingLabel.Location = new System.Drawing.Point(11, 523);
+            this.MediaPlayingLabel.Location = new System.Drawing.Point(12, 654);
             this.MediaPlayingLabel.Name = "MediaPlayingLabel";
             this.MediaPlayingLabel.Size = new System.Drawing.Size(77, 29);
             this.MediaPlayingLabel.TabIndex = 28;
@@ -248,9 +269,10 @@
             this.axWindowsMediaPlayer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(216, 178);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(242, 222);
             this.axWindowsMediaPlayer1.TabIndex = 0;
             this.axWindowsMediaPlayer1.MediaChange += new AxWMPLib._WMPOCXEvents_MediaChangeEventHandler(this.axWindowsMediaPlayer1_MediaChange);
             this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
@@ -270,9 +292,10 @@
             this.panelAdmin.Controls.Add(this.UsersButton);
             this.panelAdmin.Controls.Add(this.AdminAddMedia);
             this.panelAdmin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelAdmin.Location = new System.Drawing.Point(0, 104);
+            this.panelAdmin.Location = new System.Drawing.Point(0, 130);
+            this.panelAdmin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAdmin.Name = "panelAdmin";
-            this.panelAdmin.Size = new System.Drawing.Size(216, 937);
+            this.panelAdmin.Size = new System.Drawing.Size(242, 1171);
             this.panelAdmin.TabIndex = 10;
             // 
             // linkLabel1
@@ -280,7 +303,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Aqua;
-            this.linkLabel1.Location = new System.Drawing.Point(12, 486);
+            this.linkLabel1.Location = new System.Drawing.Point(14, 608);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(131, 19);
             this.linkLabel1.TabIndex = 31;
@@ -291,10 +314,10 @@
             // 
             this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 759);
+            this.panel1.Location = new System.Drawing.Point(0, 949);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 178);
+            this.panel1.Size = new System.Drawing.Size(242, 222);
             this.panel1.TabIndex = 30;
             // 
             // SearchButtton
@@ -309,8 +332,9 @@
             this.SearchButtton.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButtton.ForeColor = System.Drawing.Color.White;
             this.SearchButtton.Location = new System.Drawing.Point(3, 1);
+            this.SearchButtton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchButtton.Name = "SearchButtton";
-            this.SearchButtton.Size = new System.Drawing.Size(210, 65);
+            this.SearchButtton.Size = new System.Drawing.Size(236, 81);
             this.SearchButtton.TabIndex = 6;
             this.SearchButtton.Text = "Search";
             this.SearchButtton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -328,9 +352,10 @@
             this.LibraryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LibraryButton.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LibraryButton.ForeColor = System.Drawing.Color.White;
-            this.LibraryButton.Location = new System.Drawing.Point(2, 62);
+            this.LibraryButton.Location = new System.Drawing.Point(2, 78);
+            this.LibraryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LibraryButton.Name = "LibraryButton";
-            this.LibraryButton.Size = new System.Drawing.Size(210, 68);
+            this.LibraryButton.Size = new System.Drawing.Size(236, 85);
             this.LibraryButton.TabIndex = 5;
             this.LibraryButton.Text = "My Library";
             this.LibraryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -350,9 +375,10 @@
             this.DecideButton.ForeColor = System.Drawing.Color.White;
             this.DecideButton.Image = ((System.Drawing.Image)(resources.GetObject("DecideButton.Image")));
             this.DecideButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DecideButton.Location = new System.Drawing.Point(2, 194);
+            this.DecideButton.Location = new System.Drawing.Point(2, 242);
+            this.DecideButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DecideButton.Name = "DecideButton";
-            this.DecideButton.Size = new System.Drawing.Size(210, 94);
+            this.DecideButton.Size = new System.Drawing.Size(236, 118);
             this.DecideButton.TabIndex = 4;
             this.DecideButton.Text = "Decide \r\nfor me";
             this.DecideButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -368,11 +394,12 @@
             this.DJButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(208)))), ((int)(((byte)(207)))));
             this.DJButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(43)))), ((int)(((byte)(84)))));
             this.DJButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DJButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DJButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DJButton.ForeColor = System.Drawing.Color.White;
-            this.DJButton.Location = new System.Drawing.Point(2, 275);
+            this.DJButton.Location = new System.Drawing.Point(2, 344);
+            this.DJButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DJButton.Name = "DJButton";
-            this.DJButton.Size = new System.Drawing.Size(210, 75);
+            this.DJButton.Size = new System.Drawing.Size(236, 94);
             this.DJButton.TabIndex = 3;
             this.DJButton.Text = "DJ Mode";
             this.DJButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,9 +417,10 @@
             this.ShowMediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowMediaButton.ForeColor = System.Drawing.Color.White;
-            this.ShowMediaButton.Location = new System.Drawing.Point(2, 128);
+            this.ShowMediaButton.Location = new System.Drawing.Point(2, 160);
+            this.ShowMediaButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ShowMediaButton.Name = "ShowMediaButton";
-            this.ShowMediaButton.Size = new System.Drawing.Size(210, 68);
+            this.ShowMediaButton.Size = new System.Drawing.Size(236, 85);
             this.ShowMediaButton.TabIndex = 2;
             this.ShowMediaButton.Text = "Show Media";
             this.ShowMediaButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,9 +438,10 @@
             this.UsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UsersButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersButton.ForeColor = System.Drawing.Color.White;
-            this.UsersButton.Location = new System.Drawing.Point(3, 343);
+            this.UsersButton.Location = new System.Drawing.Point(3, 429);
+            this.UsersButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UsersButton.Name = "UsersButton";
-            this.UsersButton.Size = new System.Drawing.Size(210, 68);
+            this.UsersButton.Size = new System.Drawing.Size(236, 85);
             this.UsersButton.TabIndex = 1;
             this.UsersButton.Text = "Users";
             this.UsersButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,9 +459,10 @@
             this.AdminAddMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdminAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdminAddMedia.ForeColor = System.Drawing.Color.White;
-            this.AdminAddMedia.Location = new System.Drawing.Point(3, 406);
+            this.AdminAddMedia.Location = new System.Drawing.Point(3, 508);
+            this.AdminAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AdminAddMedia.Name = "AdminAddMedia";
-            this.AdminAddMedia.Size = new System.Drawing.Size(210, 68);
+            this.AdminAddMedia.Size = new System.Drawing.Size(236, 85);
             this.AdminAddMedia.TabIndex = 0;
             this.AdminAddMedia.Text = "Add Media";
             this.AdminAddMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -450,9 +480,10 @@
             this.panelAddMedia.Controls.Add(this.BackAddMedia);
             this.panelAddMedia.Controls.Add(this.AddMedia);
             this.panelAddMedia.ForeColor = System.Drawing.Color.Black;
-            this.panelAddMedia.Location = new System.Drawing.Point(413, 206);
+            this.panelAddMedia.Location = new System.Drawing.Point(465, 258);
+            this.panelAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAddMedia.Name = "panelAddMedia";
-            this.panelAddMedia.Size = new System.Drawing.Size(504, 660);
+            this.panelAddMedia.Size = new System.Drawing.Size(567, 825);
             this.panelAddMedia.TabIndex = 11;
             this.panelAddMedia.Visible = false;
             // 
@@ -461,7 +492,7 @@
             this.FileNameLabel.AutoSize = true;
             this.FileNameLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FileNameLabel.ForeColor = System.Drawing.Color.White;
-            this.FileNameLabel.Location = new System.Drawing.Point(230, 53);
+            this.FileNameLabel.Location = new System.Drawing.Point(259, 66);
             this.FileNameLabel.Name = "FileNameLabel";
             this.FileNameLabel.Size = new System.Drawing.Size(0, 29);
             this.FileNameLabel.TabIndex = 8;
@@ -472,9 +503,11 @@
             this.MetadataBox.Controls.Add(this.MetaGrid);
             this.MetadataBox.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MetadataBox.ForeColor = System.Drawing.Color.White;
-            this.MetadataBox.Location = new System.Drawing.Point(3, 207);
+            this.MetadataBox.Location = new System.Drawing.Point(3, 259);
+            this.MetadataBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MetadataBox.Name = "MetadataBox";
-            this.MetadataBox.Size = new System.Drawing.Size(498, 360);
+            this.MetadataBox.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MetadataBox.Size = new System.Drawing.Size(560, 450);
             this.MetadataBox.TabIndex = 7;
             this.MetadataBox.TabStop = false;
             this.MetadataBox.Text = "Metadata";
@@ -488,7 +521,8 @@
             this.Column1,
             this.Column2});
             this.MetaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MetaGrid.Location = new System.Drawing.Point(3, 38);
+            this.MetaGrid.Location = new System.Drawing.Point(3, 39);
+            this.MetaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MetaGrid.MultiSelect = false;
             this.MetaGrid.Name = "MetaGrid";
             this.MetaGrid.RowHeadersVisible = false;
@@ -499,7 +533,7 @@
             this.MetaGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.MetaGrid.RowTemplate.Height = 26;
             this.MetaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.MetaGrid.Size = new System.Drawing.Size(492, 319);
+            this.MetaGrid.Size = new System.Drawing.Size(554, 407);
             this.MetaGrid.TabIndex = 0;
             this.MetaGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetaGrid_CellContentClick);
             // 
@@ -521,9 +555,10 @@
             // 
             this.panelMediaType.Controls.Add(this.radioVideo);
             this.panelMediaType.Controls.Add(this.radioSong);
-            this.panelMediaType.Location = new System.Drawing.Point(250, 120);
+            this.panelMediaType.Location = new System.Drawing.Point(281, 150);
+            this.panelMediaType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMediaType.Name = "panelMediaType";
-            this.panelMediaType.Size = new System.Drawing.Size(124, 92);
+            this.panelMediaType.Size = new System.Drawing.Size(140, 115);
             this.panelMediaType.TabIndex = 6;
             // 
             // radioVideo
@@ -531,7 +566,8 @@
             this.radioVideo.AutoSize = true;
             this.radioVideo.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioVideo.ForeColor = System.Drawing.Color.White;
-            this.radioVideo.Location = new System.Drawing.Point(3, 40);
+            this.radioVideo.Location = new System.Drawing.Point(3, 50);
+            this.radioVideo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioVideo.Name = "radioVideo";
             this.radioVideo.Size = new System.Drawing.Size(83, 28);
             this.radioVideo.TabIndex = 4;
@@ -546,6 +582,7 @@
             this.radioSong.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioSong.ForeColor = System.Drawing.Color.White;
             this.radioSong.Location = new System.Drawing.Point(0, 0);
+            this.radioSong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioSong.Name = "radioSong";
             this.radioSong.Size = new System.Drawing.Size(75, 28);
             this.radioSong.TabIndex = 5;
@@ -559,7 +596,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(30, 120);
+            this.label1.Location = new System.Drawing.Point(34, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 39);
             this.label1.TabIndex = 3;
@@ -568,9 +605,10 @@
             // FileButton
             // 
             this.FileButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FileButton.Location = new System.Drawing.Point(37, 38);
+            this.FileButton.Location = new System.Drawing.Point(42, 48);
+            this.FileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FileButton.Name = "FileButton";
-            this.FileButton.Size = new System.Drawing.Size(158, 54);
+            this.FileButton.Size = new System.Drawing.Size(178, 68);
             this.FileButton.TabIndex = 2;
             this.FileButton.Text = "File...";
             this.FileButton.UseVisualStyleBackColor = true;
@@ -580,9 +618,10 @@
             // 
             this.BackAddMedia.AutoSize = true;
             this.BackAddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackAddMedia.Location = new System.Drawing.Point(26, 588);
+            this.BackAddMedia.Location = new System.Drawing.Point(29, 735);
+            this.BackAddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BackAddMedia.Name = "BackAddMedia";
-            this.BackAddMedia.Size = new System.Drawing.Size(169, 49);
+            this.BackAddMedia.Size = new System.Drawing.Size(190, 61);
             this.BackAddMedia.TabIndex = 1;
             this.BackAddMedia.Text = "Back";
             this.BackAddMedia.UseVisualStyleBackColor = true;
@@ -592,9 +631,10 @@
             // 
             this.AddMedia.AutoSize = true;
             this.AddMedia.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddMedia.Location = new System.Drawing.Point(306, 588);
+            this.AddMedia.Location = new System.Drawing.Point(344, 735);
+            this.AddMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddMedia.Name = "AddMedia";
-            this.AddMedia.Size = new System.Drawing.Size(169, 49);
+            this.AddMedia.Size = new System.Drawing.Size(190, 61);
             this.AddMedia.TabIndex = 0;
             this.AddMedia.Text = "Add Media";
             this.AddMedia.UseVisualStyleBackColor = true;
@@ -609,26 +649,13 @@
             // panelShowMedia
             // 
             this.panelShowMedia.AutoSize = true;
-            this.panelShowMedia.Controls.Add(this.BackMediaButton);
             this.panelShowMedia.Controls.Add(this.MediaGrid);
-            this.panelShowMedia.Location = new System.Drawing.Point(389, 110);
+            this.panelShowMedia.Location = new System.Drawing.Point(438, 138);
+            this.panelShowMedia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelShowMedia.Name = "panelShowMedia";
-            this.panelShowMedia.Size = new System.Drawing.Size(631, 562);
+            this.panelShowMedia.Size = new System.Drawing.Size(710, 702);
             this.panelShowMedia.TabIndex = 14;
             this.panelShowMedia.Visible = false;
-            // 
-            // BackMediaButton
-            // 
-            this.BackMediaButton.AutoSize = true;
-            this.BackMediaButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BackMediaButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackMediaButton.Location = new System.Drawing.Point(0, 513);
-            this.BackMediaButton.Name = "BackMediaButton";
-            this.BackMediaButton.Size = new System.Drawing.Size(631, 49);
-            this.BackMediaButton.TabIndex = 2;
-            this.BackMediaButton.Text = "Back";
-            this.BackMediaButton.UseVisualStyleBackColor = true;
-            this.BackMediaButton.Click += new System.EventHandler(this.BackMediaButton_Click);
             // 
             // MediaGrid
             // 
@@ -639,46 +666,47 @@
             this.MediaGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.MediaGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.MediaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NameCol,
             this.ArtistCol});
             this.MediaGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.MediaGrid.DefaultCellStyle = dataGridViewCellStyle31;
             this.MediaGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.Location = new System.Drawing.Point(0, 0);
+            this.MediaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MediaGrid.MultiSelect = false;
             this.MediaGrid.Name = "MediaGrid";
             this.MediaGrid.ReadOnly = true;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.MediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.MediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.MediaGrid.RowHeadersVisible = false;
             this.MediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
-            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Black;
+            this.MediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle39;
             this.MediaGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.MediaGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.MediaGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -688,7 +716,7 @@
             this.MediaGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.MediaGrid.RowTemplate.Height = 24;
             this.MediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MediaGrid.Size = new System.Drawing.Size(631, 562);
+            this.MediaGrid.Size = new System.Drawing.Size(710, 702);
             this.MediaGrid.TabIndex = 0;
             this.MediaGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MetaGrid_CellContentClick);
             this.MediaGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseClick);
@@ -700,14 +728,14 @@
             // 
             // NameCol
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.NameCol.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.NameCol.DefaultCellStyle = dataGridViewCellStyle29;
             this.NameCol.HeaderText = "Name";
             this.NameCol.MinimumWidth = 8;
             this.NameCol.Name = "NameCol";
@@ -716,14 +744,14 @@
             // 
             // ArtistCol
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistCol.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(99)))), ((int)(((byte)(99)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistCol.DefaultCellStyle = dataGridViewCellStyle30;
             this.ArtistCol.HeaderText = "Artist";
             this.ArtistCol.MinimumWidth = 8;
             this.ArtistCol.Name = "ArtistCol";
@@ -740,9 +768,11 @@
             this.addToQueueToolStripMenuItem,
             this.goToToolStripMenuItem,
             this.deleteToolStripMenuItem,
-            this.downloadToolStripMenuItem});
+            this.downloadToolStripMenuItem,
+            this.infoToolStripMenuItem});
             this.MediaMenuStrip1.Name = "MediaMenuStrip1";
-            this.MediaMenuStrip1.Size = new System.Drawing.Size(156, 144);
+            this.MediaMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.MediaMenuStrip1.Size = new System.Drawing.Size(156, 172);
             // 
             // playToolStripMenuItem
             // 
@@ -789,7 +819,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(158, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newToolStripMenuItem.Text = "New...";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -827,7 +857,9 @@
             // 
             this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DeleteMediaMenuItem,
-            this.fromPlaylistToolStripMenuItem});
+            this.fromPlaylistToolStripMenuItem,
+            this.artistToolStripMenuItem1,
+            this.playlistToolStripMenuItem1});
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
             this.deleteToolStripMenuItem.Text = "Delete...";
@@ -835,15 +867,43 @@
             // DeleteMediaMenuItem
             // 
             this.DeleteMediaMenuItem.Name = "DeleteMediaMenuItem";
-            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.DeleteMediaMenuItem.Size = new System.Drawing.Size(203, 34);
             this.DeleteMediaMenuItem.Text = "Media";
             this.DeleteMediaMenuItem.Click += new System.EventHandler(this.mediaToolStripMenuItem_Click);
             // 
             // fromPlaylistToolStripMenuItem
             // 
             this.fromPlaylistToolStripMenuItem.Name = "fromPlaylistToolStripMenuItem";
-            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fromPlaylistToolStripMenuItem.Size = new System.Drawing.Size(203, 34);
             this.fromPlaylistToolStripMenuItem.Text = "From playlist";
+            // 
+            // artistToolStripMenuItem1
+            // 
+            this.artistToolStripMenuItem1.Name = "artistToolStripMenuItem1";
+            this.artistToolStripMenuItem1.Size = new System.Drawing.Size(203, 34);
+            this.artistToolStripMenuItem1.Text = "Artist";
+            this.artistToolStripMenuItem1.Click += new System.EventHandler(this.artistToolStripMenuItem1_Click);
+            // 
+            // playlistToolStripMenuItem1
+            // 
+            this.playlistToolStripMenuItem1.Name = "playlistToolStripMenuItem1";
+            this.playlistToolStripMenuItem1.Size = new System.Drawing.Size(203, 34);
+            this.playlistToolStripMenuItem1.Text = "Playlist";
+            this.playlistToolStripMenuItem1.Click += new System.EventHandler(this.playlistToolStripMenuItem1_Click);
+            // 
+            // downloadToolStripMenuItem
+            // 
+            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
+            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
+            this.downloadToolStripMenuItem.Text = "Download";
+            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
+            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // panelProfile
             // 
@@ -860,11 +920,11 @@
             this.panelProfile.Controls.Add(this.EmailRegLabel);
             this.panelProfile.Controls.Add(this.PvtRegLabel);
             this.panelProfile.Controls.Add(this.UserRegLabel);
-            this.panelProfile.Controls.Add(this.BackProfileButton);
             this.panelProfile.Controls.Add(this.ProfileLabel);
-            this.panelProfile.Location = new System.Drawing.Point(559, 104);
+            this.panelProfile.Location = new System.Drawing.Point(629, 130);
+            this.panelProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelProfile.Name = "panelProfile";
-            this.panelProfile.Size = new System.Drawing.Size(482, 585);
+            this.panelProfile.Size = new System.Drawing.Size(542, 731);
             this.panelProfile.TabIndex = 15;
             this.panelProfile.Visible = false;
             // 
@@ -877,10 +937,11 @@
             this.emailProfileBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailProfileBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.emailProfileBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailProfileBox.Location = new System.Drawing.Point(220, 155);
+            this.emailProfileBox.Location = new System.Drawing.Point(248, 194);
+            this.emailProfileBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.emailProfileBox.Name = "emailProfileBox";
             this.emailProfileBox.PasswordChar = '•';
-            this.emailProfileBox.Size = new System.Drawing.Size(150, 30);
+            this.emailProfileBox.Size = new System.Drawing.Size(169, 30);
             this.emailProfileBox.TabIndex = 31;
             this.emailProfileBox.Visible = false;
             // 
@@ -889,7 +950,7 @@
             this.linkLabelEditPass.AutoSize = true;
             this.linkLabelEditPass.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelEditPass.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkLabelEditPass.Location = new System.Drawing.Point(145, 208);
+            this.linkLabelEditPass.Location = new System.Drawing.Point(163, 260);
             this.linkLabelEditPass.Name = "linkLabelEditPass";
             this.linkLabelEditPass.Size = new System.Drawing.Size(58, 24);
             this.linkLabelEditPass.TabIndex = 30;
@@ -902,7 +963,7 @@
             this.linkLabelEditEmail.AutoSize = true;
             this.linkLabelEditEmail.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabelEditEmail.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.linkLabelEditEmail.Location = new System.Drawing.Point(145, 155);
+            this.linkLabelEditEmail.Location = new System.Drawing.Point(163, 194);
             this.linkLabelEditEmail.Name = "linkLabelEditEmail";
             this.linkLabelEditEmail.Size = new System.Drawing.Size(58, 24);
             this.linkLabelEditEmail.TabIndex = 29;
@@ -915,7 +976,7 @@
             this.PassProfilelabel.AutoSize = true;
             this.PassProfilelabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PassProfilelabel.ForeColor = System.Drawing.Color.White;
-            this.PassProfilelabel.Location = new System.Drawing.Point(215, 203);
+            this.PassProfilelabel.Location = new System.Drawing.Point(242, 254);
             this.PassProfilelabel.Name = "PassProfilelabel";
             this.PassProfilelabel.Size = new System.Drawing.Size(117, 29);
             this.PassProfilelabel.TabIndex = 28;
@@ -926,7 +987,7 @@
             this.emailProfileLabel.AutoSize = true;
             this.emailProfileLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailProfileLabel.ForeColor = System.Drawing.Color.White;
-            this.emailProfileLabel.Location = new System.Drawing.Point(215, 150);
+            this.emailProfileLabel.Location = new System.Drawing.Point(242, 188);
             this.emailProfileLabel.Name = "emailProfileLabel";
             this.emailProfileLabel.Size = new System.Drawing.Size(117, 29);
             this.emailProfileLabel.TabIndex = 27;
@@ -937,7 +998,7 @@
             this.userProfilelabel.AutoSize = true;
             this.userProfilelabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userProfilelabel.ForeColor = System.Drawing.Color.White;
-            this.userProfilelabel.Location = new System.Drawing.Point(215, 97);
+            this.userProfilelabel.Location = new System.Drawing.Point(242, 121);
             this.userProfilelabel.Name = "userProfilelabel";
             this.userProfilelabel.Size = new System.Drawing.Size(117, 29);
             this.userProfilelabel.TabIndex = 26;
@@ -946,27 +1007,39 @@
             // premiumCheckBox
             // 
             this.premiumCheckBox.AutoSize = true;
-            this.premiumCheckBox.Location = new System.Drawing.Point(242, 321);
+            this.premiumCheckBox.Checked = true;
+            this.premiumCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.premiumCheckBox.Location = new System.Drawing.Point(272, 401);
+            this.premiumCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.premiumCheckBox.Name = "premiumCheckBox";
             this.premiumCheckBox.Size = new System.Drawing.Size(22, 21);
             this.premiumCheckBox.TabIndex = 25;
             this.premiumCheckBox.UseVisualStyleBackColor = true;
+            this.premiumCheckBox.CheckedChanged += new System.EventHandler(this.premiumCheckBox_CheckedChanged);
+            this.premiumCheckBox.CheckStateChanged += new System.EventHandler(this.premiumCheckBox_CheckStateChanged);
+            this.premiumCheckBox.Click += new System.EventHandler(this.premiumCheckBox_Click);
             // 
             // pvtCheckBox
             // 
             this.pvtCheckBox.AutoSize = true;
-            this.pvtCheckBox.Location = new System.Drawing.Point(242, 267);
+            this.pvtCheckBox.Checked = true;
+            this.pvtCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.pvtCheckBox.Location = new System.Drawing.Point(272, 334);
+            this.pvtCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pvtCheckBox.Name = "pvtCheckBox";
             this.pvtCheckBox.Size = new System.Drawing.Size(22, 21);
             this.pvtCheckBox.TabIndex = 24;
             this.pvtCheckBox.UseVisualStyleBackColor = true;
+            this.pvtCheckBox.CheckedChanged += new System.EventHandler(this.pvtCheckBox_CheckedChanged);
+            this.pvtCheckBox.CheckStateChanged += new System.EventHandler(this.pvtCheckBox_CheckStateChanged);
+            this.pvtCheckBox.Click += new System.EventHandler(this.pvtCheckBox_Click);
             // 
             // PremiumLabel
             // 
             this.PremiumLabel.AutoSize = true;
             this.PremiumLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PremiumLabel.ForeColor = System.Drawing.Color.White;
-            this.PremiumLabel.Location = new System.Drawing.Point(28, 313);
+            this.PremiumLabel.Location = new System.Drawing.Point(32, 391);
             this.PremiumLabel.Name = "PremiumLabel";
             this.PremiumLabel.Size = new System.Drawing.Size(117, 29);
             this.PremiumLabel.TabIndex = 23;
@@ -977,7 +1050,7 @@
             this.PasswordRegLabel.AutoSize = true;
             this.PasswordRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordRegLabel.ForeColor = System.Drawing.Color.White;
-            this.PasswordRegLabel.Location = new System.Drawing.Point(28, 203);
+            this.PasswordRegLabel.Location = new System.Drawing.Point(32, 254);
             this.PasswordRegLabel.Name = "PasswordRegLabel";
             this.PasswordRegLabel.Size = new System.Drawing.Size(111, 29);
             this.PasswordRegLabel.TabIndex = 22;
@@ -988,7 +1061,7 @@
             this.EmailRegLabel.AutoSize = true;
             this.EmailRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailRegLabel.ForeColor = System.Drawing.Color.White;
-            this.EmailRegLabel.Location = new System.Drawing.Point(28, 150);
+            this.EmailRegLabel.Location = new System.Drawing.Point(32, 188);
             this.EmailRegLabel.Name = "EmailRegLabel";
             this.EmailRegLabel.Size = new System.Drawing.Size(69, 29);
             this.EmailRegLabel.TabIndex = 20;
@@ -999,7 +1072,7 @@
             this.PvtRegLabel.AutoSize = true;
             this.PvtRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PvtRegLabel.ForeColor = System.Drawing.Color.White;
-            this.PvtRegLabel.Location = new System.Drawing.Point(28, 258);
+            this.PvtRegLabel.Location = new System.Drawing.Point(32, 322);
             this.PvtRegLabel.Name = "PvtRegLabel";
             this.PvtRegLabel.Size = new System.Drawing.Size(179, 29);
             this.PvtRegLabel.TabIndex = 18;
@@ -1010,30 +1083,18 @@
             this.UserRegLabel.AutoSize = true;
             this.UserRegLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserRegLabel.ForeColor = System.Drawing.Color.White;
-            this.UserRegLabel.Location = new System.Drawing.Point(28, 97);
+            this.UserRegLabel.Location = new System.Drawing.Point(32, 121);
             this.UserRegLabel.Name = "UserRegLabel";
             this.UserRegLabel.Size = new System.Drawing.Size(117, 29);
             this.UserRegLabel.TabIndex = 17;
             this.UserRegLabel.Text = "Username";
-            // 
-            // BackProfileButton
-            // 
-            this.BackProfileButton.AutoSize = true;
-            this.BackProfileButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackProfileButton.Location = new System.Drawing.Point(28, 500);
-            this.BackProfileButton.Name = "BackProfileButton";
-            this.BackProfileButton.Size = new System.Drawing.Size(169, 49);
-            this.BackProfileButton.TabIndex = 5;
-            this.BackProfileButton.Text = "Back";
-            this.BackProfileButton.UseVisualStyleBackColor = true;
-            this.BackProfileButton.Click += new System.EventHandler(this.BackProfileButton_Click);
             // 
             // ProfileLabel
             // 
             this.ProfileLabel.AutoSize = true;
             this.ProfileLabel.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProfileLabel.Location = new System.Drawing.Point(21, 37);
+            this.ProfileLabel.Location = new System.Drawing.Point(24, 46);
             this.ProfileLabel.Name = "ProfileLabel";
             this.ProfileLabel.Size = new System.Drawing.Size(126, 39);
             this.ProfileLabel.TabIndex = 4;
@@ -1043,12 +1104,12 @@
             // 
             this.panelSearch.Controls.Add(this.aSearchBox);
             this.panelSearch.Controls.Add(this.ResultGrid);
-            this.panelSearch.Controls.Add(this.BackaSearchButton);
             this.panelSearch.Controls.Add(this.groupBox4);
             this.panelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSearch.Location = new System.Drawing.Point(216, 104);
+            this.panelSearch.Location = new System.Drawing.Point(242, 130);
+            this.panelSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelSearch.Name = "panelSearch";
-            this.panelSearch.Size = new System.Drawing.Size(1637, 937);
+            this.panelSearch.Size = new System.Drawing.Size(925, 1075);
             this.panelSearch.TabIndex = 16;
             this.panelSearch.Visible = false;
             // 
@@ -1063,8 +1124,9 @@
             this.aSearchBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.aSearchBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aSearchBox.Location = new System.Drawing.Point(0, 0);
+            this.aSearchBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.aSearchBox.Name = "aSearchBox";
-            this.aSearchBox.Size = new System.Drawing.Size(1637, 30);
+            this.aSearchBox.Size = new System.Drawing.Size(925, 30);
             this.aSearchBox.TabIndex = 14;
             this.aSearchBox.Text = "   Search";
             this.aSearchBox.Click += new System.EventHandler(this.SearchBox_Click);
@@ -1077,19 +1139,21 @@
             this.ResultGrid.AllowUserToDeleteRows = false;
             this.ResultGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ResultGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ResultGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.ResultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ResultGrid.ContextMenuStrip = this.MediaMenuStrip1;
             this.ResultGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ResultGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ResultGrid.Location = new System.Drawing.Point(0, 538);
+            this.ResultGrid.Location = new System.Drawing.Point(0, 637);
+            this.ResultGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ResultGrid.MultiSelect = false;
             this.ResultGrid.Name = "ResultGrid";
             this.ResultGrid.ReadOnly = true;
             this.ResultGrid.RowHeadersVisible = false;
@@ -1103,28 +1167,17 @@
             this.ResultGrid.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.ResultGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ResultGrid.RowTemplate.Height = 24;
-            this.ResultGrid.Size = new System.Drawing.Size(1637, 350);
+            this.ResultGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ResultGrid.Size = new System.Drawing.Size(925, 438);
             this.ResultGrid.TabIndex = 0;
-            this.ResultGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
+            this.ResultGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ResultGrid_CellMouseDown);
+            this.ResultGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
             this.ResultGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
-            // 
-            // BackaSearchButton
-            // 
-            this.BackaSearchButton.AutoSize = true;
-            this.BackaSearchButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BackaSearchButton.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackaSearchButton.Location = new System.Drawing.Point(0, 888);
-            this.BackaSearchButton.Name = "BackaSearchButton";
-            this.BackaSearchButton.Size = new System.Drawing.Size(1637, 49);
-            this.BackaSearchButton.TabIndex = 16;
-            this.BackaSearchButton.Text = "Back";
-            this.BackaSearchButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BackaSearchButton.UseVisualStyleBackColor = true;
-            this.BackaSearchButton.Click += new System.EventHandler(this.BackaSearchButton_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.AutoSize = true;
+            this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.trackBar1);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.panelTypeSearch);
@@ -1134,18 +1187,31 @@
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1637, 937);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(925, 1075);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Filters";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 260);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(319, 24);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "For excluding search separate with &&";
+            // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(143, 133);
+            this.trackBar1.Location = new System.Drawing.Point(161, 194);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.trackBar1.Maximum = 4;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(79, 69);
+            this.trackBar1.Size = new System.Drawing.Size(89, 69);
             this.trackBar1.TabIndex = 4;
             this.trackBar1.Visible = false;
             // 
@@ -1154,7 +1220,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 130);
+            this.label3.Location = new System.Drawing.Point(18, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 29);
             this.label3.TabIndex = 27;
@@ -1163,16 +1229,31 @@
             // 
             // panelTypeSearch
             // 
+            this.panelTypeSearch.Controls.Add(this.linkLabel2);
             this.panelTypeSearch.Controls.Add(this.checkBox6);
             this.panelTypeSearch.Controls.Add(this.checkBox5);
             this.panelTypeSearch.Controls.Add(this.checkBox4);
             this.panelTypeSearch.Controls.Add(this.checkBox3);
             this.panelTypeSearch.Controls.Add(this.checkBox2);
             this.panelTypeSearch.Controls.Add(this.checkBox1);
-            this.panelTypeSearch.Location = new System.Drawing.Point(94, 39);
+            this.panelTypeSearch.Location = new System.Drawing.Point(106, 49);
+            this.panelTypeSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTypeSearch.Name = "panelTypeSearch";
-            this.panelTypeSearch.Size = new System.Drawing.Size(315, 78);
+            this.panelTypeSearch.Size = new System.Drawing.Size(354, 135);
             this.panelTypeSearch.TabIndex = 26;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.Aqua;
+            this.linkLabel2.Location = new System.Drawing.Point(12, 98);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(107, 24);
+            this.linkLabel2.TabIndex = 6;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Deselect All";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // checkBox6
             // 
@@ -1180,7 +1261,8 @@
             this.checkBox6.Checked = true;
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox6.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(210, 41);
+            this.checkBox6.Location = new System.Drawing.Point(236, 51);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(95, 28);
             this.checkBox6.TabIndex = 5;
@@ -1194,7 +1276,8 @@
             this.checkBox5.Checked = true;
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(210, 7);
+            this.checkBox5.Location = new System.Drawing.Point(236, 9);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(74, 28);
             this.checkBox5.TabIndex = 4;
@@ -1208,7 +1291,8 @@
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(107, 41);
+            this.checkBox4.Location = new System.Drawing.Point(120, 51);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(91, 28);
             this.checkBox4.TabIndex = 3;
@@ -1222,7 +1306,8 @@
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(107, 7);
+            this.checkBox3.Location = new System.Drawing.Point(120, 9);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(81, 28);
             this.checkBox3.TabIndex = 2;
@@ -1236,7 +1321,8 @@
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(3, 47);
+            this.checkBox2.Location = new System.Drawing.Point(3, 59);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(84, 28);
             this.checkBox2.TabIndex = 1;
@@ -1250,7 +1336,8 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(3, 7);
+            this.checkBox1.Location = new System.Drawing.Point(3, 9);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 28);
             this.checkBox1.TabIndex = 0;
@@ -1263,7 +1350,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 38);
+            this.label2.Location = new System.Drawing.Point(18, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 29);
             this.label2.TabIndex = 25;
@@ -1279,10 +1366,10 @@
             this.panelMediaControl.Controls.Add(this.PlayButton);
             this.panelMediaControl.Controls.Add(this.PrevButton);
             this.panelMediaControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMediaControl.Location = new System.Drawing.Point(216, 964);
+            this.panelMediaControl.Location = new System.Drawing.Point(242, 1205);
             this.panelMediaControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMediaControl.Name = "panelMediaControl";
-            this.panelMediaControl.Size = new System.Drawing.Size(821, 77);
+            this.panelMediaControl.Size = new System.Drawing.Size(925, 96);
             this.panelMediaControl.TabIndex = 28;
             // 
             // panel2
@@ -1290,20 +1377,20 @@
             this.panel2.Controls.Add(this.VolumeBar);
             this.panel2.Controls.Add(this.button10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(372, 0);
+            this.panel2.Location = new System.Drawing.Point(420, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(287, 77);
+            this.panel2.Size = new System.Drawing.Size(323, 96);
             this.panel2.TabIndex = 28;
             // 
             // VolumeBar
             // 
             this.VolumeBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.VolumeBar.Location = new System.Drawing.Point(34, 8);
+            this.VolumeBar.Location = new System.Drawing.Point(38, 27);
             this.VolumeBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VolumeBar.Maximum = 100;
             this.VolumeBar.Name = "VolumeBar";
-            this.VolumeBar.Size = new System.Drawing.Size(253, 69);
+            this.VolumeBar.Size = new System.Drawing.Size(285, 69);
             this.VolumeBar.TabIndex = 28;
             this.VolumeBar.TickFrequency = 0;
             this.VolumeBar.TickStyle = System.Windows.Forms.TickStyle.None;
@@ -1321,7 +1408,7 @@
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(34, 77);
+            this.button10.Size = new System.Drawing.Size(38, 96);
             this.button10.TabIndex = 1;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -1334,10 +1421,10 @@
             this.LikeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LikeButton.ForeColor = System.Drawing.Color.Transparent;
             this.LikeButton.Image = global::SpotfliX.Properties.Resources.icons8_heart_64__2_;
-            this.LikeButton.Location = new System.Drawing.Point(302, 0);
+            this.LikeButton.Location = new System.Drawing.Point(341, 0);
             this.LikeButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LikeButton.Name = "LikeButton";
-            this.LikeButton.Size = new System.Drawing.Size(70, 77);
+            this.LikeButton.Size = new System.Drawing.Size(79, 96);
             this.LikeButton.TabIndex = 5;
             this.LikeButton.UseVisualStyleBackColor = true;
             this.LikeButton.Click += new System.EventHandler(this.LikeButton_Click);
@@ -1350,10 +1437,10 @@
             this.QueueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.QueueButton.ForeColor = System.Drawing.Color.Transparent;
             this.QueueButton.Image = global::SpotfliX.Properties.Resources.icons8_lounge_music_playlist_80;
-            this.QueueButton.Location = new System.Drawing.Point(216, 0);
+            this.QueueButton.Location = new System.Drawing.Point(244, 0);
             this.QueueButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.QueueButton.Name = "QueueButton";
-            this.QueueButton.Size = new System.Drawing.Size(86, 77);
+            this.QueueButton.Size = new System.Drawing.Size(97, 96);
             this.QueueButton.TabIndex = 4;
             this.QueueButton.UseVisualStyleBackColor = true;
             this.QueueButton.Click += new System.EventHandler(this.QueueButton_Click);
@@ -1366,10 +1453,10 @@
             this.ShuffleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShuffleButton.ForeColor = System.Drawing.Color.Transparent;
             this.ShuffleButton.Image = global::SpotfliX.Properties.Resources.icons8_shuffle_48;
-            this.ShuffleButton.Location = new System.Drawing.Point(162, 0);
+            this.ShuffleButton.Location = new System.Drawing.Point(183, 0);
             this.ShuffleButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShuffleButton.Name = "ShuffleButton";
-            this.ShuffleButton.Size = new System.Drawing.Size(54, 77);
+            this.ShuffleButton.Size = new System.Drawing.Size(61, 96);
             this.ShuffleButton.TabIndex = 3;
             this.ShuffleButton.UseVisualStyleBackColor = true;
             this.ShuffleButton.Click += new System.EventHandler(this.ShuffleButton_Click);
@@ -1382,10 +1469,10 @@
             this.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NextButton.ForeColor = System.Drawing.Color.Transparent;
             this.NextButton.Image = global::SpotfliX.Properties.Resources.icons8_fast_forward_round_48;
-            this.NextButton.Location = new System.Drawing.Point(108, 0);
+            this.NextButton.Location = new System.Drawing.Point(122, 0);
             this.NextButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(54, 77);
+            this.NextButton.Size = new System.Drawing.Size(61, 96);
             this.NextButton.TabIndex = 2;
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
@@ -1398,10 +1485,10 @@
             this.PlayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayButton.ForeColor = System.Drawing.Color.Transparent;
             this.PlayButton.Image = global::SpotfliX.Properties.Resources.icons8_play_button_48;
-            this.PlayButton.Location = new System.Drawing.Point(54, 0);
+            this.PlayButton.Location = new System.Drawing.Point(61, 0);
             this.PlayButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(54, 77);
+            this.PlayButton.Size = new System.Drawing.Size(61, 96);
             this.PlayButton.TabIndex = 1;
             this.PlayButton.UseVisualStyleBackColor = true;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
@@ -1417,7 +1504,7 @@
             this.PrevButton.Location = new System.Drawing.Point(0, 0);
             this.PrevButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PrevButton.Name = "PrevButton";
-            this.PrevButton.Size = new System.Drawing.Size(54, 77);
+            this.PrevButton.Size = new System.Drawing.Size(61, 96);
             this.PrevButton.TabIndex = 0;
             this.PrevButton.UseVisualStyleBackColor = true;
             this.PrevButton.Click += new System.EventHandler(this.PrevButton_Click);
@@ -1432,9 +1519,10 @@
             this.panelChangePass.Controls.Add(this.label7);
             this.panelChangePass.Controls.Add(this.label6);
             this.panelChangePass.Controls.Add(this.label5);
-            this.panelChangePass.Location = new System.Drawing.Point(398, 334);
+            this.panelChangePass.Location = new System.Drawing.Point(448, 418);
+            this.panelChangePass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelChangePass.Name = "panelChangePass";
-            this.panelChangePass.Size = new System.Drawing.Size(501, 281);
+            this.panelChangePass.Size = new System.Drawing.Size(564, 351);
             this.panelChangePass.TabIndex = 18;
             this.panelChangePass.Visible = false;
             // 
@@ -1442,9 +1530,10 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(25, 207);
+            this.button3.Location = new System.Drawing.Point(28, 259);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 39);
+            this.button3.Size = new System.Drawing.Size(102, 49);
             this.button3.TabIndex = 30;
             this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
@@ -1454,9 +1543,10 @@
             // 
             this.button2.AutoSize = true;
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(274, 207);
+            this.button2.Location = new System.Drawing.Point(308, 259);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 39);
+            this.button2.Size = new System.Drawing.Size(220, 49);
             this.button2.TabIndex = 29;
             this.button2.Text = "Change password";
             this.button2.UseVisualStyleBackColor = true;
@@ -1471,10 +1561,11 @@
             this.Newpass2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Newpass2.Cursor = System.Windows.Forms.Cursors.Default;
             this.Newpass2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Newpass2.Location = new System.Drawing.Point(288, 136);
+            this.Newpass2.Location = new System.Drawing.Point(324, 170);
+            this.Newpass2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Newpass2.Name = "Newpass2";
             this.Newpass2.PasswordChar = '•';
-            this.Newpass2.Size = new System.Drawing.Size(150, 30);
+            this.Newpass2.Size = new System.Drawing.Size(169, 30);
             this.Newpass2.TabIndex = 28;
             // 
             // OldpassBox
@@ -1486,10 +1577,11 @@
             this.OldpassBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OldpassBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.OldpassBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OldpassBox.Location = new System.Drawing.Point(288, 24);
+            this.OldpassBox.Location = new System.Drawing.Point(324, 30);
+            this.OldpassBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OldpassBox.Name = "OldpassBox";
             this.OldpassBox.PasswordChar = '•';
-            this.OldpassBox.Size = new System.Drawing.Size(150, 30);
+            this.OldpassBox.Size = new System.Drawing.Size(169, 30);
             this.OldpassBox.TabIndex = 27;
             // 
             // Newpass1
@@ -1501,10 +1593,11 @@
             this.Newpass1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Newpass1.Cursor = System.Windows.Forms.Cursors.Default;
             this.Newpass1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Newpass1.Location = new System.Drawing.Point(288, 79);
+            this.Newpass1.Location = new System.Drawing.Point(324, 99);
+            this.Newpass1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Newpass1.Name = "Newpass1";
             this.Newpass1.PasswordChar = '•';
-            this.Newpass1.Size = new System.Drawing.Size(150, 30);
+            this.Newpass1.Size = new System.Drawing.Size(169, 30);
             this.Newpass1.TabIndex = 26;
             // 
             // label7
@@ -1512,7 +1605,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(20, 137);
+            this.label7.Location = new System.Drawing.Point(22, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(245, 29);
             this.label7.TabIndex = 25;
@@ -1523,7 +1616,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(20, 24);
+            this.label6.Location = new System.Drawing.Point(22, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(151, 29);
             this.label6.TabIndex = 24;
@@ -1534,7 +1627,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(20, 80);
+            this.label5.Location = new System.Drawing.Point(22, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 29);
             this.label5.TabIndex = 23;
@@ -1552,10 +1645,10 @@
             this.panelArtist.Controls.Add(this.ArtistMediaGrid);
             this.panelArtist.Controls.Add(this.ArtistNameLabel);
             this.panelArtist.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelArtist.Location = new System.Drawing.Point(1037, 104);
+            this.panelArtist.Location = new System.Drawing.Point(1167, 130);
             this.panelArtist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelArtist.Name = "panelArtist";
-            this.panelArtist.Size = new System.Drawing.Size(816, 937);
+            this.panelArtist.Size = new System.Drawing.Size(918, 1171);
             this.panelArtist.TabIndex = 19;
             this.panelArtist.Visible = false;
             // 
@@ -1564,7 +1657,7 @@
             this.FollowingQLabel.AutoSize = true;
             this.FollowingQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowingQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingQLabel.Location = new System.Drawing.Point(507, 28);
+            this.FollowingQLabel.Location = new System.Drawing.Point(570, 35);
             this.FollowingQLabel.Name = "FollowingQLabel";
             this.FollowingQLabel.Size = new System.Drawing.Size(49, 59);
             this.FollowingQLabel.TabIndex = 13;
@@ -1576,7 +1669,7 @@
             this.FollowingLabel.AutoSize = true;
             this.FollowingLabel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowingLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowingLabel.Location = new System.Drawing.Point(478, 78);
+            this.FollowingLabel.Location = new System.Drawing.Point(538, 98);
             this.FollowingLabel.Name = "FollowingLabel";
             this.FollowingLabel.Size = new System.Drawing.Size(109, 29);
             this.FollowingLabel.TabIndex = 12;
@@ -1589,11 +1682,11 @@
             this.JobsBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.JobsBox.Font = new System.Drawing.Font("Ink Free", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.JobsBox.ForeColor = System.Drawing.Color.Silver;
-            this.JobsBox.Location = new System.Drawing.Point(45, 141);
+            this.JobsBox.Location = new System.Drawing.Point(51, 176);
             this.JobsBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JobsBox.Name = "JobsBox";
             this.JobsBox.ReadOnly = true;
-            this.JobsBox.Size = new System.Drawing.Size(316, 73);
+            this.JobsBox.Size = new System.Drawing.Size(356, 91);
             this.JobsBox.TabIndex = 11;
             this.JobsBox.Text = "Jobs & desc";
             // 
@@ -1602,7 +1695,7 @@
             this.FollowerQLabel.AutoSize = true;
             this.FollowerQLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FollowerQLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FollowerQLabel.Location = new System.Drawing.Point(407, 28);
+            this.FollowerQLabel.Location = new System.Drawing.Point(458, 35);
             this.FollowerQLabel.Name = "FollowerQLabel";
             this.FollowerQLabel.Size = new System.Drawing.Size(49, 59);
             this.FollowerQLabel.TabIndex = 10;
@@ -1613,7 +1706,7 @@
             this.Followers.AutoSize = true;
             this.Followers.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Followers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Followers.Location = new System.Drawing.Point(377, 77);
+            this.Followers.Location = new System.Drawing.Point(424, 96);
             this.Followers.Name = "Followers";
             this.Followers.Size = new System.Drawing.Size(108, 29);
             this.Followers.TabIndex = 9;
@@ -1629,7 +1722,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe Print", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button6.Location = new System.Drawing.Point(45, 84);
+            this.button6.Location = new System.Drawing.Point(51, 105);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(89, 45);
@@ -1647,45 +1740,46 @@
             this.ArtistAlbumGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ArtistAlbumGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistAlbumGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistAlbumGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistAlbumGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ArtistAlbumGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArtistAlbumGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3});
             this.ArtistAlbumGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArtistAlbumGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArtistAlbumGrid.DefaultCellStyle = dataGridViewCellStyle35;
             this.ArtistAlbumGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistAlbumGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ArtistAlbumGrid.Location = new System.Drawing.Point(0, 545);
+            this.ArtistAlbumGrid.Location = new System.Drawing.Point(0, 681);
+            this.ArtistAlbumGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ArtistAlbumGrid.MultiSelect = false;
             this.ArtistAlbumGrid.Name = "ArtistAlbumGrid";
             this.ArtistAlbumGrid.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistAlbumGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistAlbumGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.ArtistAlbumGrid.RowHeadersVisible = false;
             this.ArtistAlbumGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.ArtistAlbumGrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.Black;
+            this.ArtistAlbumGrid.RowsDefaultCellStyle = dataGridViewCellStyle37;
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1695,7 +1789,7 @@
             this.ArtistAlbumGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ArtistAlbumGrid.RowTemplate.Height = 24;
             this.ArtistAlbumGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ArtistAlbumGrid.Size = new System.Drawing.Size(816, 188);
+            this.ArtistAlbumGrid.Size = new System.Drawing.Size(918, 235);
             this.ArtistAlbumGrid.TabIndex = 7;
             this.ArtistAlbumGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.ArtistAlbumGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
@@ -1718,45 +1812,46 @@
             this.ArtistMediaGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ArtistMediaGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ArtistMediaGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistMediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistMediaGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ArtistMediaGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArtistMediaGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
             this.ArtistMediaGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ArtistMediaGrid.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ArtistMediaGrid.DefaultCellStyle = dataGridViewCellStyle5;
             this.ArtistMediaGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ArtistMediaGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ArtistMediaGrid.Location = new System.Drawing.Point(0, 733);
+            this.ArtistMediaGrid.Location = new System.Drawing.Point(0, 916);
+            this.ArtistMediaGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ArtistMediaGrid.MultiSelect = false;
             this.ArtistMediaGrid.Name = "ArtistMediaGrid";
             this.ArtistMediaGrid.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ArtistMediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ArtistMediaGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.ArtistMediaGrid.RowHeadersVisible = false;
             this.ArtistMediaGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            this.ArtistMediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.ArtistMediaGrid.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.ArtistMediaGrid.RowTemplate.ContextMenuStrip = this.MediaMenuStrip1;
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -1767,7 +1862,7 @@
             this.ArtistMediaGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ArtistMediaGrid.RowTemplate.Height = 24;
             this.ArtistMediaGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ArtistMediaGrid.Size = new System.Drawing.Size(816, 204);
+            this.ArtistMediaGrid.Size = new System.Drawing.Size(918, 255);
             this.ArtistMediaGrid.TabIndex = 6;
             this.ArtistMediaGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.ArtistMediaGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
@@ -1785,7 +1880,7 @@
             this.ArtistNameLabel.AutoSize = true;
             this.ArtistNameLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArtistNameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ArtistNameLabel.Location = new System.Drawing.Point(36, 28);
+            this.ArtistNameLabel.Location = new System.Drawing.Point(40, 35);
             this.ArtistNameLabel.Name = "ArtistNameLabel";
             this.ArtistNameLabel.Size = new System.Drawing.Size(247, 59);
             this.ArtistNameLabel.TabIndex = 5;
@@ -1798,10 +1893,10 @@
             this.panelLibrary.Controls.Add(this.FavVGrid);
             this.panelLibrary.Controls.Add(this.UserLibLabel);
             this.panelLibrary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLibrary.Location = new System.Drawing.Point(216, 104);
+            this.panelLibrary.Location = new System.Drawing.Point(242, 130);
             this.panelLibrary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelLibrary.Name = "panelLibrary";
-            this.panelLibrary.Size = new System.Drawing.Size(821, 860);
+            this.panelLibrary.Size = new System.Drawing.Size(925, 1075);
             this.panelLibrary.TabIndex = 28;
             this.panelLibrary.Visible = false;
             // 
@@ -1814,45 +1909,46 @@
             this.PlaylistGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.PlaylistGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.PlaylistGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PlaylistGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PlaylistGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.PlaylistGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PlaylistGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3});
             this.PlaylistGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.PlaylistGrid.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PlaylistGrid.DefaultCellStyle = dataGridViewCellStyle9;
             this.PlaylistGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PlaylistGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.PlaylistGrid.Location = new System.Drawing.Point(0, 296);
+            this.PlaylistGrid.Location = new System.Drawing.Point(0, 370);
+            this.PlaylistGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PlaylistGrid.MultiSelect = false;
             this.PlaylistGrid.Name = "PlaylistGrid";
             this.PlaylistGrid.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.PlaylistGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PlaylistGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.PlaylistGrid.RowHeadersVisible = false;
             this.PlaylistGrid.RowHeadersWidth = 30;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            this.PlaylistGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            this.PlaylistGrid.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.PlaylistGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.PlaylistGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.PlaylistGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1862,7 +1958,7 @@
             this.PlaylistGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.PlaylistGrid.RowTemplate.Height = 24;
             this.PlaylistGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PlaylistGrid.Size = new System.Drawing.Size(821, 188);
+            this.PlaylistGrid.Size = new System.Drawing.Size(925, 235);
             this.PlaylistGrid.TabIndex = 10;
             this.PlaylistGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.PlaylistGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
@@ -1885,45 +1981,46 @@
             this.FavMGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.FavMGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.FavMGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FavMGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FavMGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.FavMGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FavMGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4});
             this.FavMGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FavMGrid.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FavMGrid.DefaultCellStyle = dataGridViewCellStyle13;
             this.FavMGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FavMGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.FavMGrid.Location = new System.Drawing.Point(0, 484);
+            this.FavMGrid.Location = new System.Drawing.Point(0, 605);
+            this.FavMGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FavMGrid.MultiSelect = false;
             this.FavMGrid.Name = "FavMGrid";
             this.FavMGrid.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FavMGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FavMGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.FavMGrid.RowHeadersVisible = false;
             this.FavMGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            this.FavMGrid.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.FavMGrid.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.FavMGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.FavMGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.FavMGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1933,7 +2030,7 @@
             this.FavMGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.FavMGrid.RowTemplate.Height = 24;
             this.FavMGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FavMGrid.Size = new System.Drawing.Size(821, 188);
+            this.FavMGrid.Size = new System.Drawing.Size(925, 235);
             this.FavMGrid.TabIndex = 9;
             this.FavMGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.FavMGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
@@ -1956,45 +2053,46 @@
             this.FavVGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.FavVGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.FavVGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FavVGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FavVGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.FavVGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FavVGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2});
             this.FavVGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FavVGrid.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FavVGrid.DefaultCellStyle = dataGridViewCellStyle17;
             this.FavVGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.FavVGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.FavVGrid.Location = new System.Drawing.Point(0, 672);
+            this.FavVGrid.Location = new System.Drawing.Point(0, 840);
+            this.FavVGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FavVGrid.MultiSelect = false;
             this.FavVGrid.Name = "FavVGrid";
             this.FavVGrid.ReadOnly = true;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FavVGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FavVGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.FavVGrid.RowHeadersVisible = false;
             this.FavVGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            this.FavVGrid.RowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            this.FavVGrid.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.FavVGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.FavVGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.FavVGrid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2004,7 +2102,7 @@
             this.FavVGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.FavVGrid.RowTemplate.Height = 24;
             this.FavVGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FavVGrid.Size = new System.Drawing.Size(821, 188);
+            this.FavVGrid.Size = new System.Drawing.Size(925, 235);
             this.FavVGrid.TabIndex = 8;
             this.FavVGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.MediaGrid_CellMouseDown);
             this.FavVGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
@@ -2023,7 +2121,7 @@
             this.UserLibLabel.AutoSize = true;
             this.UserLibLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLibLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.UserLibLabel.Location = new System.Drawing.Point(15, 9);
+            this.UserLibLabel.Location = new System.Drawing.Point(17, 11);
             this.UserLibLabel.Name = "UserLibLabel";
             this.UserLibLabel.Size = new System.Drawing.Size(232, 59);
             this.UserLibLabel.TabIndex = 6;
@@ -2031,25 +2129,15 @@
             // 
             // panelQueue
             // 
-            this.panelQueue.Controls.Add(this.QueueLabel);
             this.panelQueue.Controls.Add(this.QGrid);
+            this.panelQueue.Controls.Add(this.QueueLabel);
             this.panelQueue.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelQueue.Location = new System.Drawing.Point(631, 104);
+            this.panelQueue.Location = new System.Drawing.Point(710, 130);
+            this.panelQueue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelQueue.Name = "panelQueue";
-            this.panelQueue.Size = new System.Drawing.Size(406, 860);
+            this.panelQueue.Size = new System.Drawing.Size(457, 1075);
             this.panelQueue.TabIndex = 29;
             this.panelQueue.Visible = false;
-            // 
-            // QueueLabel
-            // 
-            this.QueueLabel.AutoSize = true;
-            this.QueueLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QueueLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.QueueLabel.Location = new System.Drawing.Point(20, 9);
-            this.QueueLabel.Name = "QueueLabel";
-            this.QueueLabel.Size = new System.Drawing.Size(155, 59);
-            this.QueueLabel.TabIndex = 8;
-            this.QueueLabel.Text = "Queue";
             // 
             // QGrid
             // 
@@ -2060,45 +2148,46 @@
             this.QGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.QGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.QGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.QGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.QGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.QGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.QGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6});
             this.QGrid.ContextMenuStrip = this.MediaMenuStrip1;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.QGrid.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.QGrid.DefaultCellStyle = dataGridViewCellStyle21;
             this.QGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.QGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.QGrid.Location = new System.Drawing.Point(0, 77);
+            this.QGrid.Location = new System.Drawing.Point(0, 96);
+            this.QGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QGrid.MultiSelect = false;
             this.QGrid.Name = "QGrid";
             this.QGrid.ReadOnly = true;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.QGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Cambria", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(155)))), ((int)(((byte)(144)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.QGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.QGrid.RowHeadersVisible = false;
             this.QGrid.RowHeadersWidth = 62;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
-            this.QGrid.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            this.QGrid.RowsDefaultCellStyle = dataGridViewCellStyle23;
             this.QGrid.RowTemplate.ContextMenuStrip = this.MediaMenuStrip1;
             this.QGrid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.QGrid.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -2109,7 +2198,7 @@
             this.QGrid.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.QGrid.RowTemplate.Height = 24;
             this.QGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.QGrid.Size = new System.Drawing.Size(406, 783);
+            this.QGrid.Size = new System.Drawing.Size(457, 979);
             this.QGrid.TabIndex = 7;
             this.QGrid.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.MediaGrid_CellMouseEnter);
             this.QGrid.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.MediaGrid_MouseDoubleClick);
@@ -2122,6 +2211,17 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 106;
             // 
+            // QueueLabel
+            // 
+            this.QueueLabel.AutoSize = true;
+            this.QueueLabel.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QueueLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.QueueLabel.Location = new System.Drawing.Point(22, 11);
+            this.QueueLabel.Name = "QueueLabel";
+            this.QueueLabel.Size = new System.Drawing.Size(155, 59);
+            this.QueueLabel.TabIndex = 8;
+            this.QueueLabel.Text = "Queue";
+            // 
             // ProfileButton
             // 
             this.ProfileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2131,9 +2231,10 @@
             this.ProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProfileButton.ForeColor = System.Drawing.Color.Transparent;
             this.ProfileButton.Image = ((System.Drawing.Image)(resources.GetObject("ProfileButton.Image")));
-            this.ProfileButton.Location = new System.Drawing.Point(629, 12);
+            this.ProfileButton.Location = new System.Drawing.Point(708, 15);
+            this.ProfileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProfileButton.Name = "ProfileButton";
-            this.ProfileButton.Size = new System.Drawing.Size(73, 73);
+            this.ProfileButton.Size = new System.Drawing.Size(82, 91);
             this.ProfileButton.TabIndex = 9;
             this.ProfileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.ProfileButton.UseVisualStyleBackColor = false;
@@ -2145,8 +2246,9 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1853, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(2085, 130);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -2154,34 +2256,167 @@
             // 
             this.spotflixBindingSource.DataSource = typeof(Proyecto.Spotflix);
             // 
-            // downloadToolStripMenuItem
+            // contextMenuStrip1
             // 
-            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            this.downloadToolStripMenuItem.Size = new System.Drawing.Size(155, 28);
-            this.downloadToolStripMenuItem.Text = "Download";
-            this.downloadToolStripMenuItem.Click += new System.EventHandler(this.downloadToolStripMenuItem_Click);
+            this.contextMenuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem8,
+            this.toolStripMenuItem11,
+            this.toolStripMenuItem16,
+            this.toolStripMenuItem17});
+            this.contextMenuStrip1.Name = "MediaMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(156, 172);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem1.Text = "Play";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem7});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem2.Text = "Add to...";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem3.Text = "Queue";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.queueToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem4.Text = "Favorites";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.favoritesToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem6});
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem5.Text = "Playlist";
+            this.toolStripMenuItem5.DropDownOpened += new System.EventHandler(this.playlistToolStripMenuItem_DropDownOpened);
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.playlistToolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem6.Text = "New...";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem7.Text = "Decide for me";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.decideForMeToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem9,
+            this.toolStripMenuItem10});
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem8.Text = "Go to...";
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem9.Text = "Artist";
+            // 
+            // toolStripMenuItem10
+            // 
+            this.toolStripMenuItem10.Name = "toolStripMenuItem10";
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(270, 34);
+            this.toolStripMenuItem10.Text = "Album";
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem12,
+            this.toolStripMenuItem13,
+            this.toolStripMenuItem14,
+            this.toolStripMenuItem15});
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem11.Text = "Delete...";
+            // 
+            // toolStripMenuItem12
+            // 
+            this.toolStripMenuItem12.Name = "toolStripMenuItem12";
+            this.toolStripMenuItem12.Size = new System.Drawing.Size(203, 34);
+            this.toolStripMenuItem12.Text = "Media";
+            // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(203, 34);
+            this.toolStripMenuItem13.Text = "From playlist";
+            // 
+            // toolStripMenuItem14
+            // 
+            this.toolStripMenuItem14.Name = "toolStripMenuItem14";
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(203, 34);
+            this.toolStripMenuItem14.Text = "Artist";
+            // 
+            // toolStripMenuItem15
+            // 
+            this.toolStripMenuItem15.Name = "toolStripMenuItem15";
+            this.toolStripMenuItem15.Size = new System.Drawing.Size(203, 34);
+            this.toolStripMenuItem15.Text = "Playlist";
+            // 
+            // toolStripMenuItem16
+            // 
+            this.toolStripMenuItem16.Name = "toolStripMenuItem16";
+            this.toolStripMenuItem16.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem16.Text = "Download";
+            // 
+            // toolStripMenuItem17
+            // 
+            this.toolStripMenuItem17.Name = "toolStripMenuItem17";
+            this.toolStripMenuItem17.Size = new System.Drawing.Size(155, 28);
+            this.toolStripMenuItem17.Text = "Info";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1853, 1041);
+            this.ClientSize = new System.Drawing.Size(2085, 1301);
             this.Controls.Add(this.panelQueue);
+            this.Controls.Add(this.panelAddMedia);
+            this.Controls.Add(this.panelShowMedia);
+            this.Controls.Add(this.panelProfile);
+            this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelLibrary);
             this.Controls.Add(this.panelMediaControl);
             this.Controls.Add(this.panelArtist);
-            this.Controls.Add(this.panelSearch);
             this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.ProfileButton);
-            this.Controls.Add(this.panelShowMedia);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelChangePass);
-            this.Controls.Add(this.panelAddMedia);
-            this.Controls.Add(this.panelProfile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(912, 624);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(1023, 766);
             this.Name = "FormMain";
             this.Text = "SpotfliX";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
@@ -2198,7 +2433,6 @@
             this.panelMediaType.ResumeLayout(false);
             this.panelMediaType.PerformLayout();
             this.panelShowMedia.ResumeLayout(false);
-            this.panelShowMedia.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MediaGrid)).EndInit();
             this.MediaMenuStrip1.ResumeLayout(false);
             this.panelProfile.ResumeLayout(false);
@@ -2232,6 +2466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.QGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spotflixBindingSource)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2263,9 +2498,7 @@
         private System.Windows.Forms.Button ShowMediaButton;
         private System.Windows.Forms.DataGridView MediaGrid;
         private System.Windows.Forms.BindingSource spotflixBindingSource;
-        private System.Windows.Forms.Button BackMediaButton;
         private System.Windows.Forms.Panel panelProfile;
-        private System.Windows.Forms.Button BackProfileButton;
         private System.Windows.Forms.Label ProfileLabel;
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.TextBox aSearchBox;
@@ -2292,15 +2525,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox emailProfileBox;
-        private System.Windows.Forms.ContextMenuStrip MediaMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem playToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToQueueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem favoritesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem decideForMeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goToToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem artistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem albumToolStripMenuItem;
         private System.Windows.Forms.Button DJButton;
@@ -2314,7 +2540,6 @@
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Button BackaSearchButton;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.Panel panelArtist;
         private System.Windows.Forms.DataGridView ArtistAlbumGrid;
@@ -2335,7 +2560,6 @@
         private System.Windows.Forms.Button SearchButtton;
         private System.Windows.Forms.Label FollowingQLabel;
         private System.Windows.Forms.Label FollowingLabel;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DeleteMediaMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromPlaylistToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
@@ -2362,7 +2586,38 @@
         private System.Windows.Forms.DataGridView QGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog DownloadDialog;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.ToolStripMenuItem artistToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem1;
+        public System.Windows.Forms.ContextMenuStrip MediaMenuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem addToQueueToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem queueToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem favoritesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem playlistToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem decideForMeToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem goToToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem11;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem12;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem13;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem14;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem15;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
+        public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem17;
     }
 }

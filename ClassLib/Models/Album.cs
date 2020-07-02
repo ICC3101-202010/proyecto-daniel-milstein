@@ -27,6 +27,10 @@ namespace Proyecto
         {
             SongList.Add(song); //Event?
         }
+        public void RemoveSong(Song s)
+        {
+            SongList.Remove(s);
+        }
 
         public string GetName()
         {

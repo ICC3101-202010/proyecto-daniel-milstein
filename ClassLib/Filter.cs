@@ -167,7 +167,7 @@ namespace Proyecto
                     }
                     DateTime dt = new DateTime(l);
                     string dur = dt.ToString("HH:mm:ss");
-                    grid.Rows.Add(name, item.GetArtist(),"Album");
+                    grid.Rows.Add(name, item.GetArtist().GetName() ,dur ,"Album");
                     grid.Rows[en].HeaderCell.Value = item;
                     en++;
 
@@ -193,7 +193,7 @@ namespace Proyecto
             List<Playlist> d = new List<Playlist>();
             List<Album> e = new List<Album>();
 
-            string key = Hkey.ToLower();
+            string key = Hkey.ToLower().Trim();
 
 
 
@@ -272,12 +272,17 @@ namespace Proyecto
                 if (item.GetName().ToLower().Contains(key) || key.Contains(item.GetName().ToLower()))
                 {
                     Res2.Add(item);
+                    foreach (Album alb in item.GetAlbums().Values)
+                    {
+                        Res5.Add(alb);
+                    }
                 }
                 foreach (Album al in e)
                 {
-                    if (al.GetName().ToLower().Contains(key))
+                    if (al.GetName().ToLower().Contains(key.Trim()) || al.GetArtist().GetName().Contains(key))
                     {
                         Res5.Add(al);
+                        Res2.Add(item);
                     }
                     foreach (Media m in al.GetSongs())
                     {
@@ -301,11 +306,14 @@ namespace Proyecto
             {
                 if (item.GetName().ToLower().Contains(key) || key.Contains(item.GetName().ToLower()) && !item.GetPrivate() )
                 {
-                    Res4.Add(item);
+                    if (item.GetPrivate() == false)
+                    {
+                        Res4.Add(item); 
+                    }
                 }
                 foreach  (Media m in item.GetList())
                 {
-                    if (Res1.Contains(m) && !Res4.Contains(item))
+                    if (Res1.Contains(m) && !Res4.Contains(item) && item.GetPrivate() == false)
                     {
                         Res4.Add(item);
                     }
@@ -457,9 +465,9 @@ namespace Proyecto
                 }
             }
 
+            HashSet<object> hash = new HashSet<object>(res2);
 
-
-            return res2;
+            return hash.ToList();
         }
     }
 

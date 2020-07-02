@@ -94,7 +94,61 @@ namespace Proyecto
 
             return meta;
         }
+        public Dictionary<string, string> MetaManual(object obj)
+        {
+            List<string> TagList = new List<string>();
+            if (obj.GetType() == typeof(Media))
+            {
+                Media m = (Media)obj;
+                Dictionary<string, string> meta = new Dictionary<string, string>();
+                meta.Add("File name", m.GetFileName());
+                meta.Add("Format", "");
+                meta.Add("Duration HH:MM:SS", "");
+                if (m.GetType() == typeof(Song))
+                {
+                    Song s = (Song)m;
+                    SongMetadata sm = (SongMetadata)s.GetMetadata();
+                    meta.Add("Name", sm.GetName());
+                    meta.Add("Artist", sm.GetArtist());
+                    meta.Add("Album", sm.GetAlbum());
+                    meta.Add("Genre", sm.GetGenre());
+                    meta.Add("Release Year", sm.GetPublicationYear().ToString());
+                    meta.Add("Label", sm.GetLabel());
+                    meta.Add("Lyrics", sm.GetLyrics()); ;
+                }
 
+                else if (m.GetType() == typeof(Video))
+                {
+                    VideoMetadata vm = (VideoMetadata)((Video)m).GetMetadata();
+                    meta.Add("Name", vm.GetName());
+                    meta.Add("Creator", vm.GetCreator());
+                    meta.Add("Genre", vm.GetGenre()); ;
+                    meta.Add("Category", vm.GetCategory());
+                    string actors = "";
+                    foreach (string item in vm.GetActors())
+                    {
+                        actors += item;
+                        actors += ", ";
+                    }
+                    actors = actors.Substring(0, actors.Length - 2);
+                    actors += ".";
+                    meta.Add("Actors", actors);
+                    meta.Add("Director", vm.GetDirector());
+                    meta.Add("Studio", vm.GetStudio());
+                    meta.Add("Release Year", vm.GetPubYear().ToString());
+                    meta.Add("Description", vm.GetDescription());
+                    meta.Add("Resolution", vm.GetResolution());
+                    meta.Add("Aspect Ratio", vm.GetAspectRatio());
+
+                }
+                return meta;
+            }
+
+
+            return null;
+
+            
+        }
 
 
 

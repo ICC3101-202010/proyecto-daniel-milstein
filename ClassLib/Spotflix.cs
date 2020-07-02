@@ -32,13 +32,19 @@
         {
             MediaDB.Remove(s);
             Artist a = PeopleDB[s.GetMetadata().GetArtist()];
-            List<Media> l = a.GetWork();
-            l.Remove(s);
-            a.SetWork(l);
+            a.RemoveWork(s);
             Album al = a.GetAlbums()[s.GetMetadata().GetAlbum()];
-            List<Song> sl = al.GetSongs();
-            sl.Remove(s);
-            al.SetSongs(sl);
+            al.RemoveSong(s);
+
+            if (al.GetSongs().Count == 0)
+            {
+                a.RemoveAlbum(al.GetName());
+            }
+            if (a.GetWork().Count == 0)
+            {
+                PeopleDB.Remove(a.GetName());
+            }
+            Save("Spotflix.bin");
         }        public static void DeleteMedia(Video v)
         {
             MediaDB.Remove(v);
@@ -53,6 +59,11 @@
                 l.Remove(v);
                 a.SetWork(l);
             }
+            Save("Spotflix.bin");
+        }        public static void RemoveArtist(Artist a)
+        {
+            PeopleDB.Remove(a.GetName());
+            Save("Spotflix.bin");
         }        public static Media FindMedia(string url)
         {
             foreach (Media item in MediaDB)

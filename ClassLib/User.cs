@@ -133,6 +133,36 @@ namespace Proyecto
         {
             return Queue;
         }
+        public void ChangeBox(string Pop)
+        {
+            if (Pop == "private")
+            {
+                if (PrivateAccount == true)
+                {
+                    PrivateAccount = false;
+                }
+                else
+                {
+                    PrivateAccount = true;
+                    foreach(Playlist pl in Playlists)
+                    {
+                        pl.SetPrivate(true);
+                    }
+                }
+            }
+            else if(Pop == "premium")
+            {
+                if (Premium == true)
+                {
+                    Premium = false;
+                }
+                else
+                {
+                    Premium = true;
+                }
+            }
+        }
+
 
         public void AddToPlaylist(Media media, string plName)
         {
@@ -197,6 +227,12 @@ namespace Proyecto
             Playlist a = new Playlist(name, privateList, UserName);
             
             Playlists.Add(a);
+        }
+
+        public void DeletePlaylist(string name)
+        {
+            Playlist a = Playlists.Find(x => x.GetName() == name);
+            Playlists.Remove(a);
         }
 
         public void FollowArtist(Artist follow)

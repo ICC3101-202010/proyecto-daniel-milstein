@@ -42,6 +42,11 @@ namespace Proyecto
         {
             Work.Add(m);
         }
+        public void RemoveWork(Media m)
+        {
+            Work.Remove(m);
+        }
+
         public string GetGender()
         {
             return Gender;
@@ -86,11 +91,13 @@ namespace Proyecto
 
         public void AddAlbum(string alName, Album album)
         {
-            //Event
             Albums.Add(alName, album);
         }
 
-
+        public void RemoveAlbum(string alName)
+        {
+            Albums.Remove(alName);
+        }
 
         public void AddFollower(User user)
         {

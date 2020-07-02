@@ -27,7 +27,16 @@ namespace Proyecto
 
         public void AddMedia(Media media)
         {
-            PList.Add(media);
+            if (PList.Count == 0)
+            {
+                PList.Add(media);
+            }
+
+            else if (PList.Count != 0 && media.GetType() == PList[0].GetType())
+            {
+                PList.Add(media);
+            }
+            
         }
 
         public List<Media> GetList()
@@ -36,6 +45,8 @@ namespace Proyecto
         }
 
         public bool GetPrivate() { return PrivateList; }
+
+        public void SetPrivate(bool pvt) { PrivateList = pvt; }
 
         public string GetCreator()
         {

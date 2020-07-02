@@ -46,6 +46,9 @@ namespace SpotfliX
                 UsersButton.Show();
             }
             axWindowsMediaPlayer1.uiMode = "none";
+            pvtCheckBox.Checked = ActiveUser.GetPrivate();
+            premiumCheckBox.Checked = ActiveUser.GetPremium();
+            DFM.Clear();
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)
@@ -55,7 +58,8 @@ namespace SpotfliX
                 HideOthers(panelProfile);
                 userProfilelabel.Text = ActiveUser.GetUsername();
                 emailProfileLabel.Text = ActiveUser.GetEmail();
-                PassProfilelabel.Text = "************"; 
+                PassProfilelabel.Text = "************";
+                
             }
             else
             {
@@ -82,7 +86,11 @@ namespace SpotfliX
         private void SearchBox_Click(object sender, EventArgs e)
         {
             TextBox tb = (TextBox)sender;
-            tb.Text = "";
+            if (tb.Text == "   Search")
+            {
+                tb.Text = "";
+            }
+            
         }
 
         private void FileButton_Click(object sender, EventArgs e)
@@ -390,17 +398,18 @@ namespace SpotfliX
             (List<Media>, List<Artist>, List<User>, List<Playlist>, List<Album>) Results = f.Search(aSearchBox.Text.ToLower());
             List<object> res = f.CastToObj(Results.Item1, Results.Item2, Results.Item3, Results.Item4, Results.Item5);
             f.ObjGrid(res, ResultGrid, SearchTypes);
+            ResultGrid.ContextMenuStrip = MediaMenuStrip1;
         }
 
         private void aSearchBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox txt = (TextBox)sender;
-            if(txt.Text != "")
+            
+            if(aSearchBox.Text != "" && aSearchBox.Text != "   Search")
             {
                 Filter f = new Filter();
-                if (txt.Text.Contains("&"))
+                if (aSearchBox.Text.Contains("&"))
                 {
-                    List<string> ls = txt.Text.Split('&').ToList();
+                    List<string> ls = aSearchBox.Text.Split('&').ToList();
                     List<object> res = f.AndSearch(ls);
                     f.ObjGrid(res, ResultGrid, SearchTypes);
                 }
@@ -412,6 +421,10 @@ namespace SpotfliX
                     f.ObjGrid(res, ResultGrid, SearchTypes); 
                 }
             }
+            else
+            {
+                ResultGrid.Rows.Clear();
+            }
             
         }
 
@@ -419,7 +432,7 @@ namespace SpotfliX
         {
             if (aSearchBox.Text == "")
             {
-                aSearchBox.Text = "Search";
+                aSearchBox.Text = "   Search";
             }
         }
 
@@ -552,6 +565,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(Song));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -565,6 +579,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(Video));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -578,6 +593,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(Artist));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
@@ -591,6 +607,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(Album));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -604,6 +621,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(User));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
@@ -617,6 +635,7 @@ namespace SpotfliX
             {
                 SearchTypes.Remove(typeof(Playlist));
             }
+            check.CheckedChanged += aSearchBox_TextChanged;
         }
 
         private void button6_Click(object sender, EventArgs e) //FollowButton
@@ -644,6 +663,7 @@ namespace SpotfliX
             if (!panelSearch.Visible)
             {
                 HideOthers(panelSearch);
+                aSearchBox.Focus();
             }
             else
             {
@@ -661,10 +681,25 @@ namespace SpotfliX
             DataGridView grid = (DataGridView)m.SourceControl;
 
             object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if(sel == null) { return; }
             if (sel.GetType() == typeof(Song))
             {
                 Song file = (Song)sel;
                 Spotflix.DeleteMedia(file);
+                File.Delete(file.GetFileName());
+                Artist a = Spotflix.GetPeopleDB[file.GetMetadata().GetArtist()];
+                a.RemoveWork(file);
+                Album al = a.GetAlbums()[file.GetMetadata().GetAlbum()];
+                al.RemoveSong(file);
+                if(al.GetSongs().Count == 0)
+                {
+                    a.RemoveAlbum(al.GetName());
+                }
+                if (a.GetWork().Count == 0)
+                {
+
+                }
+                
 
 
             }
@@ -673,6 +708,7 @@ namespace SpotfliX
             {
                 Video file = (Video)sel;
                 Spotflix.DeleteMedia(file);
+                File.Delete(file.GetFileName());
             }
         }
 
@@ -938,8 +974,9 @@ namespace SpotfliX
 
         private void playlistToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
-            ToolStripMenuItem it = (ToolStripMenuItem)sender;
-            ToolStripDropDown tool = it.DropDown;
+            //ToolStripMenuItem it = (ToolStripMenuItem)sender;
+            ToolStripDropDown tool = playlistToolStripMenuItem.DropDown;
+
             tool.Items.Clear();
             tool.Items.Add(newToolStripMenuItem);
             foreach (Playlist item in ActiveUser.GetPlaylist())
@@ -1070,10 +1107,10 @@ namespace SpotfliX
 
         private void DecideButton_Click(object sender, EventArgs e)
         {
-            if (DFM.Count()>0)
+            if (DFM.Count>0)
             {
                 Random r = new Random();
-                Video v = DFM[r.Next(DFM.Count() + 1)];
+                Video v = DFM[r.Next(DFM.Count)];
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
                 DialogResult dr = MessageBox.Show($"The video selected was {v.GetMetadata().GetName()}. Select YES if you want to" +
@@ -1082,7 +1119,7 @@ namespace SpotfliX
                 {
                     DFM.Clear();
                 }
-                else
+                else if (dr == DialogResult.No)
                 {
                     DFM.Remove(v);
                 }
@@ -1110,7 +1147,7 @@ namespace SpotfliX
                     try
                     {
                         File.Copy(s.GetFileName(), DownloadDialog.SelectedPath + $"{s.GetMetadata().GetName()}-{s.GetMetadata().GetArtist()}" 
-                            + s.GetInfo()["format"]);
+                            + s.GetInfo()["format"],true);
 
                     }
                     catch (Exception)
@@ -1154,6 +1191,160 @@ namespace SpotfliX
             List<Type> ts = new List<Type>() { typeof(Song), typeof(Video) };
             f.ObjGrid(f.CastToObj(ActiveUser.GetQueue()), QGrid, ts);
 
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LinkLabel lab = (LinkLabel)sender;
+            if (lab.Text == "Select All")
+            {
+                foreach (Control cItem in panelTypeSearch.Controls)
+                {
+                    if(cItem.GetType() == typeof(CheckBox))
+                    {
+                        CheckBox item = (CheckBox)cItem;
+                        item.Checked = true;
+                    }
+                    
+                }
+                lab.Text = "Deselect All";
+
+            }
+            else if (lab.Text == "Deselect All")
+            {
+                foreach (Control cItem in panelTypeSearch.Controls)
+                {
+                    if (cItem.GetType() == typeof(CheckBox))
+                    {
+                        CheckBox item = (CheckBox)cItem;
+                        item.Checked = false;
+                    }
+                }
+                lab.Text = "Select All";
+            }
+
+            lab.LinkClicked += aSearchBox_TextChanged;
+            
+
+        }
+
+        private void artistToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+
+            object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel.GetType() == typeof(Artist))
+            {
+                Artist a = (Artist)sel;
+                Spotflix.RemoveArtist(a);
+            }
+            else if (sel.GetType() == typeof(Song))
+            {
+
+            }
+            
+        }
+
+        private void playlistToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem submenuItem = (ToolStripMenuItem)sender;
+            ToolStripDropDownMenu submenudrop = (ToolStripDropDownMenu)submenuItem.Owner;
+
+            ToolStripMenuItem menuItem = (ToolStripMenuItem)submenudrop.OwnerItem;
+            ContextMenuStrip m = (ContextMenuStrip)menuItem.Owner;
+            DataGridView grid = (DataGridView)m.SourceControl;
+
+            object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel.GetType() == typeof(Playlist))
+            {
+                Playlist pl = (Playlist)sel;
+                ActiveUser.DeletePlaylist(pl.GetName());
+            }
+        }
+
+        private void pvtCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+
+            
+        }
+
+        private void premiumCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pvtCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void premiumCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pvtCheckBox_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure you want to change this setting?", "Confirm change", MessageBoxButtons.YesNo);
+            if (d == DialogResult.Yes)
+            {
+                ActiveUser.ChangeBox("private");
+            }
+        }
+
+        private void premiumCheckBox_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure you want to change this setting?", "Confirm change", MessageBoxButtons.YesNo);
+            if (d == DialogResult.Yes)
+            {
+                ActiveUser.ChangeBox("premium");
+            }
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripItem item = (ToolStripItem)sender;
+            ContextMenuStrip menu = (ContextMenuStrip)item.Owner;
+            DataGridView grid = (DataGridView)menu.SourceControl;
+            object sel = grid.Rows[SelectedRow].HeaderCell.Value;
+            if (sel == null) { return; }
+            else
+            {
+                
+                MetaDataController m1 = new MetaDataController();
+                AddMediaMeta = m1.MetaManual(sel);
+                QGrid.Rows.Clear();
+                foreach (var asd in AddMediaMeta)
+                {
+                    QGrid.Rows.Add(asd.Key, asd.Value);
+
+                }
+                QueueLabel.Text = AddMediaMeta["Name"];
+            }
+            if (sel.GetType() == typeof(Song))
+            {
+                Song s = (Song)sel;
+                QueueLabel.Text = s.GetMetadata().GetName();
+                MetaDataController m1 = new MetaDataController();
+                AddMediaMeta = m1.MetaManual(s.GetFileName(), "song");
+                QGrid.Rows.Clear();
+                foreach (var asd in AddMediaMeta)
+                {
+                    QGrid.Rows.Add(asd.Key, asd.Value);
+
+                }
+            }
+        }
+
+        private void ResultGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            SelectedRow = e.RowIndex;
         }
     }
 }
